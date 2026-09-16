@@ -1708,6 +1708,14 @@
     content: ""; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 50%;
     background: var(--primary); box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.6);
   }
+  .uof-grid.two { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .uof-grid.two .uof-card { padding: 48px 48px 40px; min-height: 500px; gap: 18px; }
+  .uof-grid.two .uof-share { font-size: 56px; }
+  .uof-grid.two .uof-name { font-size: 40px; }
+  .uof-grid.two .uof-points { gap: 16px; margin-top: 10px; }
+  .uof-grid.two .uof-points li { font-size: 24px; padding-left: 26px; }
+  .uof-grid.two .uof-points li::before { top: 13px; width: 8px; height: 8px; }
+  .uof-grid.two .uof-ms { font-size: 15px; }
   .uof-card.primary {
     border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
     border-top-color: var(--primary);
@@ -2502,31 +2510,29 @@ without MMs or subsidies.</div>
       <div class="corner-mark">13 — The Raise</div>
       <div class="ph-note">Amber = placeholder</div>
       <h2 class="title"><span class="ph">$0M</span> to reach <span style="color:var(--primary)">mainnet and 100 creators.</span></h2>
-      <p class="sub">Four workstreams over twelve months. Each one removes a reason a creator or trader would not show up.</p>
+      <p class="sub">Two workstreams over twelve months. Scaling brings the audience. Product gives it a trading engine that rivals order books.</p>
 
-      <div class="uof-grid">
+      <div class="uof-grid two">
         <div class="uof-card">
           <div class="uof-share ph">00%</div>
-          <div class="uof-name">Growth funnels &amp; UGC</div>
-          <ul class="uof-points"><li>Referral loops</li><li>Autonomous content engine</li><li>Paid tests, attention to first trade</li></ul>
-          <div class="uof-ms">Milestone · <b class="ph">0k</b> monthly traders</div>
-        </div>
-        <div class="uof-card">
-          <div class="uof-share ph">00%</div>
-          <div class="uof-name">Creator onboarding</div>
-          <ul class="uof-points"><li>Market templates</li><li>Creator revenue share</li><li>Hands-on program for the first 100</li></ul>
-          <div class="uof-ms">Milestone · <b>100</b> creators live</div>
+          <div class="uof-name">Scaling</div>
+          <ul class="uof-points">
+            <li>Growth funnels and referral loops</li>
+            <li>UGC and the autonomous content engine</li>
+            <li>Creator onboarding and revenue share</li>
+            <li>Paid tests, attention to first trade</li>
+          </ul>
+          <div class="uof-ms">Milestone · <b class="ph">0k</b> monthly traders · <b>100</b> creators live</div>
         </div>
         <div class="uof-card primary">
           <div class="uof-share ph">00%</div>
-          <div class="uof-name">Social layer</div>
-          <ul class="uof-points"><li>Gasless embedded wallets</li><li>Friend activity and notifications</li><li>Mechanics that make a market spread</li></ul>
-          <div class="uof-ms">Milestone · mainnet app</div>
-        </div>
-        <div class="uof-card">
-          <div class="uof-share ph">00%</div>
-          <div class="uof-name">PMM &amp; matching stack</div>
-          <ul class="uof-points"><li>Liquidity vaults</li><li>On-chain settlement</li><li>Hybrid PMM and order book matching</li><li>Mainnet audit</li></ul>
+          <div class="uof-name">Product</div>
+          <ul class="uof-points">
+            <li>PMM and order book hybrid trading engine</li>
+            <li>Liquidity vaults and on-chain settlement</li>
+            <li>Gasless embedded wallets and the social layer</li>
+            <li>Mainnet audit</li>
+          </ul>
           <div class="uof-ms">Milestone · hybrid live on mainnet · <b class="ph">Q0 2027</b></div>
         </div>
       </div>
