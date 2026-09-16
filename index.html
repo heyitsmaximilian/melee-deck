@@ -1589,6 +1589,108 @@
     text-transform: uppercase;
   }
 
+
+  /* === Placeholders (review only) === */
+  .ph { color: var(--amber) !important; }
+  .ph-note {
+    position: absolute; top: 44px; right: 96px;
+    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--amber); font-weight: 500;
+  }
+
+  /* === Slide 11 · Traction === */
+  .tr-body {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    align-content: center;
+  }
+  .tr-panel {
+    padding: 52px 48px 40px;
+    min-height: 560px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+    border-top: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .tr-panel.primary {
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+    border-top-color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 5%, var(--bg-card));
+  }
+  .tr-head { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
+  .tr-name { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+  .tr-kicker {
+    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted); font-weight: 500;
+  }
+  .tr-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 56px 40px; }
+  .tr-stat b {
+    display: block;
+    font-family: var(--font-numeral); font-weight: 400;
+    font-size: 76px; letter-spacing: -0.02em; line-height: 1; color: var(--text);
+  }
+  .tr-stat span {
+    display: block; margin-top: 10px;
+    font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted); font-weight: 500;
+  }
+  .tr-src {
+    margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); font-weight: 500;
+  }
+
+  /* === Slide 13 · Use of funds === */
+  .uof-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-content: center;
+  }
+  .uof-card {
+    padding: 40px 32px 32px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+    border-top: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 480px;
+  }
+  .uof-points { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .uof-points li {
+    position: relative; padding-left: 22px;
+    font-size: 20px; line-height: 1.4; color: var(--text-secondary);
+  }
+  .uof-points li::before {
+    content: ""; position: absolute; left: 0; top: 11px; width: 7px; height: 7px; border-radius: 50%;
+    background: var(--primary); box-shadow: 0 0 10px rgba(var(--primary-rgb), 0.6);
+  }
+  .uof-card.primary {
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+    border-top-color: var(--primary);
+    background: color-mix(in srgb, var(--primary) 5%, var(--bg-card));
+  }
+  .uof-share {
+    font-family: var(--font-numeral); font-size: 48px; letter-spacing: -0.02em;
+    line-height: 1; color: var(--primary);
+  }
+  .uof-name { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--text); margin-top: 6px; }
+  .uof-body { font-size: 20px; line-height: 1.5; color: var(--text-secondary); }
+  .uof-ms {
+    margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border);
+    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); font-weight: 500; line-height: 1.5;
+  }
+  .uof-ms b { color: var(--text); font-weight: 600; }
+
   /* === Slide 10 · Team === */
   .team-row {
     display: grid;
@@ -1807,7 +1909,7 @@
       <h1 class="headline">The people's prediction&nbsp;<em>market.</em></h1>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>01 / 12</span>
+        <span>01 / 14</span>
       </div>
     </div>
   </section>
@@ -1958,7 +2060,7 @@ without MMs or subsidies.</div>
           <div class="v-arrow"></div>
           <div class="v-side after">
             <div class="v-lbl">Melee</div>
-            <div class="after-txt">The <b>platform.</b></div>
+            <div class="after-txt">The <b>creator platform.</b></div>
           </div>
         </div>
       </div>
@@ -2029,14 +2131,14 @@ without MMs or subsidies.</div>
   <section data-label="Competitive">
     <div class="frame">
       <div class="corner-mark">07 — Competitive</div>
-      <h2 class="title">The permissionless <span style="color:var(--primary)">advantage.</span></h2>
-      <p class="sub">Polymarket and Kalshi are curated networks. Melee is the permissionless layer beneath all truth.</p>
+      <h2 class="title">Curated networks vs <span style="color:var(--primary)">creator markets.</span></h2>
+      <p class="sub">Polymarket and Kalshi pick every market. On Melee, creators launch them and keep a cut of every trade.</p>
 
       <div class="comp">
         <div></div>
         <div class="comp-hdr is-melee">
           <div class="comp-hdr-co">Melee</div>
-          <div class="comp-hdr-role">Permissionless layer</div>
+          <div class="comp-hdr-role">Creator markets</div>
         </div>
         <div class="comp-hdr">
           <div class="comp-hdr-co">Polymarket</div>
@@ -2081,7 +2183,7 @@ without MMs or subsidies.</div>
     <div class="frame">
       <div class="corner-mark">08 — The Market</div>
       <h2 class="title">A global <span style="color:var(--primary)">truth layer.</span></h2>
-      <p class="sub">Curated networks compete for the head of the market. A permissionless platform monetizes the entire curve.</p>
+      <p class="sub">Curated networks compete for the head of the market. A creator platform monetizes the entire curve.</p>
 
       <div class="mkt-chart">
         <svg viewBox="0 0 1600 520" preserveAspectRatio="none" aria-hidden="true">
@@ -2111,9 +2213,9 @@ without MMs or subsidies.</div>
           <p>What centralized platforms can list. $45B a month today.</p>
         </div>
         <div class="mkt-tail-note">
-          <div class="mkt-kicker">The long tail · platform only</div>
+          <div class="mkt-kicker">The long tail · creators only</div>
           <div class="mkt-tail-h">Every truth, in every language.</div>
-          <p>Regional sport, local politics, culture, finance — demand scattered across thousands of venues no curator can list.</p>
+          <p>Regional sport, local politics, culture, finance. Demand scattered across thousands of communities no curator can list.</p>
         </div>
       </div>
 
@@ -2185,8 +2287,8 @@ without MMs or subsidies.</div>
   <section data-label="G2M">
     <div class="frame">
       <div class="corner-mark">10 — G2M</div>
-      <h2 class="title">Find PMF. <span style="color:var(--primary)">Scale to the long-tail.</span></h2>
-      <p class="sub">Win market share with a proven customer base, then expand the TAM to every truth on earth.</p>
+      <h2 class="title">Crypto first. <span style="color:var(--primary)">Then every truth.</span></h2>
+      <p class="sub">Win on-chain traders with markets they already want, then hand creation to creators in every category.</p>
 
       <div class="gtm" id="gtm-track">
         <div class="gtm-phase is-now" id="gtm-wedge">
@@ -2195,7 +2297,7 @@ without MMs or subsidies.</div>
           <div class="gtm-name">Crypto price markets</div>
           <ul class="gtm-points">
             <li>Frequent, objective, rapidly resolving</li>
-            <li>Permissionless market creation of financial assets</li>
+            <li>Open creation on any financial asset</li>
             <li>Serves existing on-chain traders</li>
           </ul>
           <div class="gtm-kgt">
@@ -2225,7 +2327,7 @@ without MMs or subsidies.</div>
           <div class="gtm-label">Then</div>
           <div class="gtm-name">Open protocol</div>
           <ul class="gtm-points">
-            <li>Permissionless creation</li>
+            <li>Creator markets in every category</li>
             <li>API integrations</li>
             <li>Regional &amp; long-tail markets</li>
           </ul>
@@ -2239,10 +2341,51 @@ without MMs or subsidies.</div>
     </div>
   </section>
 
+
+  <!-- ======================= Slide 11 · Traction ======================= -->
+  <section data-label="Traction">
+    <div class="frame">
+      <div class="corner-mark">11 — Traction</div>
+      <div class="ph-note">Amber = placeholder</div>
+      <h2 class="title">The thesis is already <span style="color:var(--primary)">observable.</span></h2>
+      <p class="sub">Devnet numbers since launch, and the attention engine feeding it. Every market below was created by a user and traded with no market maker.</p>
+
+      <div class="tr-body">
+        <div class="tr-panel primary">
+          <div class="tr-head">
+            <div class="tr-name">On-chain</div>
+            <div class="tr-kicker">Devnet · since <span class="ph">Mon YYYY</span></div>
+          </div>
+          <div class="tr-stats">
+            <div class="tr-stat"><b class="ph">0,000</b><span>Markets created</span></div>
+            <div class="tr-stat"><b class="ph">00%</b><span>Created by users</span></div>
+            <div class="tr-stat"><b class="ph">00,000</b><span>Trades</span></div>
+            <div class="tr-stat"><b class="ph">0,000</b><span>Unique wallets</span></div>
+          </div>
+          <div class="tr-src">Source · Melee gateway · as of <span class="ph">DD Mon 2026</span></div>
+        </div>
+
+        <div class="tr-panel">
+          <div class="tr-head">
+            <div class="tr-name">Attention</div>
+            <div class="tr-kicker">Socials · zero paid spend</div>
+          </div>
+          <div class="tr-stats">
+            <div class="tr-stat"><b>100M+</b><span>Cumulative views</span></div>
+            <div class="tr-stat"><b>4.5M</b><span>Top post</span></div>
+            <div class="tr-stat"><b class="ph">00k</b><span>Followers</span></div>
+            <div class="tr-stat"><b class="ph">0,000</b><span>Waitlist / referrals</span></div>
+          </div>
+          <div class="tr-src">Source · <span class="ph">X, TikTok</span> · as of <span class="ph">DD Mon 2026</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======================= Slide 10 · Distribution ======================= -->
   <section data-label="Distribution">
     <div class="frame">
-      <div class="corner-mark">11 — Distribution</div>
+      <div class="corner-mark">12 — Distribution</div>
       <h2 class="title">Distribution compounds with <span style="color:var(--primary)">every market.</span></h2>
       <p class="sub">Melee pairs high-intent trader onboarding with an autonomous engine that can spin up attention for any vertical.</p>
 
@@ -2269,22 +2412,53 @@ without MMs or subsidies.</div>
             <div class="dist-stage-aud">Audience · Mass consumer</div>
           </div>
         </div>
-
-        <div class="dist-proof">
-          <span class="dist-proof-tag">Already<br>live</span>
-          <span class="dist-proof-stat"><b>4.5M</b><span class="dist-proof-stat-lbl">Top post</span></span>
-          <span class="dist-proof-stat"><b>100 M+</b><span class="dist-proof-stat-lbl">Cumulative views</span></span>
-          <span class="dist-proof-stat"><b>100s</b><span class="dist-proof-stat-lbl">Posts / day</span></span>
-        </div>
         </div>
       </div>
     
   </section>
 
+
+  <!-- ======================= Slide 13 · Use of funds ======================= -->
+  <section data-label="Use of funds">
+    <div class="frame">
+      <div class="corner-mark">13 — The Raise</div>
+      <div class="ph-note">Amber = placeholder</div>
+      <h2 class="title"><span class="ph">$0M</span> to reach <span style="color:var(--primary)">mainnet and 100 creators.</span></h2>
+      <p class="sub">Four workstreams over twelve months. Each one removes a reason a creator or trader would not show up.</p>
+
+      <div class="uof-grid">
+        <div class="uof-card">
+          <div class="uof-share ph">00%</div>
+          <div class="uof-name">Growth funnels &amp; UGC</div>
+          <ul class="uof-points"><li>Referral loops</li><li>Autonomous content engine</li><li>Paid tests, attention to first trade</li></ul>
+          <div class="uof-ms">Milestone · <b class="ph">0k</b> monthly traders</div>
+        </div>
+        <div class="uof-card">
+          <div class="uof-share ph">00%</div>
+          <div class="uof-name">Creator onboarding</div>
+          <ul class="uof-points"><li>Market templates</li><li>Creator revenue share</li><li>Hands-on program for the first 100</li></ul>
+          <div class="uof-ms">Milestone · <b>100</b> creators live</div>
+        </div>
+        <div class="uof-card primary">
+          <div class="uof-share ph">00%</div>
+          <div class="uof-name">Social layer</div>
+          <ul class="uof-points"><li>Gasless embedded wallets</li><li>Friend activity and notifications</li><li>Mechanics that make a market spread</li></ul>
+          <div class="uof-ms">Milestone · mainnet app</div>
+        </div>
+        <div class="uof-card">
+          <div class="uof-share ph">00%</div>
+          <div class="uof-name">PMM &amp; matching stack</div>
+          <ul class="uof-points"><li>Liquidity vaults</li><li>On-chain settlement</li><li>Hybrid PMM and order book matching</li><li>Mainnet audit</li></ul>
+          <div class="uof-ms">Milestone · mainnet · <b class="ph">Q0 2027</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======================= Slide 11 · Team ======================= -->
   <section data-label="Team">
     <div class="frame">
-      <div class="corner-mark">12 — Team</div>
+      <div class="corner-mark">14 — Team</div>
       <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
 
       <div class="team-row">
