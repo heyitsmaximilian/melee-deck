@@ -1008,11 +1008,13 @@
     letter-spacing: -0.01em;
     line-height: 1.3;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: 48px;
+    grid-template-columns: 1fr 1fr;
+    gap: 96px;
     align-items: end;
   }
-  .s2-verdict .v-side.after { text-align: right; }
+  .s2-verdict .before { font-size: 34px; }
+  .s2-verdict .before b { color: var(--text); font-weight: 700; font-family: var(--font-numeral); font-variant-numeric: tabular-nums; }
+  .s2-verdict .after-txt { font-size: 56px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.05; }
   .s2-verdict .v-lbl {
     font-family: var(--font-mono);
     font-size: 16px;
@@ -2245,13 +2247,12 @@ without MMs or subsidies.</div>
 
         <div class="s2-verdict">
           <div class="v-side">
-            <div class="v-lbl">Today</div>
-            <div class="before">Polymarket and Kalshi are networks worth $37B.</div>
+            <div class="v-lbl">Today · the networks</div>
+            <div class="before">Polymarket and Kalshi. <b>$37B</b> between them.</div>
           </div>
-          <div class="v-arrow"></div>
           <div class="v-side after">
-            <div class="v-lbl">Melee</div>
-            <div class="after-txt">The <b>creator platform.</b></div>
+            <div class="v-lbl">Melee · the platform</div>
+            <div class="after-txt">Melee is <b>YouTube.</b></div>
           </div>
         </div>
       </div>
