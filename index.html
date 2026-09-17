@@ -1445,7 +1445,14 @@
     color: var(--text);
   }
 
-  .gtm-kgts { display: flex; flex-direction: column; gap: 12px; margin-top: auto; }
+  .gtm-kgts { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+  .gtm-kgts .gtm-kgt { padding: 16px 20px; gap: 6px; }
+  .gtm-kgts .gtm-kgt-desc { font-size: 17px; line-height: 1.4; }
+  .gtm-phase.is-done .gtm-label { color: var(--green); }
+  .gtm-phase.is-done .gtm-node { background: var(--green); border-color: var(--green); box-shadow: 0 0 0 6px rgba(63,207,142,0.15); }
+  .gtm-phase.is-done .gtm-points li::before { background: var(--green); box-shadow: none; }
+  .gtm-phase.is-done .gtm-kgt-kicker { color: var(--green); }
+  .gtm-kgt-name .ph { color: var(--amber); }
   .gtm-kgts .gtm-kgt { margin-top: 0; }
   .gtm-kgt {
     margin-top: auto;
@@ -2355,8 +2362,8 @@ without MMs or subsidies.</div>
   <section data-label="G2M">
     <div class="frame">
       <div class="corner-mark">09 — G2M</div>
-      <h2 class="title">Crypto first. <span style="color:var(--primary)">Then every truth.</span></h2>
-      <p class="sub">Three audiences, in order. Win each with the markets it already wants and the lever that reaches it.</p>
+      <h2 class="title">Crypto natives first. <span style="color:var(--primary)">Then every category.</span></h2>
+      <p class="sub">Creator markets go first to the audience that already bets on price. Then the playbook repeats.</p>
 
       <div class="gtm" id="gtm-track">
         <div class="gtm-phase is-now" id="gtm-wedge">
@@ -2364,20 +2371,20 @@ without MMs or subsidies.</div>
           <div class="gtm-label">Now</div>
           <div class="gtm-name">Crypto natives</div>
           <ul class="gtm-points">
-            <li>Crypto price markets</li>
-            <li>Finance</li>
-            <li>Sports</li>
+            <li>Creator markets live on crypto, finance and sports</li>
+            <li>Traders who already bet on price, and already have wallets</li>
+            <li>Points and creator incentives bring the first cohort</li>
           </ul>
           <div class="gtm-kgts">
+          <div class="gtm-kgt">
+            <div class="gtm-kgt-kicker">Live</div>
+            <div class="gtm-kgt-name"><span class="ph">0,000</span> rounds · <span class="ph">0,000</span> traders</div>
+            <div class="gtm-kgt-desc">Every round cleared by PMM with no market maker.</div>
+          </div>
           <div class="gtm-kgt">
             <div class="gtm-kgt-kicker">Baseline liquidity</div>
             <div class="gtm-kgt-name">DeFi vaults</div>
             <div class="gtm-kgt-desc">Vault deposits give every new market instant depth.</div>
-          </div>
-          <div class="gtm-kgt">
-            <div class="gtm-kgt-kicker">Growth lever</div>
-            <div class="gtm-kgt-name">Points, creator incentives</div>
-            <div class="gtm-kgt-desc">Rewards for the traders and creators who show up first.</div>
           </div>
           </div>
         </div>
