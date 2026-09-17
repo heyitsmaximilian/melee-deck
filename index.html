@@ -1761,40 +1761,49 @@
   .uof-ms b { color: var(--text); font-weight: 600; }
 
 
-  /* === Slide 9 · G2M matrix === */
-  .gtmx {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 220px 1fr 1fr 1fr;
-    grid-template-rows: auto repeat(4, 1fr);
-    margin-top: 12px;
+  /* === Slide 9 · G2M flywheel === */
+  .fw { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 26px; margin-top: 8px; }
+  .fw-stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 56px; position: relative; }
+  .fw-stage {
+    position: relative;
+    padding: 36px 34px 32px;
     border: 1px solid var(--border);
     border-radius: var(--r-card);
-    overflow: hidden;
-    background: var(--bg-card);
+    background: color-mix(in srgb, var(--bg-card) 70%, transparent);
     box-shadow: var(--card-shadow);
-    align-content: stretch;
+    display: flex; flex-direction: column; gap: 14px;
+    min-height: 420px;
   }
-  .gtmx > div { padding: 26px 28px; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-  .gtmx > div:nth-child(4n) { border-right: none; }
-  .gtmx > div:nth-last-child(-n+4) { border-bottom: none; }
-  .gtmx-corner { background: var(--bg); }
-  .gtmx-head { padding: 30px 28px 26px !important; }
-  .gtmx-stage {
-    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--text-muted); font-weight: 700; margin-bottom: 10px;
+  .fw-stage.is-core {
+    border-color: color-mix(in srgb, var(--primary) 35%, var(--border));
+    background: color-mix(in srgb, var(--primary) 6%, var(--bg-card));
   }
-  .gtmx-aud { font-size: 38px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); }
-  .gtmx-head.is-now { background: rgba(var(--primary-rgb),0.10); box-shadow: inset 0 3px 0 var(--primary); }
-  .gtmx-head.is-now .gtmx-stage { color: var(--primary); }
-  .gtmx-row {
-    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase;
-    color: var(--text-muted); font-weight: 700; display: flex; align-items: center; background: var(--bg);
+  /* arrow into the next stage, drawn in the grid gap */
+  .fw-stage:not(:last-child)::after {
+    content: "";
+    position: absolute; top: 50%; right: -40px;
+    width: 24px; height: 24px; transform: translateY(-50%) rotate(45deg);
+    border-top: 2px solid var(--text-muted); border-right: 2px solid var(--text-muted);
   }
-  .gtmx-cell { font-size: 22px; line-height: 1.4; color: var(--text-secondary); display: flex; align-items: center; }
-  .gtmx-cell b { color: var(--text); font-weight: 600; }
-  .gtmx-cell.is-now { background: rgba(var(--primary-rgb),0.06); color: var(--text); }
-  .gtmx-cell.is-now b { color: var(--primary); }
+  .fw-num { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; color: var(--primary); font-weight: 700; }
+  .fw-name { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); }
+  .fw-how { font-size: 21px; line-height: 1.45; color: var(--text-secondary); }
+  .fw-proof { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; }
+  .fw-proof b { font-family: var(--font-numeral); font-weight: 800; font-size: 44px; letter-spacing: -0.03em; line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
+  .fw-proof span { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+  .fw-loop {
+    display: flex; align-items: center; gap: 16px;
+    padding: 20px 28px;
+    border: 1px solid color-mix(in srgb, var(--primary) 28%, transparent);
+    border-radius: var(--r-card);
+    background: color-mix(in srgb, var(--primary) 4%, var(--bg-card));
+    font-size: 22px; color: var(--text); font-weight: 500;
+  }
+  .fw-loop svg { width: 28px; height: 28px; color: var(--primary); flex: none; }
+  .fw-aud { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .fw-aud-k { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-right: 10px; }
+  .fw-aud-v { font-size: 20px; color: var(--text-secondary); }
+  .fw-aud i { width: 28px; height: 1px; background: var(--text-muted); display: inline-block; }
   /* === Slide 10 · Team === */
   .team-row {
     display: grid;
@@ -2397,34 +2406,46 @@ without MMs or subsidies.</div>
   <section data-label="G2M">
     <div class="frame">
       <div class="corner-mark">09 — G2M</div>
-      <h2 class="title">Crypto natives first. <span style="color:var(--primary)">Then every category.</span></h2>
-      <p class="sub">One playbook, three audiences in order. The first is the one that needs no education.</p>
+      <h2 class="title">Built as a <span style="color:var(--primary)">flywheel.</span></h2>
+      <p class="sub">Attention becomes traders. Traders become creators. Creators bring the next audience.</p>
 
-      <div class="gtmx">
-        <div class="gtmx-corner"></div>
-        <div class="gtmx-head is-now"><div class="gtmx-stage">Now</div><div class="gtmx-aud">Crypto natives</div></div>
-        <div class="gtmx-head"><div class="gtmx-stage">Next</div><div class="gtmx-aud">General internet</div></div>
-        <div class="gtmx-head"><div class="gtmx-stage">Then</div><div class="gtmx-aud">Global scale</div></div>
-
-        <div class="gtmx-row">Markets</div>
-        <div class="gtmx-cell is-now"><span><b>Creator markets</b> on crypto price, finance and sports</span></div>
-        <div class="gtmx-cell"><span>Long-tail markets on anything. The viral moment of the day, as a market in real time</span></div>
-        <div class="gtmx-cell"><span>Every sporting event, every election, in every language</span></div>
-
-        <div class="gtmx-row">Why they come</div>
-        <div class="gtmx-cell is-now"><span>They already bet on price and already hold a wallet</span></div>
-        <div class="gtmx-cell"><span>A creator they follow launched it. Every market is a post</span></div>
-        <div class="gtmx-cell"><span>Local partners bring local questions no curator would list</span></div>
-
-        <div class="gtmx-row">How we reach them</div>
-        <div class="gtmx-cell is-now"><span>Points and creator incentives</span></div>
-        <div class="gtmx-cell"><span>UGC, affiliates and referrals. Templates make launching a market a one-minute job</span></div>
-        <div class="gtmx-cell"><span>B2B partners, ambassadors, regional teams</span></div>
-
-        <div class="gtmx-row">Liquidity</div>
-        <div class="gtmx-cell is-now"><span><b>DeFi vaults</b> give every new market depth from day one</span></div>
-        <div class="gtmx-cell"><span>Shared across categories. New markets draw on the same vaults</span></div>
-        <div class="gtmx-cell"><span>Diversified across regions. Every market makes the vaults safer</span></div>
+      <div class="fw">
+        <div class="fw-stages">
+          <div class="fw-stage">
+            <div class="fw-num">01</div>
+            <div class="fw-name">Attention</div>
+            <div class="fw-how">An autonomous content engine posts hundreds of times a day across culture, sport and money.</div>
+            <div class="fw-proof"><b>100M+</b><span>views · zero paid</span></div>
+          </div>
+          <div class="fw-stage">
+            <div class="fw-num">02</div>
+            <div class="fw-name">Activation</div>
+            <div class="fw-how">Gasless entry, no wallet setup. You land on a market three of your friends already bet on.</div>
+            <div class="fw-proof"><b class="ph">0,000</b><span>traders activated</span></div>
+          </div>
+          <div class="fw-stage is-core">
+            <div class="fw-num">03</div>
+            <div class="fw-name">Creation</div>
+            <div class="fw-how">Anyone launches a market in under a minute. Templates handle the resolution. PMM prices it from the first dollar.</div>
+            <div class="fw-proof"><b class="ph">00%</b><span>of markets user-created</span></div>
+          </div>
+          <div class="fw-stage">
+            <div class="fw-num">04</div>
+            <div class="fw-name">Share</div>
+            <div class="fw-how">Every market is a post. Referrals and affiliates pay whoever brings the audience, on every trade.</div>
+            <div class="fw-proof"><b class="ph">0.0</b><span>invites per trader</span></div>
+          </div>
+        </div>
+        <div class="fw-loop">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Every shared market is the next post. Shared vault liquidity gives it depth on day one.</span>
+        </div>
+        <div class="fw-aud">
+          <span class="fw-aud-k">Audience, in order</span>
+          <span class="fw-aud-v">Traders who already bet on price</span><i></i>
+          <span class="fw-aud-v">Creator audiences</span><i></i>
+          <span class="fw-aud-v">Every feed</span>
+        </div>
       </div>
     </div>
   </section>
