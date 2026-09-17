@@ -1836,8 +1836,10 @@
   .lp-get { fill: var(--primary); font-weight: 600; }
   .lp-input.is-melee rect { stroke: color-mix(in srgb, var(--primary) 35%, var(--border)); fill: color-mix(in srgb, var(--primary) 5%, var(--bg-card)); }
   /* === Slide 10 · Participants === */
-  .pp-grid { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-content: center; }
-  .pp-card { padding: 40px 34px 34px; border: 1px solid var(--border); border-radius: var(--r-card); background: color-mix(in srgb, var(--bg-card) 70%, transparent); border-top: 4px solid var(--primary); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 16px; min-height: 480px; }
+  .pp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .pp-rail { margin-top: 24px; }
+  .frame:has(.pp-grid) { justify-content: center; }
+  .pp-card { padding: 40px 34px 34px; border: 1px solid var(--border); border-radius: var(--r-card); background: color-mix(in srgb, var(--bg-card) 70%, transparent); border-top: 4px solid var(--primary); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 16px; min-height: 420px; }
   .pp-card.primary { border-color: color-mix(in srgb, var(--primary) 35%, var(--border)); border-top-color: var(--primary); background: color-mix(in srgb, var(--primary) 5%, var(--bg-card)); }
   .pp-kick { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); font-weight: 700; }
   .pp-name { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); }
@@ -2463,7 +2465,7 @@ without MMs or subsidies.</div>
     <div class="frame">
       <div class="corner-mark">10 — Distribution</div>
       <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
-      <p class="sub">Creators post it, affiliates take it over, capital gives it depth, resolvers close it. Each earns from the fees of the market they grew.</p>
+      <p class="sub">Creators post it, affiliates take it over, the content engine amplifies it, traders invite their friends. Each earns from the fees of the market they grew.</p>
       <div class="pp-grid">
         <div class="pp-card primary">
           <div class="pp-kick">Markets are content</div>
@@ -2477,19 +2479,25 @@ without MMs or subsidies.</div>
           <div class="pp-give"><span>Brings</span>CTO a market and market it to their own network.</div>
           <div class="pp-get"><span>Earns</span>Affiliate share of fees</div>
         </div>
-        <div class="pp-card">
-          <div class="pp-kick">Capital</div>
-          <div class="pp-name">DeFi capital</div>
-          <div class="pp-give"><span>Brings</span>Presale and cashout LP give every market depth on day one. Shared liquidity is the long-tail moat.</div>
-          <div class="pp-get"><span>Earns</span>LP yield on a shared pool</div>
-        </div>
+        
+        
         
         <div class="pp-card">
-          <div class="pp-kick">Resolution</div>
-          <div class="pp-name">Resolvers</div>
-          <div class="pp-give"><span>Brings</span>Settle the market from the source result.</div>
-          <div class="pp-get"><span>Earns</span>Resolver fee, set per market</div>
+          <div class="pp-kick">Attention</div>
+          <div class="pp-name">Content engine</div>
+          <div class="pp-give"><span>Brings</span>Hundreds of autonomous posts a day across culture, sport and money.</div>
+          <div class="pp-get"><span>Earns</span>Attention at zero paid spend</div>
         </div>
+        <div class="pp-card">
+          <div class="pp-kick">Invites</div>
+          <div class="pp-name">Referrals</div>
+          <div class="pp-give"><span>Brings</span>Traders invite friends into the markets they are already in.</div>
+          <div class="pp-get"><span>Earns</span>Referral share of a friend's fees</div>
+        </div>
+      </div>
+      <div class="pf-rail pp-rail">
+        <span class="pf-rail-k">Also paid</span>
+        <span class="pf-rail-v"><b>DeFi capital</b> earns LP yield for giving every market depth on day one. <b>Resolvers</b> earn a fee for settling it from the source result. Same fee stream.</span>
       </div>
     </div>
   </section>
