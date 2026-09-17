@@ -1847,14 +1847,14 @@
   .pp-get span { color: var(--primary); }
   /* === Slide 10 · Product flow === */
   .pf { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 24px; }
-  .pf-stages { display: grid; grid-template-columns: repeat(5, 1fr); gap: 44px; }
-  .pf-stage { position: relative; padding: 30px 26px 26px; border: 1px solid var(--border); border-radius: var(--r-card); background: color-mix(in srgb, var(--bg-card) 70%, transparent); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 12px; min-height: 470px; }
+  .pf-stages { display: grid; grid-template-columns: repeat(6, 1fr); gap: 36px; }
+  .pf-stage { position: relative; padding: 28px 22px 24px; border: 1px solid var(--border); border-radius: var(--r-card); background: color-mix(in srgb, var(--bg-card) 70%, transparent); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 12px; min-height: 470px; }
   .pf-stage.is-core { border-color: color-mix(in srgb, var(--primary) 35%, var(--border)); background: color-mix(in srgb, var(--primary) 6%, var(--bg-card)); }
-  .pf-stage:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -31px; width: 18px; height: 18px; transform: translateY(-50%) rotate(45deg); border-top: 2px solid var(--text-muted); border-right: 2px solid var(--text-muted); }
+  .pf-stage:not(:last-child)::after { content: ""; position: absolute; top: 50%; right: -27px; width: 18px; height: 18px; transform: translateY(-50%) rotate(45deg); border-top: 2px solid var(--text-muted); border-right: 2px solid var(--text-muted); }
   .pf-num { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; color: var(--primary); font-weight: 700; }
-  .pf-name { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); }
+  .pf-name { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; color: var(--text); }
   .pf-tech { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; line-height: 1.5; }
-  .pf-what { font-size: 19px; line-height: 1.45; color: var(--text-secondary); margin-top: 4px; }
+  .pf-what { font-size: 18px; line-height: 1.45; color: var(--text-secondary); margin-top: 4px; }
   .pf-tag { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); font-weight: 700; line-height: 1.5; padding: 8px 10px; border: 1px dashed color-mix(in srgb, var(--amber) 45%, transparent); border-radius: 8px; }
   .pf-money { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border); font-size: 18px; line-height: 1.4; color: var(--text); font-weight: 500; }
   .pf-money span { display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); font-weight: 700; margin-bottom: 6px; }
@@ -2632,7 +2632,7 @@ without MMs or subsidies.</div>
     <div class="frame">
       <div class="corner-mark">14 — Appendix · Product flow</div>
       <h2 class="title">The life of <span style="color:var(--primary)">a market.</span></h2>
-      <p class="sub">Five steps from question to payout, and where the money is at each one.</p>
+      <p class="sub">Six steps from question to payout, and where the money is at each one.</p>
       <div class="pf">
         <div class="pf-stages">
         <div class="pf-stage">
@@ -2651,8 +2651,15 @@ without MMs or subsidies.</div>
           
           <div class="pf-money"><span>Money</span>Deposits seed the pool. The market opens funded, with no market maker.</div>
         </div>
-        <div class="pf-stage is-core">
+        <div class="pf-stage">
           <div class="pf-num">03</div>
+          <div class="pf-name">Discover</div>
+          <div class="pf-tech">Social graph · LLM discovery · UGC</div>
+          <div class="pf-what">The market reaches the feeds of the people most likely to trade it, and the creators who share it.</div>
+          <div class="pf-money"><span>Money</span>Nothing yet. Attention arrives before the first trade.</div>
+        </div>
+        <div class="pf-stage is-core">
+          <div class="pf-num">04</div>
           <div class="pf-name">Trade</div>
           <div class="pf-tech">PMM · cashout LP · order book hybrid</div>
           <div class="pf-what">The PMM prices every trade from the first dollar. Cashout LPs let traders exit before resolution.</div>
@@ -2660,7 +2667,7 @@ without MMs or subsidies.</div>
           <div class="pf-money"><span>Money</span>Fees on every trade. Cashout LPs earn for providing the exit.</div>
         </div>
         <div class="pf-stage">
-          <div class="pf-num">04</div>
+          <div class="pf-num">05</div>
           <div class="pf-name">Resolve</div>
           <div class="pf-tech">Resolver marketplace · resolver API</div>
           <div class="pf-what">A resolver settles the market from the source result. Disputes and voids follow the locked rules.</div>
@@ -2668,7 +2675,7 @@ without MMs or subsidies.</div>
           <div class="pf-money"><span>Money</span>Resolver fee, set per market.</div>
         </div>
         <div class="pf-stage">
-          <div class="pf-num">05</div>
+          <div class="pf-num">06</div>
           <div class="pf-name">Settle</div>
           <div class="pf-tech">On-chain payout</div>
           <div class="pf-what">Winners are paid from the pool. Fees split to creator, resolver and Melee.</div>
