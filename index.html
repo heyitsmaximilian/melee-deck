@@ -1835,6 +1835,16 @@
   .lp-csub { font-size: 13px; font-weight: 700; fill: var(--primary); letter-spacing: 0.16em; }
   .lp-get { fill: var(--primary); font-weight: 600; }
   .lp-input.is-melee rect { stroke: color-mix(in srgb, var(--primary) 35%, var(--border)); fill: color-mix(in srgb, var(--primary) 5%, var(--bg-card)); }
+  /* === Slide 10 · Participants === */
+  .pp-grid { flex: 1; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-content: center; }
+  .pp-card { padding: 40px 34px 34px; border: 1px solid var(--border); border-radius: var(--r-card); background: color-mix(in srgb, var(--bg-card) 70%, transparent); border-top: 4px solid var(--primary); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 16px; min-height: 480px; }
+  .pp-card.primary { border-color: color-mix(in srgb, var(--primary) 35%, var(--border)); border-top-color: var(--primary); background: color-mix(in srgb, var(--primary) 5%, var(--bg-card)); }
+  .pp-kick { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); font-weight: 700; }
+  .pp-name { font-size: 34px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); }
+  .pp-give, .pp-get { font-size: 21px; line-height: 1.45; color: var(--text-secondary); }
+  .pp-give span, .pp-get span { display: block; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; }
+  .pp-get { margin-top: auto; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text); font-weight: 600; }
+  .pp-get span { color: var(--primary); }
   /* === Slide 10 · Team === */
   .team-row {
     display: grid;
@@ -2087,7 +2097,7 @@
       <p class="sub">Every question, asked by the people who care about it.</p>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>01 / 12</span>
+        <span>01 / 13</span>
       </div>
     </div>
   </section>
@@ -2418,10 +2428,45 @@ without MMs or subsidies.</div>
 <!-- ======================= Slide 7 · The Loop ======================= -->
   <section data-label="The Loop">
     <div class="frame">
-      <div class="corner-mark">09 — Flywheel</div>
-      <h2 class="title">Whoever brings the audience <span style="color:var(--primary)">gets paid.</span></h2>
-      <p class="sub">Culture makes the market, the PMM prices it, and one fee stream pays everyone who feeds the loop.</p>
-      <div class="lp-wrap"><svg class="lp" viewBox="0 0 1728 690" role="img" aria-label="Melee flywheel"><defs><marker id="lpArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head"/></marker><marker id="lpArrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head-p"/></marker></defs><line class="lp-arrow" x1="214.0" y1="300" x2="284.0" y2="300" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="484.0" y1="300" x2="554.0" y2="300" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="754.0" y1="300" x2="824.0" y2="300" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="1024.0" y1="300" x2="1094.0" y2="300" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="1294.0" y1="300" x2="1364.0" y2="300" marker-end="url(#lpArrow)"/><path class="lp-arrow lp-return" d="M 1465 250.0 V 128 Q 1465 110 1447 110 H 403 Q 385 110 385 128 V 246.0" marker-end="url(#lpArrowP)"/><text class="lp-lbl lp-lbl-p" x="925" y="94" text-anchor="middle">Creator share of fees</text><line class="lp-arrow" x1="1564.0" y1="300" x2="1584" y2="300" marker-end="url(#lpArrow)"/><g class="lp-node is-melee"><rect x="1590" y="254" width="130" height="92" rx="16"/><text class="lp-name" x="1655" y="292" text-anchor="middle">Melee</text><text class="lp-sub" x="1655" y="326" text-anchor="middle">2% take</text></g><g class="lp-node "><rect x="20" y="254" width="190" height="92" rx="16"/><text class="lp-name" x="115" y="292" text-anchor="middle">Culture</text><text class="lp-sub" x="115" y="326" text-anchor="middle">Moments and memes</text></g><g class="lp-node "><rect x="290" y="254" width="190" height="92" rx="16"/><text class="lp-name" x="385" y="292" text-anchor="middle">Creator</text><text class="lp-sub" x="385" y="326" text-anchor="middle">Launches it</text></g><g class="lp-node is-core"><rect x="560" y="254" width="190" height="92" rx="16"/><text class="lp-name" x="655" y="292" text-anchor="middle">Market</text><text class="lp-sub" x="655" y="326" text-anchor="middle">Anything, in a minute</text></g><g class="lp-node is-core"><rect x="830" y="254" width="190" height="92" rx="16"/><text class="lp-name" x="925" y="292" text-anchor="middle">PMM</text><text class="lp-sub" x="925" y="326" text-anchor="middle">First-dollar pricing</text></g><g class="lp-node "><rect x="1100" y="254" width="190" height="92" rx="16"/><text class="lp-name" x="1195" y="292" text-anchor="middle">Traders</text><text class="lp-sub" x="1195" y="326" text-anchor="middle">Social graph and discovery</text></g><g class="lp-node "><rect x="1370" y="254" width="190" height="92" rx="16"/><text class="lp-name" x="1465" y="292" text-anchor="middle">Fees</text><text class="lp-sub" x="1465" y="326" text-anchor="middle">On every trade</text></g><line class="lp-arrow lp-up" x1="655" y1="472.0" x2="655" y2="354.0" marker-end="url(#lpArrow)"/><g class="lp-input"><rect x="530.0" y="476.0" width="250" height="168" rx="16"/><text class="lp-kick" x="655" y="506.0" text-anchor="middle">MARKETS ARE CONTENT</text><text class="lp-iname" x="655" y="538.0" text-anchor="middle">UGC creators</text><text class="lp-desc" x="655" y="568.0" text-anchor="middle">Post it to their audience,</text><text class="lp-desc" x="655" y="589.0" text-anchor="middle">bring the traders.</text><text class="lp-desc lp-get" x="655" y="620.0" text-anchor="middle">Get · share of the fees it earns</text></g><line class="lp-arrow lp-up" x1="925" y1="472.0" x2="925" y2="354.0" marker-end="url(#lpArrow)"/><g class="lp-input"><rect x="800.0" y="476.0" width="250" height="168" rx="16"/><text class="lp-kick" x="925" y="506.0" text-anchor="middle">CAPITAL</text><text class="lp-iname" x="925" y="538.0" text-anchor="middle">DeFi capital</text><text class="lp-desc" x="925" y="568.0" text-anchor="middle">Presale and cashout LP give</text><text class="lp-desc" x="925" y="589.0" text-anchor="middle">every market depth on day one.</text><text class="lp-desc lp-get" x="925" y="620.0" text-anchor="middle">Get · LP yield on a shared pool</text></g><line class="lp-arrow lp-up" x1="1195" y1="472.0" x2="1195" y2="354.0" marker-end="url(#lpArrow)"/><g class="lp-input"><rect x="1070.0" y="476.0" width="250" height="168" rx="16"/><text class="lp-kick" x="1195" y="506.0" text-anchor="middle">OWNERSHIP</text><text class="lp-iname" x="1195" y="538.0" text-anchor="middle">Traders as affiliates</text><text class="lp-desc" x="1195" y="568.0" text-anchor="middle">CTO a market and market it.</text><text class="lp-desc lp-get" x="1195" y="620.0" text-anchor="middle">Get · affiliate share of fees</text></g><line class="lp-arrow lp-up" x1="1465" y1="472.0" x2="1465" y2="354.0" marker-end="url(#lpArrow)"/><g class="lp-input"><rect x="1340.0" y="476.0" width="250" height="168" rx="16"/><text class="lp-kick" x="1465" y="506.0" text-anchor="middle">RESOLUTION</text><text class="lp-iname" x="1465" y="538.0" text-anchor="middle">Resolvers</text><text class="lp-desc" x="1465" y="568.0" text-anchor="middle">Settle the market from the</text><text class="lp-desc" x="1465" y="589.0" text-anchor="middle">source result.</text><text class="lp-desc lp-get" x="1465" y="620.0" text-anchor="middle">Get · resolver fee per market</text></g></svg></div>
+      <div class="corner-mark">09 — The Loop</div>
+      <h2 class="title">Culture in. Fees out. <span style="color:var(--primary)">Fees back in.</span></h2>
+      <p class="sub">A creator turns a moment into a market, the PMM prices it from the first dollar, and the fees flow back to the creator who brought the audience.</p>
+      <div class="lp-wrap"><svg class="lp" viewBox="0 0 1728 420" role="img" aria-label="Melee value loop"><defs><marker id="lpArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head"/></marker><marker id="lpArrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head-p"/></marker></defs><line class="lp-arrow" x1="214.0" y1="290" x2="284.0" y2="290" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="484.0" y1="290" x2="554.0" y2="290" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="754.0" y1="290" x2="824.0" y2="290" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="1024.0" y1="290" x2="1094.0" y2="290" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="1294.0" y1="290" x2="1364.0" y2="290" marker-end="url(#lpArrow)"/><path class="lp-arrow lp-return" d="M 1465 240.0 V 118 Q 1465 100 1447 100 H 403 Q 385 100 385 118 V 236.0" marker-end="url(#lpArrowP)"/><text class="lp-lbl lp-lbl-p" x="925" y="84" text-anchor="middle">Creator share of fees</text><line class="lp-arrow" x1="1564.0" y1="290" x2="1584" y2="290" marker-end="url(#lpArrow)"/><g class="lp-node is-melee"><rect x="1590" y="244" width="130" height="92" rx="16"/><text class="lp-name" x="1655" y="282" text-anchor="middle">Melee</text><text class="lp-sub" x="1655" y="316" text-anchor="middle">2% take</text></g><g class="lp-node "><rect x="20" y="244" width="190" height="92" rx="16"/><text class="lp-name" x="115" y="282" text-anchor="middle">Culture</text><text class="lp-sub" x="115" y="316" text-anchor="middle">Moments and memes</text></g><g class="lp-node "><rect x="290" y="244" width="190" height="92" rx="16"/><text class="lp-name" x="385" y="282" text-anchor="middle">Creator</text><text class="lp-sub" x="385" y="316" text-anchor="middle">Launches it</text></g><g class="lp-node is-core"><rect x="560" y="244" width="190" height="92" rx="16"/><text class="lp-name" x="655" y="282" text-anchor="middle">Market</text><text class="lp-sub" x="655" y="316" text-anchor="middle">Anything, in a minute</text></g><g class="lp-node is-core"><rect x="830" y="244" width="190" height="92" rx="16"/><text class="lp-name" x="925" y="282" text-anchor="middle">PMM</text><text class="lp-sub" x="925" y="316" text-anchor="middle">First-dollar pricing</text></g><g class="lp-node "><rect x="1100" y="244" width="190" height="92" rx="16"/><text class="lp-name" x="1195" y="282" text-anchor="middle">Traders</text><text class="lp-sub" x="1195" y="316" text-anchor="middle">Social graph and discovery</text></g><g class="lp-node "><rect x="1370" y="244" width="190" height="92" rx="16"/><text class="lp-name" x="1465" y="282" text-anchor="middle">Fees</text><text class="lp-sub" x="1465" y="316" text-anchor="middle">On every trade</text></g></svg></div>
+    </div>
+  </section>
+
+  <!-- ======================= Slide 10 · Participants ======================= -->
+  <section data-label="Participants">
+    <div class="frame">
+      <div class="corner-mark">10 — Flywheel</div>
+      <h2 class="title">Everyone who feeds the loop <span style="color:var(--primary)">gets paid.</span></h2>
+      <p class="sub">One fee stream pays every participant who brings attention, capital or resolution. That is why it spins.</p>
+      <div class="pp-grid">
+        <div class="pp-card primary">
+          <div class="pp-kick">Markets are content</div>
+          <div class="pp-name">UGC creators</div>
+          <div class="pp-give"><span>Give</span>Post the market to their audience and bring the traders.</div>
+          <div class="pp-get"><span>Get</span>Share of the fees it earns</div>
+        </div>
+        <div class="pp-card">
+          <div class="pp-kick">Capital</div>
+          <div class="pp-name">DeFi capital</div>
+          <div class="pp-give"><span>Give</span>Presale and cashout LP give every market depth on day one. Shared liquidity is the long-tail moat.</div>
+          <div class="pp-get"><span>Get</span>LP yield on a shared pool</div>
+        </div>
+        <div class="pp-card">
+          <div class="pp-kick">Ownership</div>
+          <div class="pp-name">Traders as affiliates</div>
+          <div class="pp-give"><span>Give</span>CTO a market and market it to their own network.</div>
+          <div class="pp-get"><span>Get</span>Affiliate share of fees</div>
+        </div>
+        <div class="pp-card">
+          <div class="pp-kick">Resolution</div>
+          <div class="pp-name">Resolvers</div>
+          <div class="pp-give"><span>Give</span>Settle the market from the source result.</div>
+          <div class="pp-get"><span>Get</span>Resolver fee per market</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2433,7 +2478,7 @@ without MMs or subsidies.</div>
   <!-- ======================= Slide 11 · Traction ======================= -->
   <section data-label="Traction">
     <div class="frame">
-      <div class="corner-mark">10 — Traction</div>
+      <div class="corner-mark">11 — Traction</div>
       <div class="ph-note">Amber = placeholder</div>
       <h2 class="title">The thesis is already <span style="color:var(--primary)">observable.</span></h2>
       <p class="sub">Devnet numbers since launch, and the attention engine feeding it. Every market below was created by a user and traded with no market maker.</p>
@@ -2476,7 +2521,7 @@ without MMs or subsidies.</div>
   <!-- ======================= Slide 13 · Use of funds ======================= -->
   <section data-label="Use of funds">
     <div class="frame">
-      <div class="corner-mark">11 — The Raise</div>
+      <div class="corner-mark">12 — The Raise</div>
       <div class="ph-note">Amber = placeholder</div>
       <h2 class="title"><span class="ph">$0M</span> to reach <span style="color:var(--primary)">mainnet and 100 creators.</span></h2>
       <p class="sub">Two workstreams over twelve months. Scaling brings the audience. Product gives it a trading engine that rivals order books.</p>
@@ -2509,7 +2554,7 @@ without MMs or subsidies.</div>
   <!-- ======================= Slide 11 · Team ======================= -->
   <section data-label="Team">
     <div class="frame">
-      <div class="corner-mark">12 — Team</div>
+      <div class="corner-mark">13 — Team</div>
       <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
 
       <div class="team-row">
