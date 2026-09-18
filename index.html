@@ -1864,6 +1864,26 @@
   .pf-rail-k { font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); font-weight: 700; padding-right: 24px; border-right: 1px solid color-mix(in srgb, var(--primary) 25%, transparent); }
   .pf-rail-v { font-size: 22px; color: var(--text-secondary); }
   .pf-rail-v b { color: var(--text); font-weight: 600; }
+  /* === Slide 9 · Distribution (spread cascade) === */
+  .sp { flex: 1; display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: stretch; margin-top: 8px; }
+  .sp-seed { align-self: center; padding: 34px 32px 30px; border-radius: var(--r-card); background: color-mix(in srgb, var(--primary) 8%, var(--bg-card)); border: 1px solid color-mix(in srgb, var(--primary) 40%, var(--border)); box-shadow: var(--card-shadow); display: flex; flex-direction: column; gap: 12px; position: relative; }
+  .sp-seed::after { content: ""; position: absolute; top: 50%; right: -30px; width: 18px; height: 18px; transform: translateY(-50%) rotate(45deg); border-top: 2px solid var(--primary); border-right: 2px solid var(--primary); }
+  .sp-seed-kick { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--primary); font-weight: 700; }
+  .sp-seed-q { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; color: var(--text); }
+  .sp-seed-meta { font-size: 16px; color: var(--text-muted); }
+  .sp-hops { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; align-items: end; }
+  .sp-hop { display: flex; flex-direction: column; gap: 10px; position: relative; height: 100%; justify-content: flex-end; }
+  .sp-dots { display: grid; gap: 7px; align-content: end; margin-bottom: 22px; flex: 1; }
+  .sp-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--primary); opacity: 0.8; box-shadow: 0 0 8px rgba(var(--primary-rgb),0.35); }
+  .sp-hop:nth-child(1) .sp-dots { grid-template-columns: repeat(4, 8px); }
+  .sp-hop:nth-child(2) .sp-dots { grid-template-columns: repeat(8, 8px); }
+  .sp-hop:nth-child(3) .sp-dots { grid-template-columns: repeat(14, 8px); }
+  .sp-hop:nth-child(4) .sp-dots { grid-template-columns: repeat(22, 8px); }
+  .sp-num { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.16em; color: var(--primary); font-weight: 700; }
+  .sp-name { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); }
+  .sp-how { font-size: 18px; line-height: 1.45; color: var(--text-secondary); min-height: 78px; }
+  .sp-earn { margin-top: 6px; padding-top: 12px; border-top: 1px solid var(--border); font-size: 16px; color: var(--text); font-weight: 600; }
+  .sp-earn span { display: block; font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }
   /* === Slide 10 · Team === */
   .team-row {
     display: grid;
@@ -2450,44 +2470,48 @@ without MMs or subsidies.</div>
   
 
 
-  <!-- ======================= Slide 10 · Participants ======================= -->
-  <section data-label="Participants">
+  <!-- ======================= Slide 9 · Distribution (spread) ======================= -->
+  <section data-label="Distribution">
     <div class="frame">
       <div class="corner-mark">09 — Distribution</div>
-      <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
-      <p class="sub">Creators post it, affiliates take it over, the content engine amplifies it, traders invite their friends. Each earns from the fees of the market they grew.</p>
-      <div class="pp-grid">
-        <div class="pp-card primary">
-          <div class="pp-kick">Markets are content</div>
-          <div class="pp-name">UGC creators</div>
-          <div class="pp-give"><span>Brings</span>Post the market to their audience and bring the traders.</div>
-          <div class="pp-get"><span>Earns</span>Share of the fees it earns</div>
+      <h2 class="title">One market. <span style="color:var(--primary)">Four ways it spreads.</span></h2>
+      <p class="sub">Every market carries its own distribution. Each hand that passes it on is paid from its fees.</p>
+      <div class="sp">
+        <div class="sp-seed">
+          <div class="sp-seed-kick">One market</div>
+          <div class="sp-seed-q">Will GTA VI score 90+ on Metacritic?</div>
+          <div class="sp-seed-meta">@ishowspeed · launched in a minute</div>
         </div>
-        <div class="pp-card">
-          <div class="pp-kick">Takeover</div>
-          <div class="pp-name">Traders as affiliates</div>
-          <div class="pp-give"><span>Brings</span>CTO a market and market it to their own network.</div>
-          <div class="pp-get"><span>Earns</span>Affiliate share of fees</div>
+        <div class="sp-hops">
+          <div class="sp-hop">
+            <div class="sp-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="sp-num">01</div>
+            <div class="sp-name">The creator posts it</div>
+            <div class="sp-how">Their audience sees the market first and trades it.</div>
+            <div class="sp-earn"><span>Paid</span>Creator share of fees</div>
+          </div>
+          <div class="sp-hop">
+            <div class="sp-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="sp-num">02</div>
+            <div class="sp-name">Traders share it</div>
+            <div class="sp-how">Every bet shows in a friend's feed. Invites pull them in.</div>
+            <div class="sp-earn"><span>Paid</span>Referral share of a friend's fees</div>
+          </div>
+          <div class="sp-hop">
+            <div class="sp-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="sp-num">03</div>
+            <div class="sp-name">Affiliates take it over</div>
+            <div class="sp-how">CTO the market and carry it into networks the creator never had.</div>
+            <div class="sp-earn"><span>Paid</span>Affiliate share of fees</div>
+          </div>
+          <div class="sp-hop">
+            <div class="sp-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="sp-num">04</div>
+            <div class="sp-name">The engine amplifies it</div>
+            <div class="sp-how">Autonomous content posts it across culture, sport and money, hundreds of times a day.</div>
+            <div class="sp-earn"><span>Paid</span>Attention at zero paid spend</div>
+          </div>
         </div>
-        
-        
-        
-        <div class="pp-card">
-          <div class="pp-kick">Attention</div>
-          <div class="pp-name">Content engine</div>
-          <div class="pp-give"><span>Brings</span>Hundreds of autonomous posts a day across culture, sport and money.</div>
-          <div class="pp-get"><span>Earns</span>Attention at zero paid spend</div>
-        </div>
-        <div class="pp-card">
-          <div class="pp-kick">Invites</div>
-          <div class="pp-name">Referrals</div>
-          <div class="pp-give"><span>Brings</span>Traders invite friends into the markets they are already in.</div>
-          <div class="pp-get"><span>Earns</span>Referral share of a friend's fees</div>
-        </div>
-      </div>
-      <div class="pf-rail pp-rail">
-        <span class="pf-rail-k">Also paid</span>
-        <span class="pf-rail-v"><b>DeFi capital</b> earns LP yield for giving every market depth on day one. <b>Resolvers</b> earn a fee for settling it from the source result. Same fee stream.</span>
       </div>
     </div>
   </section>
