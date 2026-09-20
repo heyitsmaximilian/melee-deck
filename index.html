@@ -449,14 +449,18 @@
   /* === Slide 3 · Mechanism Comparison === */
   .cmp {
     display: grid;
-    grid-template-columns: 260px repeat(3, 1fr);
+    grid-template-columns: 320px repeat(3, 1fr);
+    grid-template-rows: auto repeat(4, 1fr);
+    flex: 1;
+    min-height: 0;
+    margin-top: 16px;
     border: 1px solid var(--border);
     border-radius: var(--r-card);
     overflow: hidden;
     background: var(--bg-card);
   }
   .cmp > div {
-    padding: 22px 18px;
+    padding: 24px 24px;
     display: flex;
     align-items: center;
     font-size: 24px;
@@ -479,7 +483,7 @@
   }
   .cmp .rowlbl {
     font-weight: 600;
-    font-size: 28px;
+    font-size: 34px;
     color: var(--text);
     letter-spacing: -0.01em;
     line-height: 1.25;
@@ -487,7 +491,7 @@
   .cmp .val {
     justify-content: center;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 40px;
     letter-spacing: -0.01em;
   }
   .cmp .val.bad { color: var(--red); }
@@ -539,7 +543,7 @@
   .cmp-split-body b { color: var(--text); font-weight: 600; }
   .cmp-split-cell.is-pmm .cmp-split-body b { color: var(--primary); }
   .slide-footnote {
-    margin-top: 24px;
+    margin-top: 36px;
     text-align: center;
     font-family: var(--font-mono);
     font-size: 18px;
@@ -568,10 +572,13 @@
   }
   .s4-row {
     flex: 1;
+    min-height: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
   }
+  .s4-row .ce-wrap { align-items: stretch; }
+  .s4-row .ce { align-content: center; }
   .s4-wrap > .s4-chips { margin-top: auto; }
   .s4-row .ce-wrap { width: min(1520px, 100%); }
   .s4-row .ce {
@@ -579,21 +586,21 @@
     grid-template-columns: 1.15fr 0.85fr;
     grid-template-areas: "head earn" "scale earn" "bar earn" "meta social";
     column-gap: 96px;
-    row-gap: 22px;
+    row-gap: 30px;
     align-items: center;
   }
   .s4-row .ce-head { grid-area: head; align-self: start; }
   .s4-row .ce-scale { grid-area: scale; }
   .s4-row .ce-bar { grid-area: bar; }
   .s4-row .ce-meta { grid-area: meta; }
-  .s4-row .ce-earn { grid-area: earn; align-self: stretch; margin: 0; padding: 40px 48px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+  .s4-row .ce-earn { grid-area: earn; align-self: stretch; margin: 0; padding: 56px 52px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
   .s4-row .ce-social { grid-area: social; margin-top: 10px; }
-  .s4-row .ce-q { font-size: 50px; }
+  .s4-row .ce-q { font-size: 54px; }
   .s4-row .ce-scale { font-size: 28px; }
   .s4-row .ce-meta { font-size: 24px; }
   .s4-row .ce-earn b { font-size: 92px; }
   .s4-row .ce-social-txt { font-size: 22px; }
-  .s4-row .ce { width: 100%; padding: 68px 76px 60px; }
+  .s4-row .ce { width: 100%; padding: 88px 80px 80px; }
   .s4-shot { margin: 0; display: flex; flex-direction: column; gap: 14px; }
   .s4-shot-frame {
     border-radius: var(--r-sheet);
