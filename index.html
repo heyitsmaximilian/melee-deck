@@ -826,6 +826,39 @@
     flex-direction: column;
     margin-top: 16px;
   }
+  /* === Slide 5 · Opportunity as a 2x2 (curated vs open; video vs prediction markets) === */
+  .yt2 {
+    flex: 1;
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: 260px 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    column-gap: 40px;
+    align-items: stretch;
+  }
+  .yt2-colhead, .yt2-rowlbl {
+    font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.22em;
+    text-transform: uppercase; font-weight: 700; color: var(--text-muted);
+  }
+  .yt2-colhead { padding: 0 32px 18px; border-bottom: 1px solid var(--border); }
+  .yt2-colhead.open { color: var(--primary); }
+  .yt2-rowlbl { display: flex; align-items: center; border-bottom: 1px solid var(--border); padding-right: 16px; }
+  .yt2-cell {
+    display: flex; flex-direction: column; justify-content: center; gap: 16px;
+    padding: 40px 32px; border-bottom: 1px solid var(--border);
+  }
+  .yt2-cell.open { background: color-mix(in srgb, var(--primary) 7%, transparent); }
+  .yt2-stat {
+    font-size: 84px; font-weight: 700; letter-spacing: -0.02em; line-height: 0.95; color: var(--text);
+    display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
+  }
+  .yt2-cell.open .yt2-stat { color: var(--primary); }
+  .yt2-u {
+    font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--text-muted); font-weight: 700;
+  }
+  .yt2-body { font-size: 24px; line-height: 1.5; color: var(--text-secondary); max-width: 560px; text-wrap: pretty; }
+  .yt2-cell.open .yt2-body { color: var(--text); }
   /* === Slide 8 · The Market (long-tail chart) === */
   .mkt-chart {
     position: relative;
@@ -2303,29 +2336,29 @@ without MMs or subsidies.</div>
       <h2 class="title">Prediction markets' <span style="color:var(--primary)">YouTube moment.</span></h2>
       <p class="sub">Video grew <b style="color:var(--text)">1,000×</b> when it went permissionless. Prediction markets are next.</p>
 
-      <div class="s2-body">
-        <div class="s2-analogy">
-          <div class="s2-col before">
-            <div class="s2-col-label">Before YouTube · 1995</div>
-            <div class="s2-col-stat">10,000 <span class="s2-col-stat-u">shows</span></div>
-            <div class="s2-col-body">Gatekeepers picked the content.</div>
-          </div>
-          <div class="s2-col after">
-            <div class="s2-col-label">After YouTube · Today</div>
-            <div class="s2-col-stat">Millions <span class="s2-col-stat-u">of creators</span></div>
-            <div class="s2-col-body">Creators built a category no network could serve.</div>
-          </div>
+      <div class="yt2">
+        <div class="yt2-corner"></div>
+        <div class="yt2-colhead">Curated</div>
+        <div class="yt2-colhead open">Open</div>
+
+        <div class="yt2-rowlbl">Video</div>
+        <div class="yt2-cell">
+          <div class="yt2-stat">10,000 <span class="yt2-u">shows · 1995</span></div>
+          <div class="yt2-body">Gatekeepers picked the content.</div>
+        </div>
+        <div class="yt2-cell open">
+          <div class="yt2-stat">Millions <span class="yt2-u">of creators · today</span></div>
+          <div class="yt2-body">A category no network could serve.</div>
         </div>
 
-        <div class="s2-verdict">
-          <div class="v-side">
-            <div class="v-lbl">Today · the networks</div>
-            <div class="before">Polymarket and Kalshi. <b>$45B</b> a month, every market chosen by a listings team.</div>
-          </div>
-          <div class="v-side after">
-            <div class="v-lbl">Next · the platform</div>
-            <div class="after-txt">Melee opens market creation to <b>every creator.</b></div>
-          </div>
+        <div class="yt2-rowlbl">Prediction markets</div>
+        <div class="yt2-cell">
+          <div class="yt2-stat">$45B <span class="yt2-u">a month · today</span></div>
+          <div class="yt2-body">Polymarket and Kalshi. Every market chosen by a listings team.</div>
+        </div>
+        <div class="yt2-cell open">
+          <div class="yt2-stat">Melee <span class="yt2-u">next</span></div>
+          <div class="yt2-body">Market creation open to every creator.</div>
         </div>
       </div>
     </div>
