@@ -1203,105 +1203,80 @@
     gap: 72px;
   }
 
-  /* HERO: two stacked claims */
+  /* HERO: two stacked claims, one grid */
   .cfw2-hero {
     display: flex;
     flex-direction: column;
-    gap: 24px;
   }
   .cfw2-claim {
     display: grid;
-    grid-template-columns: 240px 1fr 520px;
+    grid-template-columns: 220px 1fr 600px;
     align-items: center;
-    gap: 40px;
-    padding: 28px 0;
+    column-gap: 48px;
+    padding: 52px 0;
     border-top: 1px solid var(--border);
-    opacity: 0.62;
   }
-  .cfw2-claim:last-child {
-    border-bottom: none;
-    border-top: 1px solid var(--border);
-    padding: 56px 0 28px;
-    opacity: 1;
-  }
+  .cfw2-claim:last-child { border-bottom: 1px solid var(--border); }
   .cfw2-who {
     font-family: var(--font-mono);
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 0.22em;
     color: var(--text-muted);
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 700;
+    line-height: 1.5;
   }
   .cfw2-line {
     display: flex;
-    align-items: baseline;
-    gap: 18px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
   .cfw2-verb {
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 400;
     color: var(--text-muted);
     letter-spacing: -0.01em;
+    line-height: 1;
   }
   .cfw2-what {
-    font-size: 96px;
+    font-size: 112px;
     font-weight: 800;
     letter-spacing: -0.028em;
     line-height: 0.95;
     color: var(--text-secondary);
   }
-  .cfw2-us .cfw2-who { color: var(--primary); font-weight: 600; }
+  .cfw2-us .cfw2-who { color: var(--primary); }
+  .cfw2-us .cfw2-verb { color: var(--text-secondary); }
   .cfw2-us .cfw2-what { color: var(--primary); }
-  .cfw2-us .cfw2-what {
-    font-size: 128px;
-  }
-  .cfw2-us .cfw2-verb {
-    font-size: 40px;
-    color: var(--text-secondary);
-  }
 
-  /* Dot fields: visualize the scale difference */
+  /* Dot fields: same box, same left edge, same dot size. Only the count differs. */
+  .cfw2-viz { display: flex; flex-direction: column; gap: 18px; width: 600px; justify-self: end; }
   .cfw2-dots {
     display: grid;
-    grid-template-columns: repeat(25, 1fr);
+    grid-template-columns: repeat(40, 9px);
+    grid-auto-rows: 9px;
     gap: 6px;
-    align-self: stretch;
-    align-items: center;
-    justify-content: end;
-    padding-left: 40px;
+    justify-content: start;
   }
   .cfw2-dots span {
-    width: 6px;
-    height: 6px;
-    background: var(--text-muted);
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
-    opacity: 0.55;
+    background: var(--text-muted);
+    opacity: 0.9;
   }
-  /* Them: just 50 dots (the component stops there) */
-  .cfw2-them .cfw2-dots {
-    grid-template-columns: repeat(10, 1fr);
-    grid-auto-rows: 6px;
-    gap: 8px;
-    max-width: 140px;
-    justify-self: end;
-    padding-left: 0;
+  .cfw2-them .cfw2-dots { grid-template-columns: repeat(10, 9px); }
+  .cfw2-dots-us span { background: var(--primary); opacity: 0.85; }
+  .cfw2-cap {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 700;
   }
-  /* Us: dense internet-sized field */
-  .cfw2-dots-us {
-    grid-template-columns: repeat(40, 1fr);
-    grid-auto-rows: 5px;
-    gap: 4px;
-    max-width: 520px;
-    justify-self: end;
-    padding-left: 0;
-  }
-  .cfw2-dots-us span {
-    background: var(--primary);
-    opacity: 0.5;
-    width: 5px;
-    height: 5px;
-  }
+  .cfw2-us .cfw2-cap { color: var(--primary); }
 
   /* Evidence row */
   .cfw2-evidence {
@@ -2453,6 +2428,7 @@ without MMs or subsidies.</div>
               <span class="cfw2-verb">Scales with</span>
               <span class="cfw2-what">the team.</span>
             </div>
+            <div class="cfw2-viz">
             <div class="cfw2-dots" aria-hidden="true">
               <!-- 50 employee dots -->
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -2461,6 +2437,8 @@ without MMs or subsidies.</div>
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
+            <div class="cfw2-cap">One listings team</div>
+            </div>
           </div>
           <div class="cfw2-claim cfw2-us">
             <div class="cfw2-who">Melee</div>
@@ -2468,9 +2446,12 @@ without MMs or subsidies.</div>
               <span class="cfw2-verb">Scales with</span>
               <span class="cfw2-what">the internet.</span>
             </div>
+            <div class="cfw2-viz">
             <div class="cfw2-dots cfw2-dots-us" aria-hidden="true">
               <!-- dense field, ~400 dots -->
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="cfw2-cap">Everyone with an audience</div>
             </div>
           </div>
         </div>
