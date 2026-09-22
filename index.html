@@ -1703,7 +1703,7 @@
   /* === Slide 10 · Traction cumulative charts === */
   .tr-body2 { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 26px; margin-top: 18px; }
   .tr-head2 { display: flex; justify-content: space-between; align-items: baseline; gap: 24px; }
-  .trc-row { flex: 1; min-height: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .trc-row { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
   .trc-card {
     min-height: 0;
     display: flex; flex-direction: column; gap: 8px;
@@ -2622,59 +2622,45 @@ without MMs or subsidies.</div>
       <div class="tr-body2">
         <div class="tr-head2">
           <div class="tr-name">On-chain</div>
-          <div class="tr-kicker">Devnet · 8–21 Sep 2026</div>
+          <div class="tr-kicker">Devnet · 8–20 Sep 2026</div>
         </div>
         <div class="trc-row">
-        <div class="trc-card">
-          <div class="trc-lbl">Users</div>
-          <div class="trc-n">100,742</div>
-          <svg class="trc-svg" viewBox="0 0 480 200" preserveAspectRatio="none" aria-hidden="true">
+          <div class="trc-card">
+            <div class="trc-lbl">Active users</div>
+            <div class="trc-n">63,911</div>
+            <svg class="trc-svg" viewBox="0 0 560 210" preserveAspectRatio="none" aria-hidden="true">
               <defs><linearGradient id="trcA" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
                 <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
               </linearGradient></defs>
-              <path d="M0,200 L0.0,155.0 L36.9,117.5 L73.8,116.4 L110.8,115.3 L147.7,108.9 L184.6,102.5 L221.5,90.5 L258.5,70.0 L295.4,53.9 L332.3,38.7 L369.2,30.8 L406.2,24.7 L443.1,18.1 L480.0,14.0 L480,200 Z" fill="url(#trcA)"/>
-              <path d="M0.0,155.0 L36.9,117.5 L73.8,116.4 L110.8,115.3 L147.7,108.9 L184.6,102.5 L221.5,90.5 L258.5,70.0 L295.4,53.9 L332.3,38.7 L369.2,30.8 L406.2,24.7 L443.1,18.1 L480.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-              <circle cx="480.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
+              <path d="M0,210 L0.0,208.0 L46.7,188.7 L93.3,155.3 L140.0,138.3 L186.7,134.0 L233.3,122.1 L280.0,102.7 L326.7,74.0 L373.3,55.5 L420.0,41.6 L466.7,30.3 L513.3,21.8 L560.0,14.0 L560,210 Z" fill="url(#trcA)"/>
+              <path d="M0.0,208.0 L46.7,188.7 L93.3,155.3 L140.0,138.3 L186.7,134.0 L233.3,122.1 L280.0,102.7 L326.7,74.0 L373.3,55.5 L420.0,41.6 L466.7,30.3 L513.3,21.8 L560.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <circle cx="560.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
             </svg>
-          <div class="trc-axis"><span>8 Sep</span><span>21 Sep</span></div>
-        </div>
-        <div class="trc-card">
-          <div class="trc-lbl">Transactions</div>
-          <div class="trc-n">1,456,709</div>
-          <svg class="trc-svg" viewBox="0 0 480 200" preserveAspectRatio="none" aria-hidden="true">
+            <div class="trc-axis"><span>8 Sep</span><span>20 Sep</span></div>
+          </div>
+          <div class="trc-card">
+            <div class="trc-lbl">Transactions</div>
+            <div class="trc-n">1,325,004</div>
+            <svg class="trc-svg" viewBox="0 0 560 210" preserveAspectRatio="none" aria-hidden="true">
               <defs><linearGradient id="trcB" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
                 <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
               </linearGradient></defs>
-              <path d="M0,200 L0.0,198.8 L36.9,192.3 L73.8,184.1 L110.8,174.3 L147.7,163.8 L184.6,152.5 L221.5,139.1 L258.5,123.4 L295.4,107.1 L332.3,90.0 L369.2,68.3 L406.2,48.7 L443.1,30.8 L480.0,14.0 L480,200 Z" fill="url(#trcB)"/>
-              <path d="M0.0,198.8 L36.9,192.3 L73.8,184.1 L110.8,174.3 L147.7,163.8 L184.6,152.5 L221.5,139.1 L258.5,123.4 L295.4,107.1 L332.3,90.0 L369.2,68.3 L406.2,48.7 L443.1,30.8 L480.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-              <circle cx="480.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
+              <path d="M0,210 L0.0,208.6 L46.7,201.1 L93.3,191.6 L140.0,180.2 L186.7,168.0 L233.3,155.0 L280.0,139.5 L326.7,121.3 L373.3,102.4 L420.0,82.5 L466.7,57.5 L513.3,34.8 L560.0,14.0 L560,210 Z" fill="url(#trcB)"/>
+              <path d="M0.0,208.6 L46.7,201.1 L93.3,191.6 L140.0,180.2 L186.7,168.0 L233.3,155.0 L280.0,139.5 L326.7,121.3 L373.3,102.4 L420.0,82.5 L466.7,57.5 L513.3,34.8 L560.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <circle cx="560.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
             </svg>
-          <div class="trc-axis"><span>8 Sep</span><span>21 Sep</span></div>
-        </div>
-        <div class="trc-card">
-          <div class="trc-lbl">Trades</div>
-          <div class="trc-n">343,535</div>
-          <svg class="trc-svg" viewBox="0 0 480 200" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="trcC" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
-                <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
-              </linearGradient></defs>
-              <path d="M0,200 L0.0,197.0 L36.9,190.8 L73.8,183.8 L110.8,176.7 L147.7,169.9 L184.6,158.9 L221.5,139.5 L258.5,118.9 L295.4,99.7 L332.3,80.2 L369.2,63.0 L406.2,45.7 L443.1,31.1 L480.0,14.0 L480,200 Z" fill="url(#trcC)"/>
-              <path d="M0.0,197.0 L36.9,190.8 L73.8,183.8 L110.8,176.7 L147.7,169.9 L184.6,158.9 L221.5,139.5 L258.5,118.9 L295.4,99.7 L332.3,80.2 L369.2,63.0 L406.2,45.7 L443.1,31.1 L480.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-              <circle cx="480.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
-            </svg>
-          <div class="trc-axis"><span>8 Sep</span><span>21 Sep</span></div>
-        </div>
+            <div class="trc-axis"><span>8 Sep</span><span>20 Sep</span></div>
+          </div>
         </div>
         <div class="tr-foot">
-          <div class="tr-f"><b>65,598</b><span>Traded · 65% of signups</span></div>
+          <div class="tr-f"><b>98,514</b><span>Signups</span></div>
           <div class="tr-f"><b>100M+</b><span>Views · zero paid spend</span></div>
           <div class="tr-f"><b>4.5M</b><span>Top post</span></div>
           <div class="tr-f"><b class="ph">0,000</b><span>Markets created</span></div>
         </div>
-        <div class="tr-src">Source · Melee gateway · cumulative · excludes 22 Sep, a partial day</div>
+        <div class="tr-src">Source · Melee gateway · cumulative · 8–20 Sep 2026</div>
       </div>
     </div>
   </section>
