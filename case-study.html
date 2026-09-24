@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Melee Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Archivo:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#000; --bg-card:#0E0D16; --primary:#8061FD; --text:#EAE8F2; --text-secondary:#A7A3B3;
+    --text-muted:#7A768A; --border:rgba(255,255,255,0.08); --rule-dash:rgba(255,255,255,0.28);
+    --font:'Geist',system-ui,sans-serif; --num:'Archivo','Geist',system-ui,sans-serif;
+  }
+  @page { size: 8.5in 11in; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #111; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: var(--font); color: var(--text); display: flex; justify-content: center; padding: 32px 0; }
+  .page {
+    width: 816px; height: 1056px; overflow: hidden; position: relative;
+    background: var(--bg); padding: 40px 56px 24px;
+    background-image: radial-gradient(rgba(255,255,255,0.09) 1px, transparent 1.3px); background-size: 22px 22px;
+    display: flex; flex-direction: column;
+  }
+  @media print { html, body { background: var(--bg); padding: 0; } }
+  .k { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--text-muted); }
+  .k.p { color: var(--primary); }
+  .hd { display: flex; justify-content: space-between; align-items: center; }
+  .hd img { height: 22px; display: block; }
+  h1 { margin-top: 22px; font-size: 36px; line-height: 1.08; font-weight: 700; letter-spacing: -0.025em; }
+  h1 span { color: #8B72FE; }
+  .sub { margin-top: 8px; font-size: 15px; line-height: 1.45; color: var(--text-secondary); max-width: 640px; }
+
+  .mo { margin-top: 18px; display: grid; grid-template-columns: 1fr 1fr 1.35fr; gap: 12px; }
+  .c { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 11px 14px; }
+  .c .who { display: flex; justify-content: space-between; gap: 8px; font-size: 10.5px; white-space: nowrap; color: var(--text-muted); font-weight: 600; }
+  .c .q { margin-top: 5px; font-size: 14px; font-weight: 600; line-height: 1.3; color: var(--text); }
+  .c.mkt { border-color: rgba(128,97,253,.45); background: linear-gradient(180deg, rgba(128,97,253,.14), rgba(128,97,253,.04)); }
+  .c.mkt .who { color: var(--primary); }
+
+  .sec { margin-top: 14px; }
+  .sec > .k { display: block; margin-bottom: 4px; }
+  .cs-chart { display: block; overflow: visible; }
+  .cs-chart .gl { stroke: rgba(255,255,255,.07); stroke-width: 1; }
+  .cs-chart .base { stroke: rgba(255,255,255,.18); stroke-width: 1; }
+  .cs-chart .ax { font: 600 10.5px var(--font); fill: var(--text-muted); letter-spacing: .04em; }
+  .cs-chart .dash { stroke: var(--rule-dash); stroke-width: 1.2; stroke-dasharray: 3 5; }
+  .cs-chart .ann { font: 700 12px var(--font); fill: var(--text); }
+  .cs-chart .ann2 { font: 600 11px var(--font); fill: var(--text-muted); }
+  .cs-chart .mk { fill: var(--primary); stroke: #000; stroke-width: 2.5; }
+  .cs-chart .pill { fill: var(--primary); }
+  .cs-chart .mkn { font: 800 10.5px var(--font); fill: #fff; }
+  .cs-chart .lead { stroke: var(--primary); stroke-width: 1.2; }
+  .cs-chart .end { fill: var(--primary); }
+
+  .sts { border-top: 1px solid var(--border); }
+  .st { display: grid; grid-template-columns: 22px 60px 1fr 52px 40px; align-items: center; gap: 10px; padding: 3px 0; border-bottom: 1px solid var(--border); font-size: 12px; }
+  .st .b { width: 18px; height: 18px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 10.5px; font-weight: 800; display: grid; place-items: center; }
+  .st .t { font-size: 11px; font-weight: 700; color: var(--text-muted); letter-spacing: .02em; }
+  .st .x { color: var(--text-secondary); line-height: 1.35; }
+  .st .v, .st .o { font-family: var(--num); font-weight: 700; text-align: right; color: var(--text); font-variant-numeric: tabular-nums; font-size: 12.5px; }
+  .st .o { color: var(--text-secondary); }
+  .st.ev-comp .b { background: transparent; border: 1.5px dashed var(--rule-dash); }
+  .st.ev-comp .x { color: var(--text); font-weight: 600; }
+  .st.ev-end .b { background: #fff; color: #000; }
+  .st.ev-end .x { color: var(--text); font-weight: 600; }
+
+  .bt { margin-top: 16px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+  .pay { display: grid; gap: 5px; }
+  .pr { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--border); padding-bottom: 5px; }
+  .pr b { font-family: var(--num); font-size: 22px; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .pr:first-child b { color: var(--primary); }
+  .pr span { font-size: 13px; font-weight: 600; color: var(--text); }
+  .pr span i { display: block; font-style: normal; font-size: 11px; font-weight: 500; color: var(--text-muted); margin-top: 2px; }
+  .why p { font-size: 12.5px; line-height: 1.5; color: var(--text-secondary); }
+  .why p + p { margin-top: 8px; }
+  .why p b { color: var(--text); font-weight: 600; }
+
+  .ft { margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding-top: 8px; border-top: 1px solid var(--border); }
+  .ft p { font-size: 10.5px; line-height: 1.5; color: var(--text-muted); max-width: 560px; }
+  .ft .u { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--text-secondary); white-space: nowrap; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hd"><img src="assets/melee-lockup.svg" alt="Melee"><span class="k p">Illustrative case study</span></div>
+  <h1>How a 2am post became<br><span>a $28M market.</span></h1>
+  <p class="sub">One creator market, from a viral post to an order book, and who got paid along the way.</p>
+
+  <div class="mo">
+    <div class="c"><div class="who"><span>A rapper · 40M followers</span><span>2:14am</span></div><div class="q">I'd knock the champ out.</div></div>
+    <div class="c"><div class="who"><span>UFC heavyweight champ</span><span>2:22am</span></div><div class="q">Name the date.</div></div>
+    <div class="c mkt"><div class="who"><span>Market · launched 2:31am</span><span>22% Yes</span></div><div class="q">Will the fight be officially announced within 30 days?</div></div>
+  </div>
+
+  <div class="sec"><span class="k p">Cumulative volume</span>
+    <svg class="cs-chart" viewBox="0 0 704 176" width="704" height="176" aria-label="Cumulative volume over eleven days, rising from zero to $28M">
+  <defs><linearGradient id="csfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8061FD" stop-opacity="0.38"/><stop offset="1" stop-color="#8061FD" stop-opacity="0"/></linearGradient></defs>
+  <line x1="48" x2="690" y1="108.7" y2="108.7" class="gl"/><text x="38" y="112.7" class="ax" text-anchor="end">$10M</text><line x1="48" x2="690" y1="67.3" y2="67.3" class="gl"/><text x="38" y="71.3" class="ax" text-anchor="end">$20M</text><line x1="48" x2="690" y1="26.0" y2="26.0" class="gl"/><text x="38" y="30.0" class="ax" text-anchor="end">$30M</text><line x1="48" x2="690" y1="150" y2="150" class="base"/><text x="48.0" y="169" class="ax" text-anchor="start">Launch</text><text x="164.7" y="169" class="ax" text-anchor="middle">Day 2</text><text x="281.5" y="169" class="ax" text-anchor="middle">Day 4</text><text x="398.2" y="169" class="ax" text-anchor="middle">Day 6</text><text x="514.9" y="169" class="ax" text-anchor="middle">Day 8</text><text x="631.6" y="169" class="ax" text-anchor="middle">Day 10</text><line x1="339.8" x2="339.8" y1="18" y2="150" class="dash"/><text x="349.8" y="28" class="ann">Polymarket lists it</text><text x="349.8" y="43" class="ann2">Odds already at 81%</text><text x="676.0" y="28.3" class="ann" text-anchor="end">$28M · resolves Yes</text>
+  <path d="M48.0,150 L48.0,150.0 L49.2,149.3 L63.8,149.3 L66.1,147.5 L106.4,144.2 L164.7,137.6 L223.1,130.6 L281.5,123.1 L339.8,114.9 L398.2,104.5 L456.5,93.0 L514.9,80.1 L573.3,66.1 L631.6,50.8 L690.0,34.3 L690.0,150 Z" fill="url(#csfill)"/>
+  <path d="M48.0,150.0 L49.2,149.3 L63.8,149.3 L66.1,147.5 L106.4,144.2 L164.7,137.6 L223.1,130.6 L281.5,123.1 L339.8,114.9 L398.2,104.5 L456.5,93.0 L514.9,80.1 L573.3,66.1 L631.6,50.8 L690.0,34.3" fill="none" stroke="#8061FD" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="65.5" x2="65.5" y1="132.5" y2="145.5" class="lead"/><rect x="46.5" y="114.5" width="38" height="18" rx="9" class="pill"/><text x="65.5" y="127.5" class="mkn" text-anchor="middle">1–5</text><circle cx="106.4" cy="144.2" r="10" class="mk"/><text x="106.4" y="148.2" class="mkn" text-anchor="middle">6</text><circle cx="164.7" cy="137.6" r="10" class="mk"/><text x="164.7" y="141.6" class="mkn" text-anchor="middle">7</text><circle cx="281.5" cy="123.1" r="10" class="mk"/><text x="281.5" y="127.1" class="mkn" text-anchor="middle">8</text><circle cx="398.2" cy="104.5" r="10" class="mk"/><text x="398.2" y="108.5" class="mkn" text-anchor="middle">9</text><circle cx="690.0" cy="34.3" r="5" class="end"/>
+</svg>
+  </div>
+
+  <div class="sec"><span class="k p">The nine steps</span>
+    <div class="sts"><div class="st"><span class="b">1</span><span class="t">2:22am</span><span class="x">A rapper's callout of the UFC heavyweight champion goes viral.</span><span class="v"></span><span class="o"></span></div><div class="st"><span class="b">2</span><span class="t">2:31am</span><span class="x">A streamer with 3M followers launches the market live, with a presale.</span><span class="v"></span><span class="o">22%</span></div><div class="st"><span class="b">3</span><span class="t">3:00am</span><span class="x">The presale fills from the stream chat.</span><span class="v">$180k</span><span class="o">22%</span></div><div class="st"><span class="b">4</span><span class="t">10:00am</span><span class="x">Trading opens. Friends' positions show in feeds and early money piles in.</span><span class="v">$600k</span><span class="o">31%</span></div><div class="st"><span class="b">5</span><span class="t">10:00am</span><span class="x">The PMM prices every trade from the pool, with no market maker.</span><span class="v"></span><span class="o"></span></div><div class="st"><span class="b">6</span><span class="t">Day 1</span><span class="x">Clip accounts start posting the odds as content.</span><span class="v">$1.4M</span><span class="o">44%</span></div><div class="st"><span class="b">7</span><span class="t">Day 2</span><span class="x">The streamer turns on referrals and gives them 25% of their fees.</span><span class="v">$3M</span><span class="o">52%</span></div><div class="st"><span class="b">8</span><span class="t">Day 4</span><span class="x">Melee's posting agents cover every new development.</span><span class="v">$6.5M</span><span class="o">68%</span></div><div class="st ev-comp"><span class="b"></span><span class="t">Day 5</span><span class="x">Polymarket lists it.</span><span class="v">$8.5M</span><span class="o">81%</span></div><div class="st"><span class="b">9</span><span class="t">Day 6</span><span class="x">The pool graduates to the order book hybrid. Market makers arrive.</span><span class="v">$11M</span><span class="o">84%</span></div><div class="st ev-end"><span class="b">✓</span><span class="t">Day 11</span><span class="x">The fight is announced and the market resolves Yes.</span><span class="v">$28M</span><span class="o">100%</span></div></div>
+  </div>
+
+  <div class="bt">
+    <div><span class="k p" style="display:block;margin-bottom:6px">Who gets paid</span>
+      <div class="pay">
+        <div class="pr"><span>The streamer<i>2% of volume, 25% to referrals from day 2</i></span><b>$435,000</b></div>
+        <div class="pr"><span>Melee<i>1% of volume</i></span><b>$280,000</b></div>
+        <div class="pr"><span>Referrals<i>Clip accounts and fans who drove volume</i></span><b>$125,000</b></div>
+      </div>
+    </div>
+    <div class="why"><span class="k p" style="display:block;margin-bottom:6px">Why only Melee could run it</span>
+      <p>A curated platform lists a market once a desk agrees to quote it. When this one started, no desk was quoting and no listings team was at work.</p>
+      <p>Polymarket listed it on day five, after the odds had moved from 22% to 81%. By then <b>the price discovery, the early traders and the creator were all on Melee.</b></p>
+    </div>
+  </div>
+
+  <div class="ft">
+    <p>Illustrative scenario. Every figure is modelled to show the mechanism, not observed. Presale backers and early traders also earn the PMM's liquidity rewards from the pool. The order book hybrid is on Melee's roadmap.</p>
+    <span class="u">melee.markets</span>
+  </div>
+</div>
+</body>
+</html>
