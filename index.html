@@ -373,6 +373,24 @@
     letter-spacing: -0.005em;
   }
 
+  /* === Slide 3 · The Problem, two columns, no cards === */
+  .s3-req { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-content: center; max-width: 1600px; width: 100%; }
+  .s3-req-col { border-top: 1px solid var(--border); padding-top: 30px; }
+  .s3-req-n { font-family: var(--font-mono); font-size: 18px; letter-spacing: 0.2em; color: var(--primary); margin-bottom: 30px; }
+  .s3-req .s3-goal-title { font-size: 46px; margin-bottom: 24px; max-width: 640px; }
+  .s3-req .s3-goal-desc { font-size: 27px; max-width: 640px; }
+  /* === Slide 11 · The Raise, two columns, no cards === */
+  .uof2 { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-content: start; margin-top: 36px; }
+  .uof2-col { border-top: 1px solid var(--border); padding-top: 30px; display: flex; flex-direction: column; gap: 20px; }
+  .uof2-name { font-size: 48px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; color: var(--text); }
+  .uof2 .uof-points { gap: 18px; margin-top: 8px; }
+  .uof2 .uof-points li { font-size: 30px; padding-left: 30px; }
+  .uof2 .uof-points li::before { top: 15px; width: 8px; height: 8px; box-shadow: none; }
+  .uof2-ms { margin-top: 30px; font-size: 26px; line-height: 1.45; color: var(--text-secondary); }
+  .uof2-ms b { color: var(--text); font-weight: 600; }
+  /* cover backers line */
+  .s1-backed { margin-top: 84px; font-size: 22px; color: var(--text-muted); position: relative; z-index: 2; }
+
   /* === Slide 2 · The Goal (3 requirements) === */
   .s3-goal-grid {
     display: grid;
@@ -546,12 +564,10 @@
   .slide-footnote {
     margin-top: 36px;
     text-align: center;
-    font-family: var(--font-mono);
-    font-size: 18px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    font-size: 19px;
+    letter-spacing: 0;
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 400;
   }
   .slide-footnote a {
     color: var(--primary);
@@ -1792,8 +1808,7 @@
   }
   .tr-src {
     margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border);
-    font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em;
-    text-transform: uppercase; color: var(--text-muted); font-weight: 500;
+    font-size: 18px; letter-spacing: 0; color: var(--text-muted); font-weight: 400;
   }
 
   /* === Slide 13 · Use of funds === */
@@ -2229,6 +2244,12 @@
   /* Title: Geist tight tracking, like .v2-h1 / --tr-tight. */
   .frame .title { letter-spacing: -0.03em; }
   .slide-footnote { font-family: var(--font-legal); font-weight: 500; letter-spacing: 0.12em; }
+
+  /* === Aesthetic pass 2026-10-12: fewer boxes === */
+  .team-card { background: transparent; border: 0; border-top: 1px solid var(--border); border-radius: 0; padding: 30px 0 0; box-shadow: none; }
+  .team-avatar { border-radius: 20px; width: 150px; height: 150px; border: 0; background: var(--bg-card); }
+  .team-row { gap: 40px; }
+  .sp-loop, .fw-loop { border: 0 !important; background: transparent !important; padding-left: 0 !important; padding-right: 0 !important; border-top: 1px solid var(--border) !important; border-radius: 0 !important; }
 </style>
 
 </head>
@@ -2239,11 +2260,10 @@
 <!-- ======================= Slide 1 · North Star ======================= -->
   <section data-label="North Star">
     <div class="s1">
-      <div class="s1-glow"></div>
       <div class="s1-wordmark"><img src="assets/melee-lockup.svg" alt="Melee"></div>
-      <div class="s1-meta"></div>
       <h1 class="headline">Markets for <em>every truth.</em></h1>
       <p class="sub">The creator-powered prediction market.</p>
+      <p class="s1-backed">Backed by Variant, DBA, Anatoly Yakovenko, Luca Netz and Andrew Kang</p>
       <div class="s1-footer">
         <span>melee.markets</span>
         <span>01 / 14</span>
@@ -2292,23 +2312,17 @@
   <section data-label="The Goal">
     <div class="frame">
       <div class="corner-mark">03 — The Problem</div>
-      <h2 class="title"><span style="color:var(--primary)">Permissionless</span> prediction markets were impossible.</h2>
+      <h2 class="title">Permissionless prediction markets were impossible.</h2>
       <p class="sub">No mechanism could satisfy both requirements at once.</p>
 
-      <div class="s3-goal-grid">
-        <div class="s3-goal-card">
-          <div class="s3-goal-num">01</div>
-          <div class="s3-goal-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5c-4 5-6.5 8.5-6.5 12a6.5 6.5 0 0 0 13 0c0-3.5-2.5-7-6.5-12z"></path></svg>
-          </div>
+      <div class="s3-req">
+        <div class="s3-req-col">
+          <div class="s3-req-n">01</div>
           <div class="s3-goal-title">Bootstrap liquidity without market makers or subsidies.</div>
           <div class="s3-goal-desc">A new market has to be tradeable the moment it opens. No waiting for quotes, no paying liquidity providers to show up.</div>
         </div>
-        <div class="s3-goal-card primary">
-          <div class="s3-goal-num">02</div>
-          <div class="s3-goal-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"></path></svg>
-          </div>
+        <div class="s3-req-col">
+          <div class="s3-req-n">02</div>
           <div class="s3-goal-title">A trading experience that rivals an order book.</div>
           <div class="s3-goal-desc">Tight pricing, instant execution and the ability to exit before resolution. The standard Polymarket and Kalshi have set.</div>
         </div>
@@ -2350,7 +2364,7 @@
         <div class="val bad">—</div>
       </div>
 
-      <div class="slide-footnote">Full mechanism · <a href="https://pmm.melee.markets">pmm.melee.markets</a></div>
+      <div class="slide-footnote">Full mechanism at <a href="https://pmm.melee.markets">pmm.melee.markets</a></div>
     </div>
   </section>
 
@@ -2358,7 +2372,7 @@
   <section data-label="Product">
     <div class="frame">
       <div class="corner-mark">05 — Product</div>
-      <h2 class="title">Markets are <span style="color:var(--primary)">moments.</span></h2>
+      <h2 class="title">Markets are moments.</h2>
       <p class="sub">Launch a market on anything the second it happens. No gatekeepers, no middlemen.</p>
 
       <div class="s4-wrap">
@@ -2406,7 +2420,7 @@
   <section data-label="The Market">
     <div class="frame">
       <div class="corner-mark">06 — The Market</div>
-      <h2 class="title">A global <span style="color:var(--primary)">truth layer.</span></h2>
+      <h2 class="title">A global truth layer.</h2>
       <p class="sub">Curated platforms compete over the head of the market. Melee opens the long tail, worldwide.</p>
 
       <div class="mkt-chart">
@@ -2457,7 +2471,7 @@
           <div class="mkt-l">Melee's take on every trade</div>
         </div>
       </div>
-      <div class="slide-footnote">Sources · The Block and DeFi Rate, prediction market volume, 2026 · Macquarie, global legal sports betting handle</div>
+      <div class="slide-footnote">Sources: The Block and DeFi Rate (prediction market volume, 2026); Macquarie (global legal sports betting handle).</div>
     </div>
   </section>
 
@@ -2465,7 +2479,7 @@
   <section data-label="Competitive">
     <div class="frame">
       <div class="corner-mark">07 — Competitive</div>
-      <h2 class="title">Curated networks vs <span style="color:var(--primary)">open platforms.</span></h2>
+      <h2 class="title">Curated networks vs open platforms.</h2>
 
       <div class="comp">
         <div></div>
@@ -2504,10 +2518,6 @@
 
       </div>
 
-      <div class="comp-callout-wrap">
-        <div class="comp-callout-lbl">Key idea</div>
-        <div class="comp-callout-body">Centralized platforms cannot allow user generated markets because <b>every market must be cleared by a market maker.</b></div>
-      </div>
     </div>
   </section>
 
@@ -2515,7 +2525,7 @@
   <section data-label="The Loop">
     <div class="frame">
       <div class="corner-mark">08 — Business model</div>
-      <h2 class="title" style="text-wrap:balance; max-width:1300px">1% to Melee. <span style="color:var(--primary)">The rest to whoever builds the market.</span></h2>
+      <h2 class="title" style="text-wrap:balance; max-width:1300px">1% to Melee. The rest to whoever builds the market.</h2>
       <p class="sub">Melee keeps 1%. Creator and resolver fees are set per market and paid out on every trade.</p>
       <div class="lp-wrap"><svg class="lp" viewBox="0 0 1728 620" role="img" aria-label="Melee value loop"><defs><marker id="lpArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head"/></marker><marker id="lpArrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head-p"/></marker></defs><line class="lp-arrow" x1="279.0" y1="135" x2="345.0" y2="135" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="609.0" y1="135" x2="675.0" y2="135" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="939.0" y1="135" x2="1005.0" y2="135" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="1269.0" y1="135" x2="1335.0" y2="135" marker-end="url(#lpArrow)"/><path class="lp-arrow lp-return" d="M 1470 198.0 V 416.0" marker-end="url(#lpArrowP)"/><line class="lp-arrow lp-return" x1="1341.0" y1="485" x2="1275.0" y2="485" marker-end="url(#lpArrowP)"/><line class="lp-arrow lp-return" x1="1011.0" y1="485" x2="945.0" y2="485" marker-end="url(#lpArrowP)"/><line class="lp-arrow lp-return" x1="681.0" y1="485" x2="615.0" y2="485" marker-end="url(#lpArrowP)"/><path class="lp-arrow lp-return" d="M 480 422.0 V 204.0" marker-end="url(#lpArrowP)"/><g class="lp-node "><rect x="25" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="150" y="127" text-anchor="middle">Culture</text><text class="lp-sub" x="150" y="167" text-anchor="middle">A moment happens</text></g><g class="lp-node "><rect x="355" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="480" y="127" text-anchor="middle">Creator</text><text class="lp-sub" x="480" y="167" text-anchor="middle">Turns it into a market</text></g><g class="lp-node is-core"><rect x="685" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="810" y="127" text-anchor="middle">Market</text><text class="lp-sub" x="810" y="167" text-anchor="middle">Live in a minute</text></g><g class="lp-node is-core"><rect x="1015" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="1140" y="127" text-anchor="middle">PMM</text><text class="lp-sub" x="1140" y="167" text-anchor="middle">From the first dollar</text></g><g class="lp-node "><rect x="1345" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="1470" y="127" text-anchor="middle">Traders</text><text class="lp-sub" x="1470" y="167" text-anchor="middle">Find it in their feed</text></g><g class="lp-node "><rect x="1345" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="1470" y="477" text-anchor="middle">Fees</text><text class="lp-sub" x="1470" y="517" text-anchor="middle">On every trade</text></g><g class="lp-node is-melee"><rect x="1015" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="1140" y="477" text-anchor="middle">Melee</text><text class="lp-sub" x="1140" y="517" text-anchor="middle">1% of every trade</text></g><g class="lp-node "><rect x="685" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="810" y="477" text-anchor="middle">Resolver fee</text><text class="lp-sub" x="810" y="517" text-anchor="middle">Variable, per market</text></g><g class="lp-node "><rect x="355" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="480" y="477" text-anchor="middle">Creator share</text><text class="lp-sub" x="480" y="517" text-anchor="middle">Set by the creator</text></g></svg></div>
     </div>
@@ -2525,7 +2535,7 @@
   <section data-label="Distribution">
     <div class="frame">
       <div class="corner-mark">09 — Distribution</div>
-      <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
+      <h2 class="title">Every market brings its own distribution.</h2>
       <p class="sub">Creators, traders, clip accounts and affiliates each carry a market further, and each is paid from its fees.</p>
       <div class="sp">
         <div class="sp-seed">
@@ -2620,7 +2630,7 @@
           <div class="tr-f"><b>4.8M</b><span>Trades</span></div>
           <div class="tr-f"><b>100M+</b><span>Social media views · zero paid spend</span></div>
         </div>
-        <div class="tr-src">Source · Melee metrics · daily · 11 Sep to 8 Oct 2026 · testnet</div>
+        <div class="tr-src">Source: Melee metrics, daily, 11 Sep to 8 Oct 2026, testnet.</div>
       </div>
     </div>
   </section>
@@ -2629,27 +2639,27 @@
   <section data-label="Use of funds">
     <div class="frame">
       <div class="corner-mark">11 — The Raise</div>
-      <h2 class="title">$5M to reach <span style="color:var(--primary)">10,000 creators on mainnet.</span></h2>
+      <h2 class="title">$5M to reach 10,000 creators on mainnet.</h2>
       <p class="sub">The raise funds distribution and product roadmap.</p>
 
-      <div class="uof-grid two">
-        <div class="uof-card">
-          <div class="uof-name">Growth</div>
+      <div class="uof2">
+        <div class="uof2-col">
+          <div class="uof2-name">Growth</div>
           <ul class="uof-points">
             <li>Growth funnels and referral loops</li>
             <li>UGC and the autonomous content engine</li>
             <li>Creator onboarding and revenue share</li>
           </ul>
-          <div class="uof-ms">Milestone · <b>1,000</b> markets a day on mainnet · <b>10,000</b> creators</div>
+          <div class="uof2-ms">Milestone: <b>1,000 markets a day on mainnet, 10,000 creators.</b></div>
         </div>
-        <div class="uof-card primary">
-          <div class="uof-name">Product</div>
+        <div class="uof2-col">
+          <div class="uof2-name">Product</div>
           <ul class="uof-points">
             <li>PMM and order book hybrid trading engine</li>
             <li>Liquidity vaults</li>
             <li>Mainnet audit</li>
           </ul>
-          <div class="uof-ms">Milestone · hybrid live on mainnet · <b>Q2 2027</b></div>
+          <div class="uof2-ms">Milestone: <b>hybrid engine live on mainnet, Q2 2027.</b></div>
         </div>
       </div>
     </div>
@@ -2659,7 +2669,7 @@
   <section data-label="Team">
     <div class="frame">
       <div class="corner-mark">12 — Team</div>
-      <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
+      <h2 class="title">Built for this problem.</h2>
 
       <div class="team-row">
         <div class="team-card">
@@ -2713,9 +2723,8 @@
 
   <section data-label="Appendix">
     <div class="s1">
-      <div class="s1-glow"></div>
       <div class="s1-wordmark"><img src="assets/melee-lockup.svg" alt="Melee"></div>
-      <h1 class="headline"><em>Appendix.</em></h1>
+      <h1 class="headline">Appendix.</h1>
       <p class="sub">The life of a market.</p>
       <div class="s1-footer">
         <span>melee.markets</span>
@@ -2728,7 +2737,7 @@
   <section data-label="Product flow">
     <div class="frame">
       <div class="corner-mark">14 — Appendix · Product flow</div>
-      <h2 class="title">The life of <span style="color:var(--primary)">a market.</span></h2>
+      <h2 class="title">The life of a market.</h2>
       <p class="sub">How a market is born, traded and paid out, and what is running underneath at each step.</p>
       <div class="lm">
         <svg class="lm-svg" viewBox="0 0 1728 680" aria-hidden="true"><defs><marker id="lmA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 0L10 5 0 10z" fill="#7A768A"/></marker>
@@ -3197,4 +3206,6 @@
 
 
 
-<!-- deploy 1791783877 -->
+
+
+<!-- deploy 1791785220 -->
