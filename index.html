@@ -891,6 +891,27 @@
   .yt2-cell { padding: 32px 40px; }
   .yt2-stat { font-size: 88px; }
   .yt2 { margin-top: 16px; }
+  /* Opportunity: two numbers and a field */
+  .op { position: relative; flex: 1; min-height: 0; }
+  .op-field {
+    position: absolute; top: 30px; right: -96px; bottom: -72px; width: 900px;
+    background-image: radial-gradient(circle, rgba(var(--primary-rgb),0.95) 2.6px, transparent 3.1px);
+    background-size: 16px 16px;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(180deg, #000 70%, transparent 100%);
+    -webkit-mask-composite: source-in; mask-composite: intersect;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 34%), linear-gradient(180deg, #000 70%, transparent 100%);
+    opacity: 0.9;
+  }
+  .op-small { position: absolute; left: 0; top: 36px; width: 760px; }
+  .op-big { position: absolute; left: 0; top: 352px; width: 1100px; }
+  .op-n { font-size: 96px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--text); display: flex; align-items: baseline; gap: 22px; flex-wrap: wrap; }
+  .op-n.big { font-size: 230px; letter-spacing: -0.05em; color: var(--primary); line-height: 0.9; }
+  .op-u { font-family: var(--font-mono); font-size: 18px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+  .op-dots { display: grid; grid-template-columns: repeat(10, 9px); grid-auto-rows: 9px; gap: 6px; margin: 26px 0 22px; }
+  .op-dots span { width: 9px; height: 9px; border-radius: 50%; background: var(--text-muted); opacity: 0.9; }
+  .op-body { font-size: 27px; line-height: 1.45; color: var(--text-secondary); max-width: 620px; margin-top: 10px; text-wrap: pretty; }
+  .op-big .op-body { margin-top: 26px; max-width: 1000px; }
+  .op-foot { position: absolute; left: 0; bottom: 0; font-size: 22px; color: var(--text-muted); max-width: 1100px; white-space: nowrap; }
   .yt2-cell.has-dots { gap: 16px; padding: 26px 40px; }
   .yt2-cell.has-dots .yt2-stat { font-size: 72px; }
   .yt2 .cfw2-dots { grid-template-columns: repeat(40, 8px); grid-auto-rows: 8px; gap: 5px; }
@@ -2251,47 +2272,11 @@
     </div>
   </section>
 
-<!-- ======================= Slide 5 · YouTube Moment ======================= -->
-  <section data-label="YouTube Moment">
-    <div class="frame">
-      <div class="corner-mark">02 — Opportunity</div>
-      <h2 class="title">Prediction markets' <span style="color:var(--primary)">YouTube moment.</span></h2>
-      <p class="sub">Video exploded once anyone could publish. Prediction markets are still controlled by centralized gatekeepers.</p>
-
-      <div class="yt2">
-        <div class="yt2-corner"></div>
-        <div class="yt2-colhead">Curated</div>
-        <div class="yt2-colhead open">Open</div>
-
-        <div class="yt2-rowlbl">Video</div>
-        <div class="yt2-cell">
-          <div class="yt2-stat">182 <span class="yt2-u">scripted series</span></div>
-          <div class="yt2-body">All of US television in 2002. A network greenlit every one.</div>
-        </div>
-        <div class="yt2-cell open">
-          <div class="yt2-stat">500 <span class="yt2-u">hours uploaded a minute</span></div>
-          <div class="yt2-body">Millions of creators capture more eyeballs than any television network.</div>
-        </div>
-
-        <div class="yt2-rowlbl">Prediction markets</div>
-        <div class="yt2-cell has-dots">
-          <div class="yt2-stat">~10,000 <span class="yt2-u">markets · Polymarket and Kalshi</span></div>
-          <div class="cfw2-dots them" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="yt2-cap">One listings team decides</div>
-        </div>
-        <div class="yt2-cell open has-dots">
-          <div class="yt2-stat">Any question <span class="yt2-u">the minute it comes up</span></div>
-          <div class="cfw2-dots cfw2-dots-us" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-          <div class="yt2-cap">Everyone with an audience</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
 <!-- ======================= Slide 2 · The Goal ======================= -->
   <section data-label="The Goal">
     <div class="frame">
-      <div class="corner-mark">03 — The Problem</div>
+      <div class="corner-mark">02 — The Problem</div>
       <h2 class="title"><span style="color:var(--primary)">Permissionless</span> prediction markets were impossible.</h2>
       <p class="sub">No mechanism could satisfy both requirements at once.</p>
 
@@ -2319,7 +2304,7 @@
 <!-- ======================= Slide 3 · Mechanism ======================= -->
   <section data-label="Mechanism">
     <div class="frame">
-      <div class="corner-mark">04 — The Mechanism</div>
+      <div class="corner-mark">03 — The Mechanism</div>
       <h2 class="title">Until the <span style="color:var(--primary)">Parimutuel Market Maker.</span></h2>
       <p class="sub">The PMM prices any question from the first dollar, without market makers.</p>
 
@@ -2357,7 +2342,7 @@
 <!-- ======================= Slide 4 · Product ======================= -->
   <section data-label="Product">
     <div class="frame">
-      <div class="corner-mark">05 — Product</div>
+      <div class="corner-mark">04 — Product</div>
       <h2 class="title">Markets are <span style="color:var(--primary)">moments.</span></h2>
       <p class="sub">Launch a market on anything the second it happens. No gatekeepers, no middlemen.</p>
 
@@ -2398,6 +2383,27 @@
           <span class="s4-chip live">Culture</span>
           <span class="s4-chip">Breaking news</span>
         </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ======================= Slide 5 · YouTube Moment ======================= -->
+  <section data-label="YouTube Moment">
+    <div class="frame">
+      <div class="corner-mark">05 — Opportunity</div>
+      <h2 class="title">Prediction markets' <span style="color:var(--primary)">YouTube moment.</span></h2>
+      <div class="op">
+        <div class="op-field" aria-hidden="true"></div>
+        <div class="op-small">
+          <div class="op-n">~10,000 <span class="op-u">markets</span></div>
+          <div class="op-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="op-body">Polymarket and Kalshi combined. Every one chosen by a listings team.</div>
+        </div>
+        <div class="op-big">
+          <div class="op-n big">200M <span class="op-u">creators</span></div>
+          <div class="op-body">Every one can open a market on Melee the minute a question comes up.</div>
+        </div>
+        <div class="op-foot">Television had 182 scripted series the year YouTube launched. Now 500 hours go up every minute.</div>
       </div>
     </div>
   </section>
@@ -3199,4 +3205,6 @@
 
 
 
-<!-- deploy 1791818240 -->
+
+
+<!-- deploy 1791885101 -->
