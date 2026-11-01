@@ -2543,6 +2543,25 @@
   .hg-h { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 22px; color: var(--text-secondary); }
   .uof-grid.two.stack { grid-template-columns: 1fr; gap: 24px; }
   .uof-grid.two.stack .uof-card { padding: 34px 40px; }
+  .moat-cards { display: flex; flex-direction: column; gap: 24px; }
+  .moat-card {
+    position: relative; padding: 34px 120px 34px 40px;
+    border: 1px solid var(--border); border-top: 4px solid var(--primary);
+    border-radius: var(--r-card);
+    background: color-mix(in srgb, var(--bg-card) 70%, transparent);
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .moat-card .uof-name { margin-top: 0; font-size: 34px; }
+  .moat-card .uof-body { font-size: 24px; }
+  .moat-card .uof-body b { color: var(--text); font-weight: 600; }
+  .moat-tick {
+    position: absolute; top: 32px; right: 36px; width: 48px; height: 48px; border-radius: 50%;
+    display: grid; place-items: center;
+    background: rgba(var(--primary-rgb), 0.14); border: 1.5px solid rgba(var(--primary-rgb), 0.6);
+  }
+  .moat-tick svg { width: 24px; height: 24px; }
+  .moat-tick path { fill: none; stroke: var(--primary); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; }
+  .moat-card.next { border: 2px dashed rgba(var(--primary-rgb), 0.55); background: rgba(var(--primary-rgb), 0.04); }
 </style>
 
 </head>
@@ -2668,22 +2687,80 @@
       <div class="split">
         <div class="split-l">
       <h2 class="title">Our moat <span style="color:var(--primary)">compounds with every market.</span></h2>
+      <p class="sub">Curated exchanges need a market maker for every market, so they <b>can't let users open them</b>.</p>
         </div>
         <div class="split-r">
-      <div class="loop">
-        <svg viewBox="0 0 820 720" aria-hidden="true">
-          <defs><marker id="lpA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8061FD"/></marker></defs>
-          <path d="M300 190 Q 520 210 588 392" fill="none" stroke="#8061FD" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#lpA)"/>
-          <path d="M556 470 Q 395 420 238 470" fill="none" stroke="#8061FD" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#lpA)"/>
-          <path d="M120 392 Q 90 250 160 196" fill="none" stroke="#8061FD" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#lpA)"/>
-        </svg>
-        <div class="lp-node" style="left:230px;top:140px">Mechanism</div>
-        <div class="lp-node" style="left:640px;top:470px">Creators</div>
-        <div class="lp-node next" style="left:150px;top:470px">Liquidity</div>
-        <div class="lp-txt" style="left:340px;top:58px;width:470px">The only pricing engine that <b>bootstraps liquidity</b> with no market maker or subsidy.</div>
-        <div class="lp-txt" style="left:470px;top:578px;width:340px;text-align:center">Creators <b>earn on every trade</b>, so they keep opening markets.</div>
-        <div class="lp-txt" style="left:-40px;top:578px;width:380px;text-align:center">Liquidity providers earn, so <b>every new market opens deeper</b>.</div>
+      <div class="moat-cards">
+        <div class="moat-card"><div class="moat-tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div class="uof-name">Pricing engine</div><div class="uof-body">The only pricing engine that <b>bootstraps liquidity</b> with no market maker or subsidy.</div></div>
+        <div class="moat-card"><div class="moat-tick"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div class="uof-name">Settlement</div><div class="uof-body">An AI assistant writes the rules. <b>Paid resolvers settle the result.</b></div></div>
+        <div class="moat-card next"><div class="uof-name">Network effects</div><div class="uof-body">Creators <b>earn on every trade</b>, so they keep opening markets. Every new market opens deeper, and the biggest <b>graduate to an order book</b>.</div></div>
       </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Viral">
+    <div class="frame">
+      <div class="corner-mark">08 — Early signal</div>
+      <h2 class="title">We're finding early product-market fit <span style="color:var(--primary)">in viral internet controversies.</span></h2>
+      <div class="vc-strip">Breaking news <i>→</i> Market launched <i>→</i> Viral distribution <i>→</i> <b>Creators acquired</b><a class="vc-link" href="https://app.notion.com/p/Melee-Viral-Market-Flywheel-406c75b77d5c810997b3f02b034b9b59" target="_blank" rel="noopener">Read the case study →</a></div>
+      <div class="vc">
+        <div class="vc-panel">
+          <div class="vc-img"><img src="assets/viral/stream.jpg" alt="The account that broke the story trading our market live on stream"></div>
+          <div class="vc-stats"><div><b>3.9M</b><span>views on the post that broke the story</span></div><div><b>106.5K</b><span>views on the reply linking our market</span></div></div>
+          <p class="vc-cap">A podcast scandal breaks on X. We open a market the next day, and the account that broke the story trades it <b>live on stream</b>.</p>
+        </div>
+        <div class="vc-panel">
+          <div class="vc-img top"><img src="assets/viral/lisa-market.png" alt="Melee market on LISA's Tarantino video, presale oversubscribed"></div>
+          <div class="vc-stats"><div><b>$85.4K</b><span>in presale bids from 308 bidders</span></div><div><b class="v">5.7×</b><span>oversubscribed</span></div></div>
+          <p class="vc-cap">A K-pop fan page we paid $10 shares our LISA market, then <b>asks to become a creator</b>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Traction">
+    <div class="frame">
+      <div class="corner-mark">09 — Traction</div>
+      <h2 class="title">Users created <span style="color:var(--primary)">12,800 markets</span> in October.</h2>
+      <p class="sub">By the end of the month they were opening <b>more than 500 markets a day</b>.</p>
+
+      <div class="tr-body2">
+        <div class="trc-row">
+          <div class="trc-card">
+            <div class="trc-lbl">Daily traders</div>
+            <div class="trc-n">68,900</div>
+            <svg class="trc-svg" viewBox="0 0 560 210" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="trcA" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
+                <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
+              </linearGradient></defs>
+              <path d="M0,210 L0.0,96.3 L20.7,56.4 L41.5,46.9 L62.2,42.3 L83.0,31.7 L103.7,37.5 L124.4,20.0 L145.2,32.9 L165.9,38.7 L186.7,34.1 L207.4,14.0 L228.1,34.1 L248.9,30.5 L269.6,83.3 L290.4,116.4 L311.1,97.5 L331.9,71.6 L352.6,72.8 L373.3,105.8 L394.1,96.3 L414.8,81.1 L435.6,70.4 L456.3,72.8 L477.0,61.0 L497.8,61.0 L518.5,56.7 L539.3,65.8 L560.0,42.8 L560,210 Z" fill="url(#trcA)"/>
+              <path d="M0.0,96.3 L20.7,56.4 L41.5,46.9 L62.2,42.3 L83.0,31.7 L103.7,37.5 L124.4,20.0 L145.2,32.9 L165.9,38.7 L186.7,34.1 L207.4,14.0 L228.1,34.1 L248.9,30.5 L269.6,83.3 L290.4,116.4 L311.1,97.5 L331.9,71.6 L352.6,72.8 L373.3,105.8 L394.1,96.3 L414.8,81.1 L435.6,70.4 L456.3,72.8 L477.0,61.0 L497.8,61.0 L518.5,56.7 L539.3,65.8 L560.0,42.8" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <circle cx="560.0" cy="42.8" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <div class="trc-axis"><span>2 Oct</span><span>29 Oct</span></div>
+          </div>
+          <div class="trc-card">
+            <div class="trc-lbl">User-created markets</div>
+            <div class="trc-n">12,800</div>
+            <svg class="trc-svg" viewBox="0 0 560 210" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="trcC" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
+                <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
+              </linearGradient></defs>
+              <path d="M0,210 L0.0,208.0 L19.3,205.7 L38.6,203.4 L57.9,202.1 L77.2,200.8 L96.6,199.1 L115.9,197.8 L135.2,196.8 L154.5,195.7 L173.8,194.7 L193.1,191.3 L212.4,185.8 L231.7,180.4 L251.0,175.5 L270.3,169.1 L289.7,164.1 L309.0,159.6 L328.3,155.3 L347.6,148.4 L366.9,142.1 L386.2,136.6 L405.5,111.6 L424.8,93.2 L444.1,75.6 L463.4,64.0 L482.8,52.8 L502.1,40.8 L521.4,29.3 L540.7,22.6 L560.0,14.0 L560,210 Z" fill="url(#trcC)"/>
+              <path d="M0.0,208.0 L19.3,205.7 L38.6,203.4 L57.9,202.1 L77.2,200.8 L96.6,199.1 L115.9,197.8 L135.2,196.8 L154.5,195.7 L173.8,194.7 L193.1,191.3 L212.4,185.8 L231.7,180.4 L251.0,175.5 L270.3,169.1 L289.7,164.1 L309.0,159.6 L328.3,155.3 L347.6,148.4 L366.9,142.1 L386.2,136.6 L405.5,111.6 L424.8,93.2 L444.1,75.6 L463.4,64.0 L482.8,52.8 L502.1,40.8 L521.4,29.3 L540.7,22.6 L560.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+              <circle cx="560.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <div class="trc-axis"><span>30 Sep</span><span>29 Oct</span></div>
+          </div>
+        </div>
+        <div class="tr-foot">
+          <div class="tr-f"><b>161,400</b><span>Traders in October</span></div>
+          <div class="tr-f"><b>8.8M</b><span>Trades</span></div>
+          <div class="tr-f"><b>100M+</b><span>Social media views · zero paid spend</span></div>
         </div>
       </div>
     </div>
@@ -2691,7 +2768,7 @@
 
   <section data-label="Distribution">
     <div class="frame">
-      <div class="corner-mark">08 — Distribution</div>
+      <div class="corner-mark">10 — Distribution</div>
       <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
       <p class="sub">Creators, their fans and Melee's own accounts each carry a market further, and each is <b>paid from its fees</b>.</p>
       <div class="sp">
@@ -2731,72 +2808,6 @@
             <div class="sp-name">Melee posts it</div>
             <div class="sp-how">Hundreds of posts a day across sport and culture.</div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section data-label="Viral">
-    <div class="frame">
-      <div class="corner-mark">09 — Early signal</div>
-      <h2 class="title">We're finding early product-market fit <span style="color:var(--primary)">in viral internet controversies.</span></h2>
-      <div class="vc-strip">Breaking news <i>→</i> Market launched <i>→</i> Viral distribution <i>→</i> <b>Creators acquired</b><a class="vc-link" href="https://app.notion.com/p/Melee-Viral-Market-Flywheel-406c75b77d5c810997b3f02b034b9b59" target="_blank" rel="noopener">Read the case study →</a></div>
-      <div class="vc">
-        <div class="vc-panel">
-          <div class="vc-img"><img src="assets/viral/stream.jpg" alt="The account that broke the story trading our market live on stream"></div>
-          <div class="vc-stats"><div><b>3.9M</b><span>views on the post that broke the story</span></div><div><b>106.5K</b><span>views on the reply linking our market</span></div></div>
-          <p class="vc-cap">A podcast scandal breaks on X. We open a market the next day, and the account that broke the story trades it <b>live on stream</b>.</p>
-        </div>
-        <div class="vc-panel">
-          <div class="vc-img top"><img src="assets/viral/lisa-market.png" alt="Melee market on LISA's Tarantino video, presale oversubscribed"></div>
-          <div class="vc-stats"><div><b>$85.4K</b><span>in presale bids from 308 bidders</span></div><div><b class="v">5.7×</b><span>oversubscribed</span></div></div>
-          <p class="vc-cap">A K-pop fan page we paid $10 shares our LISA market, then <b>asks to become a creator</b>.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section data-label="Traction">
-    <div class="frame">
-      <div class="corner-mark">10 — Traction</div>
-      <h2 class="title">Users created <span style="color:var(--primary)">12,800 markets</span> in October.</h2>
-      <p class="sub">By the end of the month they were opening <b>more than 500 markets a day</b>.</p>
-
-      <div class="tr-body2">
-        <div class="trc-row">
-          <div class="trc-card">
-            <div class="trc-lbl">Daily traders</div>
-            <div class="trc-n">68,900</div>
-            <svg class="trc-svg" viewBox="0 0 560 210" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="trcA" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
-                <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
-              </linearGradient></defs>
-              <path d="M0,210 L0.0,96.3 L20.7,56.4 L41.5,46.9 L62.2,42.3 L83.0,31.7 L103.7,37.5 L124.4,20.0 L145.2,32.9 L165.9,38.7 L186.7,34.1 L207.4,14.0 L228.1,34.1 L248.9,30.5 L269.6,83.3 L290.4,116.4 L311.1,97.5 L331.9,71.6 L352.6,72.8 L373.3,105.8 L394.1,96.3 L414.8,81.1 L435.6,70.4 L456.3,72.8 L477.0,61.0 L497.8,61.0 L518.5,56.7 L539.3,65.8 L560.0,42.8 L560,210 Z" fill="url(#trcA)"/>
-              <path d="M0.0,96.3 L20.7,56.4 L41.5,46.9 L62.2,42.3 L83.0,31.7 L103.7,37.5 L124.4,20.0 L145.2,32.9 L165.9,38.7 L186.7,34.1 L207.4,14.0 L228.1,34.1 L248.9,30.5 L269.6,83.3 L290.4,116.4 L311.1,97.5 L331.9,71.6 L352.6,72.8 L373.3,105.8 L394.1,96.3 L414.8,81.1 L435.6,70.4 L456.3,72.8 L477.0,61.0 L497.8,61.0 L518.5,56.7 L539.3,65.8 L560.0,42.8" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-              <circle cx="560.0" cy="42.8" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <div class="trc-axis"><span>2 Oct</span><span>29 Oct</span></div>
-          </div>
-          <div class="trc-card">
-            <div class="trc-lbl">User-created markets</div>
-            <div class="trc-n">12,800</div>
-            <svg class="trc-svg" viewBox="0 0 560 210" preserveAspectRatio="none" aria-hidden="true">
-              <defs><linearGradient id="trcC" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.34"/>
-                <stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/>
-              </linearGradient></defs>
-              <path d="M0,210 L0.0,208.0 L19.3,205.7 L38.6,203.4 L57.9,202.1 L77.2,200.8 L96.6,199.1 L115.9,197.8 L135.2,196.8 L154.5,195.7 L173.8,194.7 L193.1,191.3 L212.4,185.8 L231.7,180.4 L251.0,175.5 L270.3,169.1 L289.7,164.1 L309.0,159.6 L328.3,155.3 L347.6,148.4 L366.9,142.1 L386.2,136.6 L405.5,111.6 L424.8,93.2 L444.1,75.6 L463.4,64.0 L482.8,52.8 L502.1,40.8 L521.4,29.3 L540.7,22.6 L560.0,14.0 L560,210 Z" fill="url(#trcC)"/>
-              <path d="M0.0,208.0 L19.3,205.7 L38.6,203.4 L57.9,202.1 L77.2,200.8 L96.6,199.1 L115.9,197.8 L135.2,196.8 L154.5,195.7 L173.8,194.7 L193.1,191.3 L212.4,185.8 L231.7,180.4 L251.0,175.5 L270.3,169.1 L289.7,164.1 L309.0,159.6 L328.3,155.3 L347.6,148.4 L366.9,142.1 L386.2,136.6 L405.5,111.6 L424.8,93.2 L444.1,75.6 L463.4,64.0 L482.8,52.8 L502.1,40.8 L521.4,29.3 L540.7,22.6 L560.0,14.0" fill="none" style="stroke:var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
-              <circle cx="560.0" cy="14.0" r="4.5" style="fill:var(--primary)" vector-effect="non-scaling-stroke"/>
-            </svg>
-            <div class="trc-axis"><span>30 Sep</span><span>29 Oct</span></div>
-          </div>
-        </div>
-        <div class="tr-foot">
-          <div class="tr-f"><b>161,400</b><span>Traders in October</span></div>
-          <div class="tr-f"><b>8.8M</b><span>Trades</span></div>
-          <div class="tr-f"><b>100M+</b><span>Social media views · zero paid spend</span></div>
         </div>
       </div>
     </div>
