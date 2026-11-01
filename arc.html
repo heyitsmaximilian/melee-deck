@@ -2,7 +2,7 @@
 
 
 <meta charset="UTF-8">
-<title>Arc · Melee Deck</title>
+<title>Melee Deck</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&amp;family=Archivo:wght@400;700;800;900&amp;family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet">
@@ -912,8 +912,6 @@
     mask-image: linear-gradient(180deg, transparent 0%, #000 38%, #000 72%, transparent 100%), linear-gradient(90deg, transparent 0%, #000 42%);
   }
   .op-foot { position: absolute; left: 0; bottom: 0; font-size: 22px; line-height: 1.45; color: var(--text-muted); max-width: 820px; }
-  .op-strip { max-width: none; white-space: normal; right: 1000px; }
-  .op-strip .mkt-strip { margin-top: 0; }
   .yt2-cell.has-dots { gap: 16px; padding: 26px 40px; }
   .yt2-cell.has-dots .yt2-stat { font-size: 72px; }
   .yt2 .cfw2-dots { grid-template-columns: repeat(40, 8px); grid-auto-rows: 8px; gap: 5px; }
@@ -2252,6 +2250,71 @@
   /* Title: Geist tight tracking, like .v2-h1 / --tr-tight. */
   .frame .title { letter-spacing: -0.03em; }
   .slide-footnote { font-family: var(--font-legal); font-weight: 500; letter-spacing: 0.12em; }
+
+  /* === arc.html additions === */
+  .two { flex: 1; display: grid; grid-template-columns: 520px 1fr; gap: 80px; align-content: start; margin-top: 24px; }
+  .lead { font-size: 30px; line-height: 1.4; color: var(--text-secondary); max-width: 480px; }
+  .tl { position: relative; padding-left: 40px; display: flex; flex-direction: column; gap: 30px; }
+  .tl::before { content: ""; position: absolute; left: 7px; top: 10px; bottom: 10px; width: 2px; background: var(--border-hover); }
+  .tl-item { position: relative; display: grid; grid-template-columns: 240px 1fr; gap: 28px; align-items: baseline; }
+  .tl-item::before { content: ""; position: absolute; left: -40px; top: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--text-muted); }
+  .tl-item.is-next::before { background: var(--primary); box-shadow: 0 0 0 6px rgba(var(--primary-rgb),0.25); }
+  .tl-date { font-size: 28px; font-weight: 700; color: var(--text); }
+  .tl-txt { font-size: 28px; line-height: 1.35; color: var(--text-secondary); }
+  .tl-item.is-next .tl-date, .tl-item.is-next .tl-txt { color: var(--primary); }
+  .pre { flex: 1; display: grid; grid-template-columns: 260px 1fr 80px 1fr; column-gap: 24px; row-gap: 0; align-content: center; margin-top: 10px; }
+  .pre-h { font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; padding: 0 0 18px; border-bottom: 1px solid var(--border); }
+  .pre-h.open { color: var(--primary); }
+  .pre-lbl { font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: flex; align-items: center; border-bottom: 1px solid var(--border); }
+  .pre-cell { padding: 36px 0; border-bottom: 1px solid var(--border); }
+  .pre-arrow { display: flex; align-items: center; justify-content: center; font-size: 40px; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+  .pre-n { font-size: 84px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; }
+  .pre-cell.open .pre-n { color: var(--primary); }
+  .pre-note { margin-top: 12px; font-size: 24px; color: var(--text-secondary); }
+  .moat-grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-content: center; }
+  .s3-goal-card.moat { min-height: 400px; padding: 48px 44px; justify-content: center; }
+  .s3-goal-card.moat.soon { border-style: dashed; border-color: rgba(var(--primary-rgb),0.5); background: rgba(var(--primary-rgb),0.05); }
+  .moat-tick { position: absolute; top: 34px; right: 40px; font-size: 40px; color: var(--green); font-weight: 700; }
+  .moat-tick.soon { color: var(--primary); letter-spacing: 0.1em; font-size: 28px; }
+  .s3-goal-card.moat .s3-goal-title { font-size: 44px; margin-top: 10px; }
+  .s3-goal-card.moat .s3-goal-desc { font-size: 27px; }
+  .hub { flex: 1; display: grid; grid-template-columns: 1fr 360px 1fr; gap: 48px; align-items: center; margin-top: 10px; }
+  .hub-col { display: flex; flex-direction: column; gap: 44px; }
+  .hub-item { position: relative; padding-left: 36px; }
+  .hub-item::before { content: ""; position: absolute; left: 0; top: 16px; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); }
+  .hub-n { font-size: 36px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+  .hub-x { margin-top: 8px; font-size: 26px; line-height: 1.4; color: var(--text-secondary); }
+  .hub-mid { display: flex; align-items: center; justify-content: center; }
+  .hub-mid img { width: 300px; height: auto; }
+  .stg { position: relative; flex: 1; margin-top: 10px; }
+  .stg-curve { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .stg-card { position: absolute; width: 440px; padding: 32px 36px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-card); box-shadow: var(--card-shadow); }
+  .stg-card.st1 { left: 0; bottom: 0; }
+  .stg-card.st2 { left: 640px; bottom: 170px; }
+  .stg-card.st3 { right: 0; top: 0; border-color: rgba(var(--primary-rgb),0.45); }
+  .stg-n { font-family: var(--font-mono); font-size: 18px; letter-spacing: 0.2em; color: var(--primary); font-weight: 700; }
+  .stg-h { margin-top: 10px; font-size: 38px; font-weight: 700; letter-spacing: -0.02em; color: var(--text); }
+  .stg-x { margin-top: 12px; font-size: 25px; line-height: 1.4; color: var(--text-secondary); }
+  .uof-grid.built { grid-template-columns: repeat(4, 1fr); gap: 28px; margin-top: 10px; }
+  .uof-grid.built .uof-card { min-height: 0; padding: 40px 36px 40px; gap: 18px; }
+  .uof-grid.built .uof-name { font-size: 36px; }
+  .uof-grid.built .uof-points li { font-size: 24px; }
+  .uof-kick { font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--primary); font-weight: 700; }
+  .tgt { flex: 1; display: grid; grid-template-columns: 1fr 520px; gap: 64px; align-items: center; }
+  .tgt-chart { position: relative; height: 480px; }
+  .tgt-chart svg { position: absolute; left: 0; top: 60px; width: 1000px; height: 420px; }
+  .tgt-lbl { position: absolute; width: 200px; text-align: center; }
+  .tgt-lbl b { display: block; font-size: 44px; font-weight: 800; letter-spacing: -0.03em; color: var(--text); font-family: var(--font-numeral); }
+  .tgt-lbl span { display: block; margin-top: 6px; font-size: 18px; color: var(--text-muted); line-height: 1.3; }
+  .tgt-cards { display: flex; flex-direction: column; gap: 24px; }
+  .tgt-cards .uof-card { min-height: 0; padding: 36px 40px; gap: 12px; }
+  .tgt-cards .uof-name { font-size: 34px; }
+  .tgt-cards .uof-body { font-size: 24px; }
+  .imagine { margin-top: 56px; text-align: left; position: relative; z-index: 2; display: inline-block; }
+  .imagine p { font-size: 30px; font-weight: 600; color: var(--text); margin: 0 0 18px; }
+  .imagine ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .imagine li { font-size: 28px; color: var(--text-secondary); padding-left: 28px; position: relative; }
+  .imagine li::before { content: ""; position: absolute; left: 0; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
 </style>
 
 </head>
@@ -2268,7 +2331,7 @@
       <p class="sub">The creator-powered prediction market.</p>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>01 / 13</span>
+        <span>01 / 17</span>
       </div>
     </div>
   </section>
@@ -2277,6 +2340,7 @@
     <div class="frame">
       <div class="corner-mark">02 — The idea</div>
       <h2 class="title">Imagine opening a market on anything, <span style="color:var(--primary)">the minute it happens.</span></h2>
+      <p class="sub">We built a prediction market where anyone can open a market and earn from the trading on it. No listing team. No market maker.</p>
 
       <div class="s4-wrap">
         <div class="s4-row">
@@ -2319,54 +2383,35 @@
     </div>
   </section>
 
-  <section data-label="Pattern">
+  <section data-label="History">
     <div class="frame">
       <div class="corner-mark">03 — The pattern</div>
-      <h2 class="title">Every medium exploded when publishing opened up. <span style="color:var(--primary)">Prediction markets haven't yet.</span></h2>
-      <div class="yt2">
-        <div class="yt2-corner"></div>
-        <div class="yt2-colhead">Gatekept</div>
-        <div class="yt2-colhead open">Open</div>
-        <div class="yt2-rowlbl">Video</div>
-        <div class="yt2-cell">
-          <div class="yt2-stat">182 <span class="yt2-u">scripted series</span></div>
-          <div class="yt2-body">US television the year YouTube launched. A network approved every one.</div>
-        </div>
-        <div class="yt2-cell open">
-          <div class="yt2-stat">500 <span class="yt2-u">hours uploaded a minute</span></div>
-          <div class="yt2-body">Anyone can publish.</div>
-        </div>
-        <div class="yt2-rowlbl">Prediction markets</div>
-        <div class="yt2-cell">
-          <div class="yt2-stat">~10,000 <span class="yt2-u">markets</span></div>
-          <div class="yt2-body">Polymarket and Kalshi. A listing team approves every one, a market maker prices it.</div>
-        </div>
-        <div class="yt2-cell open">
-          <div class="yt2-stat">Any question <span class="yt2-u">in a minute</span></div>
-          <div class="yt2-body">Anyone can open one, on Melee.</div>
-        </div>
+      <h2 class="title">Prediction markets opened to traders one step at a time. <span style="color:var(--primary)">Creators are next.</span></h2>
+      <div class="two">
+        <p class="lead">Each step widened who could trade. None widened who could create.</p>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-date">1988</div><div class="tl-txt">Iowa Electronic Markets. The first prediction market, built for research.</div></div>
+        <div class="tl-item"><div class="tl-date">2001</div><div class="tl-txt">Intrade opens prediction markets to the public.</div></div>
+        <div class="tl-item"><div class="tl-date">2014</div><div class="tl-txt">PredictIt launches under a CFTC no-action letter.</div></div>
+        <div class="tl-item"><div class="tl-date">2020</div><div class="tl-txt">Kalshi is designated by the CFTC. Polymarket launches.</div></div>
+        <div class="tl-item"><div class="tl-date">2026</div><div class="tl-txt">$45B a month traded, on markets two companies list.</div></div>
+        <div class="tl-item is-next"><div class="tl-date">Next</div><div class="tl-txt">Anyone opens a market.</div></div>
+      </div>
       </div>
     </div>
   </section>
 
-  <section data-label="Opportunity">
+  <section data-label="Precedent">
     <div class="frame">
       <div class="corner-mark">04 — The opportunity</div>
-      <h2 class="title">Two companies trade $45B a month. <span style="color:var(--primary)">200M creators have questions nobody lists.</span></h2>
-      <div class="op">
-        <div class="op-row op-row1">
-          <div class="op-n">~10,000 <span class="op-u">markets</span></div>
-          <div class="op-body">Everything Polymarket and Kalshi list today.</div>
-          <div class="op-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
-        </div>
-        <div class="op-row op-row2">
-          <div class="op-field" aria-hidden="true"></div>
-          <div class="op-n big">200M <span class="op-u">creators</span></div>
-          <div class="op-body">Everyone with an audience and a question it is arguing about.</div>
-        </div>
-        <div class="op-foot">$45B a month is Polymarket and Kalshi (The Block, DeFi Rate). Global sports betting is $655B a year (Macquarie).</div>
-      </div></div>
+      <h2 class="title">Every time creation went permissionless, <span style="color:var(--primary)">supply grew a thousandfold.</span></h2>
+      <div class="pre">
+        <div class="pre-h"></div><div class="pre-h">Curated</div><div class="pre-h"></div><div class="pre-h open">Permissionless</div>
+        <div class="pre-lbl">Stocks</div><div class="pre-cell"><div class="pre-n">~6,000</div><div class="pre-note">companies listed on NYSE and Nasdaq</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12M</div><div class="pre-note">tokens launched on Pump.fun since 2024</div></div>
+        <div class="pre-lbl">Video</div><div class="pre-cell"><div class="pre-n">182</div><div class="pre-note">scripted series on US television in 2005</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">500 hrs</div><div class="pre-note">uploaded to YouTube every minute</div></div>
+        <div class="pre-lbl">Prediction markets</div><div class="pre-cell"><div class="pre-n">~10,000</div><div class="pre-note">markets on Polymarket and Kalshi</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12,800</div><div class="pre-note">opened by users on Melee in October</div></div>
       </div>
+      <div class="slide-footnote">Sources: NYSE, Nasdaq; Pump.fun via DefiLlama (June 2026); YouTube; Melee metrics, October 2026, testnet.</div>
     </div>
   </section>
 
@@ -2374,6 +2419,7 @@
     <div class="frame">
       <div class="corner-mark">05 — The mechanism</div>
       <h2 class="title">The PMM prices any market from the first dollar. <span style="color:var(--primary)">No market maker needed.</span></h2>
+      <p class="sub">Order books need a market maker. Parimutuel pools don't, but you can't trade in and out of them. The Parimutuel Market Maker is a pool that prices every trade and pays its liquidity providers.</p>
 
       <div class="cmp">
         <div class="hdr"></div>
@@ -2406,54 +2452,65 @@
     </div>
   </section>
 
-  <section data-label="Competitive">
+  <section data-label="Road">
     <div class="frame">
-      <div class="corner-mark">06 — Why Melee</div>
-      <h2 class="title">Creator markets need an exchange with no market maker. <span style="color:var(--primary)">Only Melee has one.</span></h2>
-
-      <div class="comp">
-        <div></div>
-        <div class="comp-hdr is-melee">
-          <div class="comp-hdr-co">Melee</div>
-          <div class="comp-hdr-role">Permissionless</div>
-        </div>
-        <div class="comp-hdr">
-          <div class="comp-hdr-co">Polymarket</div>
-          <div class="comp-hdr-role">Curated · crypto</div>
-        </div>
-        <div class="comp-hdr">
-          <div class="comp-hdr-co">Kalshi</div>
-          <div class="comp-hdr-role">Curated · regulated</div>
-        </div>
-
-        <div class="comp-rowlbl">Markets</div>
-        <div class="comp-cell is-melee"><b>Creator markets</b></div>
-        <div class="comp-cell">Curated markets</div>
-        <div class="comp-cell">Curated markets</div>
-
-        <div class="comp-rowlbl">Distribution</div>
-        <div class="comp-cell is-melee"><b>Creator · B2B</b></div>
-        <div class="comp-cell">In-house</div>
-        <div class="comp-cell">In-house · brokers</div>
-
-        <div class="comp-rowlbl">Liquidity</div>
-        <div class="comp-cell is-melee"><b>Passive liquidity</b></div>
-        <div class="comp-cell">Market makers</div>
-        <div class="comp-cell">Market makers</div>
-
-        <div class="comp-rowlbl">Payouts</div>
-        <div class="comp-cell is-melee"><b>Ratchet with volatility</b></div>
-        <div class="comp-cell">Fixed at entry</div>
-        <div class="comp-cell">Fixed at entry</div>
-
+      <div class="corner-mark">06 — The road</div>
+      <h2 class="title">The road to get here.</h2>
+      <div class="two">
+        <p class="lead">We designed a new market mechanism and shipped it in under a year.</p>
+      <div class="tl">
+        <div class="tl-item"><div class="tl-date">November 2025</div><div class="tl-txt">Private alpha. The first bonding-curve parimutuel prediction market.</div></div>
+        <div class="tl-item"><div class="tl-date">June 2026</div><div class="tl-txt">PMM litepaper published.</div></div>
+        <div class="tl-item"><div class="tl-date">June 2026</div><div class="tl-txt">Sponsored transactions proven on devnet. No SOL, no seed phrase.</div></div>
+        <div class="tl-item"><div class="tl-date">8 September 2026</div><div class="tl-txt">Testnet opens.</div></div>
+        <div class="tl-item"><div class="tl-date">1 October 2026</div><div class="tl-txt">User-created markets open.</div></div>
+        <div class="tl-item"><div class="tl-date">October 2026</div><div class="tl-txt">12,800 markets created by users. 161,400 traders.</div></div>
+        <div class="tl-item is-next"><div class="tl-date">Q2 2027</div><div class="tl-txt">Order book hybrid on mainnet (planned).</div></div>
       </div>
+      </div>
+    </div>
+  </section>
 
+  <section data-label="Moat">
+    <div class="frame">
+      <div class="corner-mark">07 — Why Melee</div>
+      <h2 class="title">Creator markets are a new market. <span style="color:var(--primary)">Three things make it ours.</span></h2>
+      <div class="moat-grid">
+        <div class="s3-goal-card moat ok"><span class="moat-tick">✓</span><div class="s3-goal-title">The mechanism</div><div class="s3-goal-desc">The only pricing engine that opens a market with no market maker. Live on testnet.</div></div>
+        <div class="s3-goal-card moat ok"><span class="moat-tick">✓</span><div class="s3-goal-title">The creator network</div><div class="s3-goal-desc">Creators are paid on every trade in their market, so they keep opening them. 12,800 in October.</div></div>
+        <div class="s3-goal-card moat soon"><span class="moat-tick soon">· · ·</span><div class="s3-goal-title">Liquidity effects</div><div class="s3-goal-desc">Passive liquidity earns on the PMM. Vaults will bring DeFi capital to every market on day one.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Participants">
+    <div class="frame">
+      <div class="corner-mark">08 — Participants</div>
+      <h2 class="title">Five kinds of participant <span style="color:var(--primary)">make a market.</span></h2>
+      <div class="hub">
+        <div class="hub-col"><div class="hub-item"><div class="hub-n">Creators</div><div class="hub-x">Open the market and set their fee.</div></div><div class="hub-item"><div class="hub-n">Presale backers</div><div class="hub-x">Fund the pool before trading opens and earn the most.</div></div><div class="hub-item"><div class="hub-n">Affiliates</div><div class="hub-x">Bring traders and are paid from the creator's share.</div></div></div>
+        <div class="hub-mid"><img src="assets/melee-lockup.svg" alt="Melee"></div>
+        <div class="hub-col"><div class="hub-item"><div class="hub-n">Traders</div><div class="hub-x">Buy, switch outcomes, cash out early.</div></div><div class="hub-item"><div class="hub-n">Resolvers</div><div class="hub-x">Settle the market onchain and are paid per market.</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Liquidity">
+    <div class="frame">
+      <div class="corner-mark">09 — Liquidity</div>
+      <h2 class="title">Liquidity begets liquidity.</h2>
+      <div class="stg">
+        <svg class="stg-curve" viewBox="0 0 1728 520" preserveAspectRatio="none" aria-hidden="true"><path d="M0,500 C500,480 900,380 1300,160 C1500,50 1650,10 1728,0" fill="none" style="stroke:var(--primary)" stroke-width="3" opacity="0.6"/></svg>
+        <div class="stg-card st1"><div class="stg-n">01</div><div class="stg-h">Presale</div><div class="stg-x">Early backers fund the pool at one price before trading opens.</div></div>
+        <div class="stg-card st2"><div class="stg-n">02</div><div class="stg-h">PMM trading</div><div class="stg-x">The pool prices every trade. Passive liquidity earns.</div></div>
+        <div class="stg-card st3"><div class="stg-n">03</div><div class="stg-h">Order book hybrid</div><div class="stg-x">Professional traders quote the biggest markets. Q2 2027.</div></div>
+      </div>
     </div>
   </section>
 
   <section data-label="Distribution">
     <div class="frame">
-      <div class="corner-mark">07 — Distribution</div>
+      <div class="corner-mark">10 — Distribution</div>
       <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
       <div class="sp">
         <div class="sp-seed">
@@ -2499,7 +2556,7 @@
 
   <section data-label="Traction">
     <div class="frame">
-      <div class="corner-mark">08 — Traction</div>
+      <div class="corner-mark">11 — Traction</div>
       <h2 class="title">Users created <span style="color:var(--primary)">12,800 markets</span> on testnet in October.</h2>
 
       <div class="tr-body2">
@@ -2547,34 +2604,23 @@
     </div>
   </section>
 
-  <section data-label="Product flow">
+  <section data-label="Built">
     <div class="frame">
-      <div class="corner-mark">09 — What's built</div>
-      <h2 class="title">Exchange, pricing engine, wallet rails and creation tools, <span style="color:var(--primary)">built and live on testnet.</span></h2>
-      <div class="lm">
-        <svg class="lm-svg" viewBox="0 0 1728 680" aria-hidden="true"><defs><marker id="lmA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 0L10 5 0 10z" fill="#7A768A"/></marker>
-          <marker id="lmP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto"><path d="M0 0L10 5 0 10z" fill="var(--primary)"/></marker></defs><line class="lm-arrow" x1="254" y1="190" x2="288" y2="190" marker-end="url(#lmA)"/><line class="lm-arrow" x1="550" y1="190" x2="583" y2="190" marker-end="url(#lmA)"/><line class="lm-arrow" x1="845" y1="190" x2="879" y2="190" marker-end="url(#lmA)"/><line class="lm-arrow" x1="1141" y1="190" x2="1174" y2="190" marker-end="url(#lmA)"/><line class="lm-arrow" x1="1436" y1="190" x2="1470" y2="190" marker-end="url(#lmA)"/><path class="lm-loop" d="M 1603.0 101.0 V 52 Q 1603.0 34 1585.0 34 H 143.0 Q 125.0 34 125.0 52 V 97.0" marker-end="url(#lmP)"/><text class="lm-lbl" x="864.0" y="20" text-anchor="middle">Fees flow back to whoever made the market</text><line class="lm-drop" x1="125.0" y1="279.0" x2="125.0" y2="365.0"/><line class="lm-drop" x1="421.0" y1="279.0" x2="421.0" y2="365.0"/><line class="lm-drop" x1="716.0" y1="279.0" x2="716.0" y2="365.0"/><line class="lm-drop" x1="1012.0" y1="279.0" x2="1012.0" y2="365.0"/><line class="lm-drop" x1="1307.0" y1="279.0" x2="1307.0" y2="365.0"/><line class="lm-drop" x1="1603.0" y1="279.0" x2="1603.0" y2="365.0"/><line class="lm-tray" x1="125.0" y1="505.0" x2="125.0" y2="585.0"/><line class="lm-tray" x1="421.0" y1="505.0" x2="421.0" y2="585.0"/><line class="lm-tray" x1="716.0" y1="505.0" x2="716.0" y2="585.0"/><line class="lm-tray" x1="1012.0" y1="505.0" x2="1012.0" y2="585.0"/><line class="lm-tray" x1="1307.0" y1="505.0" x2="1307.0" y2="585.0"/><line class="lm-tray" x1="1603.0" y1="505.0" x2="1603.0" y2="585.0"/></svg>
-          <div class="lm-node " style="left:0px"><div class="lm-num">01</div><b>Create</b><span>A question becomes a market</span></div>
-          <div class="lm-comp" style="left:0px"><div class="lm-k">Runs on</div><div class="lm-v">Creation assistant</div></div>
-          <div class="lm-node " style="left:296px"><div class="lm-num">02</div><b>Discover</b><span>It reaches the right feeds</span></div>
-          <div class="lm-comp" style="left:296px"><div class="lm-k">Runs on</div><div class="lm-v">Discovery</div></div>
-          <div class="lm-node is-core" style="left:591px"><div class="lm-num">03</div><b>Presale</b><span>It opens funded</span></div>
-          <div class="lm-comp" style="left:591px"><div class="lm-k">Runs on</div><div class="lm-v">Presale pool</div></div>
-          <div class="lm-node is-core" style="left:887px"><div class="lm-num">04</div><b>Trade</b><span>Priced from the first dollar</span></div>
-          <div class="lm-comp" style="left:887px"><div class="lm-k">Runs on</div><div class="lm-v">PMM + cashout LP</div></div>
-          <div class="lm-node " style="left:1182px"><div class="lm-num">05</div><b>Resolve</b><span>Settled from the source</span></div>
-          <div class="lm-comp" style="left:1182px"><div class="lm-k">Runs on</div><div class="lm-v">Resolver marketplace</div></div>
-          <div class="lm-node " style="left:1478px"><div class="lm-num">06</div><b>Settle</b><span>Paid from the pool</span></div>
-          <div class="lm-comp" style="left:1478px"><div class="lm-k">Runs on</div><div class="lm-v">Claim + fee split</div></div>
-        <div class="lm-rails"><span class="lm-rk">Rails</span><span class="lm-mod">USDT<small>balances</small></span><span class="lm-mod">Embedded wallets<small>created at login</small></span><span class="lm-mod">Melee pays the gas<small>no SOL, no seed phrase</small></span><span class="lm-mod">Solana<small>on-chain program</small></span></div>
+      <div class="corner-mark">12 — What we built</div>
+      <h2 class="title">We have built <span style="color:var(--primary)">four products</span> from scratch.</h2>
+      <div class="uof-grid built">
+        <div class="uof-card primary"><div class="uof-name">Pricing engine</div><ul class="uof-points"><li>Parimutuel Market Maker on Solana</li><li>Presale</li><li>Cashout LP</li><li>Minimum payout on every position</li></ul></div>
+        <div class="uof-card"><div class="uof-name">Platform</div><ul class="uof-points"><li>Web app</li><li>Embedded wallet created at login</li><li>Melee pays the gas</li><li>USDT balances</li></ul></div>
+        <div class="uof-card"><div class="uof-name">Creation</div><ul class="uof-points"><li>AI creation assistant writes the rules</li><li>Resolver marketplace and API</li><li>Templates for sport, culture and crypto</li></ul></div>
+        <div class="uof-card"><div class="uof-name">Distribution engine</div><ul class="uof-points"><li>Autonomous posting, hundreds a day</li><li>Affiliates and referrals</li><li>Discovery feed</li></ul></div>
       </div>
     </div>
   </section>
 
   <section data-label="Team">
     <div class="frame">
-      <div class="corner-mark">10 — Team</div>
-      <h2 class="title">Backed by Variant, DBA and <span style="color:var(--primary)">the founder of Solana.</span></h2>
+      <div class="corner-mark">13 — Team</div>
+      <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
 
       <div class="team-row">
         <div class="team-card">
@@ -2609,6 +2655,11 @@
       </div>
 
       <div class="backed-block">
+        <div class="backed-head">Backed by</div>
+        <div class="backed-group">
+          <div class="backed-group-label">Institutional</div>
+          <div class="backed-names">Variant<span class="dot"></span>DBA</div>
+        </div>
         <div class="backed-group">
           <div class="backed-group-label">Angels</div>
           <div class="backed-names">
@@ -2621,18 +2672,33 @@
     </div>
   </section>
 
-  <section data-label="The Loop">
+  <section data-label="Target">
     <div class="frame">
-      <div class="corner-mark">11 — Business model</div>
-      <h2 class="title">1% to Melee. <span style="color:var(--primary)">The rest to the people.</span></h2>
-      <p class="sub">Melee keeps 1%. Creator and resolver fees are set per market and paid out on every trade.</p>
-      <div class="lp-wrap"><svg class="lp" viewBox="0 0 1728 620" role="img" aria-label="Melee value loop"><defs><marker id="lpArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head"/></marker><marker id="lpArrowP" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="lp-head-p"/></marker></defs><line class="lp-arrow" x1="279.0" y1="135" x2="345.0" y2="135" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="609.0" y1="135" x2="675.0" y2="135" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="939.0" y1="135" x2="1005.0" y2="135" marker-end="url(#lpArrow)"/><line class="lp-arrow" x1="1269.0" y1="135" x2="1335.0" y2="135" marker-end="url(#lpArrow)"/><path class="lp-arrow lp-return" d="M 1470 198.0 V 416.0" marker-end="url(#lpArrowP)"/><line class="lp-arrow lp-return" x1="1341.0" y1="485" x2="1275.0" y2="485" marker-end="url(#lpArrowP)"/><line class="lp-arrow lp-return" x1="1011.0" y1="485" x2="945.0" y2="485" marker-end="url(#lpArrowP)"/><line class="lp-arrow lp-return" x1="681.0" y1="485" x2="615.0" y2="485" marker-end="url(#lpArrowP)"/><path class="lp-arrow lp-return" d="M 480 422.0 V 204.0" marker-end="url(#lpArrowP)"/><g class="lp-node "><rect x="25" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="150" y="127" text-anchor="middle">Culture</text><text class="lp-sub" x="150" y="167" text-anchor="middle">A moment happens</text></g><g class="lp-node "><rect x="355" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="480" y="127" text-anchor="middle">Creator</text><text class="lp-sub" x="480" y="167" text-anchor="middle">Turns it into a market</text></g><g class="lp-node is-core"><rect x="685" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="810" y="127" text-anchor="middle">Market</text><text class="lp-sub" x="810" y="167" text-anchor="middle">Live in a minute</text></g><g class="lp-node is-core"><rect x="1015" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="1140" y="127" text-anchor="middle">PMM</text><text class="lp-sub" x="1140" y="167" text-anchor="middle">From the first dollar</text></g><g class="lp-node "><rect x="1345" y="76" width="250" height="118" rx="20"/><text class="lp-name" x="1470" y="127" text-anchor="middle">Traders</text><text class="lp-sub" x="1470" y="167" text-anchor="middle">Find it in their feed</text></g><g class="lp-node "><rect x="1345" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="1470" y="477" text-anchor="middle">Fees</text><text class="lp-sub" x="1470" y="517" text-anchor="middle">On every trade</text></g><g class="lp-node is-melee"><rect x="1015" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="1140" y="477" text-anchor="middle">Melee</text><text class="lp-sub" x="1140" y="517" text-anchor="middle">1% of every trade</text></g><g class="lp-node "><rect x="685" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="810" y="477" text-anchor="middle">Resolver fee</text><text class="lp-sub" x="810" y="517" text-anchor="middle">Variable, per market</text></g><g class="lp-node "><rect x="355" y="426" width="250" height="118" rx="20"/><text class="lp-name" x="480" y="477" text-anchor="middle">Creator share</text><text class="lp-sub" x="480" y="517" text-anchor="middle">Set by the creator</text></g></svg></div>
+      <div class="corner-mark">14 — The target</div>
+      <h2 class="title">We're aiming for <span style="color:var(--primary)">100,000 markets a month.</span></h2>
+      <div class="tgt">
+        <div class="tgt-chart">
+          <svg viewBox="0 0 1000 420" aria-hidden="true">
+            <line x1="0" y1="400" x2="1000" y2="400" stroke="#2A2638" stroke-width="2"/>
+            <rect x="60" y="355" width="200" height="45" rx="8" fill="#5A5670"/>
+            <rect x="400" y="295" width="200" height="105" rx="8" fill="#4B36A8"/>
+            <rect x="740" y="50" width="200" height="350" rx="8" style="fill:var(--primary)"/>
+          </svg>
+          <div class="tgt-lbl" style="left:60px;top:300px"><b>12,800</b><span>October 2026 · testnet</span></div>
+          <div class="tgt-lbl" style="left:400px;top:240px"><b>30,000</b><span>1,000 a day · mainnet milestone</span></div>
+          <div class="tgt-lbl" style="left:740px;top:-6px"><b>100,000</b><span>Target · a month</span></div>
+        </div>
+        <div class="tgt-cards">
+          <div class="uof-card primary"><div class="uof-kick">Immediate</div><div class="uof-name">Trading fees</div><div class="uof-body">1% of every trade to Melee.</div></div>
+          <div class="uof-card"><div class="uof-kick">Set per market</div><div class="uof-name">Creator and resolver fees</div><div class="uof-body">Set by the creator at launch, paid out on every trade.</div></div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section data-label="Use of funds">
     <div class="frame">
-      <div class="corner-mark">12 — The raise</div>
+      <div class="corner-mark">15 — The raise</div>
       <h2 class="title">$5M to reach <span style="color:var(--primary)">10,000 creators on mainnet.</span></h2>
 
       <div class="uof-grid two">
@@ -2663,10 +2729,71 @@
       <div class="s1-glow"></div>
       <div class="s1-wordmark"><img src="assets/melee-lockup.svg" alt="Melee"></div>
       <h1 class="headline">Every question <em>will have a market.</em></h1>
-      
+      <div class="imagine"><p>Imagine a world</p><ul><li>where any creator opens a market the minute something happens.</li><li>where every community prices its own questions.</li><li>where the people who build a market are the ones paid for it.</li></ul></div>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>13 / 13</span>
+        <span>16 / 17</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="QA">
+    <div class="s1">
+      <div class="s1-glow"></div>
+      <div class="s1-wordmark"><img src="assets/melee-lockup.svg" alt="Melee"></div>
+      <h1 class="headline"><em>Q&amp;A.</em></h1>
+      <div class="s1-footer">
+        <span>melee.markets</span>
+        <span>17 / 17</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-label="Competitive">
+    <div class="frame">
+      <div class="corner-mark">Appendix — Competitive</div>
+      <h2 class="title">Curated networks vs <span style="color:var(--primary)">open platforms.</span></h2>
+
+      <div class="comp">
+        <div></div>
+        <div class="comp-hdr is-melee">
+          <div class="comp-hdr-co">Melee</div>
+          <div class="comp-hdr-role">Permissionless</div>
+        </div>
+        <div class="comp-hdr">
+          <div class="comp-hdr-co">Polymarket</div>
+          <div class="comp-hdr-role">Curated · crypto</div>
+        </div>
+        <div class="comp-hdr">
+          <div class="comp-hdr-co">Kalshi</div>
+          <div class="comp-hdr-role">Curated · regulated</div>
+        </div>
+
+        <div class="comp-rowlbl">Markets</div>
+        <div class="comp-cell is-melee"><b>Creator markets</b></div>
+        <div class="comp-cell">Curated markets</div>
+        <div class="comp-cell">Curated markets</div>
+
+        <div class="comp-rowlbl">Distribution</div>
+        <div class="comp-cell is-melee"><b>Creator · B2B</b></div>
+        <div class="comp-cell">In-house</div>
+        <div class="comp-cell">In-house · brokers</div>
+
+        <div class="comp-rowlbl">Liquidity</div>
+        <div class="comp-cell is-melee"><b>Passive liquidity</b></div>
+        <div class="comp-cell">Market makers</div>
+        <div class="comp-cell">Market makers</div>
+
+        <div class="comp-rowlbl">Payouts</div>
+        <div class="comp-cell is-melee"><b>Ratchet with volatility</b></div>
+        <div class="comp-cell">Fixed at entry</div>
+        <div class="comp-cell">Fixed at entry</div>
+
+      </div>
+
+      <div class="comp-callout-wrap">
+        <div class="comp-callout-lbl">Key idea</div>
+        <div class="comp-callout-body">Centralized platforms cannot allow user generated markets because <b>every market must be cleared by a market maker.</b></div>
       </div>
     </div>
   </section>
@@ -2951,4 +3078,6 @@
 
 
 
-<!-- deploy 1793557522 -->
+
+
+<!-- deploy 1793560692 -->
