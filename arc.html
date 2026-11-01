@@ -2440,6 +2440,17 @@
   .split.top { align-items: start; height: auto; }
   .split.top .split-l { padding-top: 40px; }
   .split.top .split-r { align-self: start; margin-top: 40px; }
+
+  /* slide 04: nested frontier circles */
+  .nest { position: relative; width: 760px; height: 760px; margin: 0 auto; }
+  .nest svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .nest-l { position: absolute; left: 0; right: 0; text-align: center; }
+  .nest-l.n1 { top: 92px; } .nest-l.n2 { top: 350px; } .nest-l.n3 { top: 590px; }
+  .nest-k { font-family: var(--font-mono); font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: var(--text-secondary); }
+  .nest-l.n1 .nest-k { color: var(--primary); }
+  .nest-n { margin-top: 8px; font-family: var(--font-numeral); font-size: 56px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
+  .nest-l.n1 .nest-n { color: var(--primary); }
+  .nest-s { margin-top: 6px; font-size: 20px; color: var(--text-secondary); }
 </style>
 
 </head>
@@ -2480,34 +2491,45 @@
 
   <section data-label="History">
     <div class="frame">
-      <div class="corner-mark">03 — The pattern</div>
+      <div class="corner-mark">03 — The frontier</div>
       <div class="split">
         <div class="split-l">
-      <h2 class="title">Prediction markets opened to traders one step at a time. <span style="color:var(--primary)">Creators are next.</span></h2>
-      <p class="sub">Every step so far widened who could trade. <b>Melee is the first to widen who can create.</b></p>
+      <h2 class="title">Creator markets are <span style="color:var(--primary)">the next frontier</span> for prediction markets.</h2>
+      <p class="sub">Each step added a new kind of market. <b>Melee opens every question a creator can ask.</b></p>
         </div>
         <div class="split-r">
       <div class="tl">
-        <div class="tl-item"><div class="tl-date">1988</div><div class="tl-txt">Iowa Electronic Markets. The first prediction market, built for research.</div></div>
-        <div class="tl-item"><div class="tl-date">2001</div><div class="tl-txt">Intrade opens prediction markets to the public.</div></div>
-        <div class="tl-item"><div class="tl-date">2020</div><div class="tl-txt">Polymarket takes prediction markets onchain, open to anyone with a crypto wallet.</div></div>
-        <div class="tl-item is-next"><div class="tl-date">Now</div><div class="tl-txt">Anyone can launch a prediction market via the Parimutuel Market Maker.</div></div>
+        <div class="tl-item"><div class="tl-date">1988</div><div class="tl-txt">Iowa Electronic Markets trades <b>elections</b>.</div></div>
+        <div class="tl-item"><div class="tl-date">2001</div><div class="tl-txt">Intrade opens <b>world events</b> to the public.</div></div>
+        <div class="tl-item"><div class="tl-date">2020</div><div class="tl-txt">Polymarket takes <b>crypto and news</b> onchain.</div></div>
+        <div class="tl-item"><div class="tl-date">2025</div><div class="tl-txt"><b>Sports</b> grows to about 85% of Kalshi's volume.</div></div>
+        <div class="tl-item is-next"><div class="tl-date">Now</div><div class="tl-txt"><b>Every question a creator asks</b>, priced by the Parimutuel Market Maker.</div></div>
       </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section data-label="Precedent">
+  <section data-label="Frontier">
     <div class="frame">
       <div class="corner-mark">04 — The opportunity</div>
-      <h2 class="title">When creation goes permissionless, <span style="color:var(--primary)">supply grows a thousandfold.</span></h2>
-      <p class="sub">Permissionless creation produced a thousand times the supply in stocks and in video. <b>Prediction markets are next.</b></p>
-      <div class="pre">
-        <div class="pre-h"></div><div class="pre-h">Curated</div><div class="pre-h"></div><div class="pre-h open">Permissionless</div>
-        <div class="pre-lbl">Stocks</div><div class="pre-cell"><div class="pre-n">~6,000</div><div class="pre-note">companies listed on NYSE and Nasdaq</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12M</div><div class="pre-note">tokens launched on Pump.fun since 2024</div></div>
-        <div class="pre-lbl">Video</div><div class="pre-cell"><div class="pre-n">182</div><div class="pre-note">scripted series on US television in 2005</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">500 hrs</div><div class="pre-note">uploaded to YouTube every minute</div></div>
-        <div class="pre-lbl">Prediction markets</div><div class="pre-cell"><div class="pre-n">~10,000</div><div class="pre-note">markets on Polymarket and Kalshi</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12,800</div><div class="pre-note">opened by users on Melee in October</div></div>
+      <div class="split">
+        <div class="split-l">
+      <h2 class="title">Each frontier was <span style="color:var(--primary)">bigger than the last.</span></h2>
+      <p class="sub">One election market traded $3.2B in 2024. Legal sports betting handles over $600B a year. <b>Creator markets cover every other question.</b></p>
+        </div>
+        <div class="split-r">
+      <div class="nest">
+        <svg viewBox="0 0 760 760" aria-hidden="true">
+          <circle cx="380" cy="380" r="376" fill="rgba(128,97,253,0.08)" stroke="rgba(128,97,253,0.35)" stroke-width="2" stroke-dasharray="6 10"/>
+          <circle cx="380" cy="526" r="230" fill="rgba(128,97,253,0.20)"/>
+          <circle cx="380" cy="648" r="108" fill="rgba(128,97,253,0.55)"/>
+        </svg>
+        <div class="nest-l n1"><div class="nest-k">Creator markets</div><div class="nest-n">Every question</div></div>
+        <div class="nest-l n2"><div class="nest-k">Sports</div><div class="nest-n">$600B+</div><div class="nest-s">a year in legal betting</div></div>
+        <div class="nest-l n3"><div class="nest-k">Elections</div><div class="nest-n">$3.2B</div><div class="nest-s">one market, 2024</div></div>
+      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2926,6 +2948,19 @@
       <div class="comp-callout-wrap">
         <div class="comp-callout-lbl">Key idea</div>
         <div class="comp-callout-body">Centralized platforms cannot allow user generated markets because <b>every market must be cleared by a market maker.</b></div>
+      </div>
+    </div>
+  </section>
+  <section data-label="Precedent appendix">
+    <div class="frame">
+      <div class="corner-mark">Appendix — Precedent</div>
+      <h2 class="title">When creation goes permissionless, <span style="color:var(--primary)">supply grows a thousandfold.</span></h2>
+      <p class="sub">Permissionless creation produced a thousand times the supply in stocks and in video. <b>Prediction markets are next.</b></p>
+      <div class="pre">
+        <div class="pre-h"></div><div class="pre-h">Curated</div><div class="pre-h"></div><div class="pre-h open">Permissionless</div>
+        <div class="pre-lbl">Stocks</div><div class="pre-cell"><div class="pre-n">~6,000</div><div class="pre-note">companies listed on NYSE and Nasdaq</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12M</div><div class="pre-note">tokens launched on Pump.fun since 2024</div></div>
+        <div class="pre-lbl">Video</div><div class="pre-cell"><div class="pre-n">182</div><div class="pre-note">scripted series on US television in 2005</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">500 hrs</div><div class="pre-note">uploaded to YouTube every minute</div></div>
+        <div class="pre-lbl">Prediction markets</div><div class="pre-cell"><div class="pre-n">~10,000</div><div class="pre-note">markets on Polymarket and Kalshi</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12,800</div><div class="pre-note">opened by users on Melee in October</div></div>
       </div>
     </div>
   </section>
