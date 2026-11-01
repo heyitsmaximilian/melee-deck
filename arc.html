@@ -2256,16 +2256,20 @@
   .feed { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-top: 18px; overflow: hidden; position: relative; }
   .feed::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 110px; background: linear-gradient(180deg, rgba(0,0,0,0), #000 90%); pointer-events: none; }
   .feed-col { display: flex; flex-direction: column; gap: 22px; min-height: 0; }
-  .mk { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-card); padding: 26px 28px 24px; box-shadow: var(--card-shadow); transition: opacity .55s ease, transform .55s ease; }
+  .mk { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-card); padding: 24px 26px 22px; box-shadow: var(--card-shadow); transition: opacity .55s ease, transform .55s ease; }
   .mk.enter { opacity: 0; transform: translateY(-26px); }
   .mk.leave { opacity: 0; transform: translateY(18px); }
-  .mk-top { display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
-  .mk-cat { color: var(--primary); }
-  .mk-top .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px rgba(63,207,142,0.8); }
+  .mk-top { display: flex; align-items: center; gap: 12px; font-size: 18px; color: var(--text-secondary); }
+  .mk-av { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-hover); }
+  .mk-handle { font-weight: 600; color: var(--text); }
+  .mk-cat { margin-left: auto; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
   .mk-q { margin-top: 14px; font-size: 27px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); }
-  .mk-bot { margin-top: 18px; display: flex; align-items: center; gap: 14px; font-size: 18px; color: var(--text-secondary); }
-  .mk-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+  .mk-odds { margin-top: 16px; display: flex; justify-content: space-between; font-size: 19px; font-weight: 600; }
+  .mk-odds .yes { color: var(--primary); } .mk-odds .no { color: var(--text-secondary); }
+  .mk-bar { margin-top: 8px; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
   .mk-bar span { display: block; height: 100%; border-radius: 3px; background: var(--primary); }
+  .mk-bot { margin-top: 16px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 17px; color: var(--text-muted); }
+  .mk-earn { color: var(--text-secondary); white-space: nowrap; } .mk-earn b { color: var(--green); font-weight: 700; }
   .feed-foot { margin-top: 20px; display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
   .feed-live { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px rgba(63,207,142,0.9); animation: feedpulse 1.6s ease-in-out infinite; }
   @keyframes feedpulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
@@ -2361,7 +2365,7 @@
         <div class="feed-col" data-col="1"></div>
         <div class="feed-col" data-col="2"></div>
       </div>
-      <div class="feed-foot"><span class="feed-live"></span>Markets opened on Melee in October 2026</div>
+      <div class="feed-foot"><span class="feed-live"></span>Markets opened on Melee in October 2026 · creators and figures illustrative</div>
     </div>
   </section>
 
@@ -2883,46 +2887,54 @@
 
 
 <script>
-  /* Slide 02 live feed. Questions are real markets opened on Melee in October 2026
-     (from the daily metrics reports). Presale fill is drawn from the observed 34% to 89% range. */
+  /* Slide 02 live feed. Questions are real markets opened on Melee in October 2026 (from the
+     daily metrics reports). Creators, odds, volume and earnings are illustrative, as on the
+     original creator card. Earnings = 1.5% of volume. */
   (function () {
     var Q = [
-      ['Culture','Will ZachXBT publish a thread about Kimchi on X by November 9?'],
-      ['Sport','Who wins PSG vs Troyes, Ligue 1, 7 November?'],
-      ['Economics','Bank of Russia rate decision in October?'],
-      ['Sport','Brose Bamberg vs Mitteldeutscher BC'],
-      ['Esports','Will there be a pentakill at Worlds 2026?'],
-      ['Culture','Will LISA\u2019s TARANTINO video reach 100M YouTube views in 72 hours?'],
-      ['Sport','Shanghai Rolex Masters: Svrcina vs Etcheverry'],
-      ['Crypto','How much will the Initia exploit drain?'],
-      ['Esports','Will Gen.G go 3-0 in the Worlds 2026 Swiss Stage?'],
-      ['Culture','What will be the #2 global Netflix show this week?'],
-      ['Sport','KBO: SSG Landers vs Kia Tigers'],
-      ['Esports','Will Faker win another Worlds title in 2026?'],
-      ['Culture','Views on the next MrBeast video in week one?'],
-      ['Sport','Wuhan Open: Sawangkaew vs Frech'],
-      ['Culture','Will the H3 crew release a show without Ethan Klein by November 2?'],
-      ['Politics','Surrey mayoral election'],
-      ['Sport','Austria vs Kosovo'],
-      ['Crypto','BTC/USD, next 5 minutes'],
-      ['Esports','Which region wins Worlds 2026?'],
-      ['Sport','Bengals vs Dolphins']
+      ['Culture','Will ZachXBT publish a thread about Kimchi on X by November 9?','Yes','No'],
+      ['Sport','Who wins PSG vs Troyes, Ligue 1, 7 November?','PSG','Troyes'],
+      ['Economics','Bank of Russia rate decision in October?','Cut','Hold'],
+      ['Sport','Brose Bamberg vs Mitteldeutscher BC','Bamberg','MBC'],
+      ['Esports','Will there be a pentakill at Worlds 2026?','Yes','No'],
+      ['Culture','Will LISA\u2019s TARANTINO video reach 100M YouTube views in 72 hours?','Yes','No'],
+      ['Sport','Shanghai Rolex Masters: Svrcina vs Etcheverry','Svrcina','Etcheverry'],
+      ['Crypto','How much will the Initia exploit drain?','Over $50M','Under'],
+      ['Esports','Will Gen.G go 3-0 in the Worlds 2026 Swiss Stage?','Yes','No'],
+      ['Culture','What will be the #2 global Netflix show this week?','Wednesday','Other'],
+      ['Sport','KBO: SSG Landers vs Kia Tigers','SSG','Kia'],
+      ['Esports','Will Faker win another Worlds title in 2026?','Yes','No'],
+      ['Culture','Views on the next MrBeast video in week one?','Over 100M','Under'],
+      ['Sport','Wuhan Open: Sawangkaew vs Frech','Sawangkaew','Frech'],
+      ['Culture','Will the H3 crew release a show without Ethan Klein by November 2?','Yes','No'],
+      ['Politics','Surrey mayoral election','Locke','Other'],
+      ['Sport','Austria vs Kosovo','Austria','Kosovo'],
+      ['Crypto','BTC/USD, next 5 minutes','Up','Down'],
+      ['Esports','Which region wins Worlds 2026?','LCK','Other'],
+      ['Sport','Bengals vs Dolphins','Bengals','Dolphins']
     ];
+    var C = [['@ishowspeed','assets/avatars/speed.jpg'],['@kaicenat','assets/avatars/kaicenat.jpg'],['@xqc','assets/avatars/xqc.jpg'],['@ninja','assets/avatars/ninja.jpg']];
     var cols = document.querySelectorAll('.feed-col');
     if (!cols.length) return;
     var i = 0, col = 0;
-    function card(q) {
-      var fill = 34 + Math.round(Math.random() * 55);
+    function money(n) { return n >= 1e6 ? '$' + (n / 1e6).toFixed(2) + 'M' : '$' + Math.round(n / 1000) + 'k'; }
+    function card(q, c) {
+      var yes = 22 + Math.round(Math.random() * 60);
+      var vol = 40000 + Math.round(Math.random() * 2400000);
+      var traders = Math.round(vol / (120 + Math.random() * 60));
+      var earn = Math.round(vol * 0.015);
       var el = document.createElement('div');
       el.className = 'mk enter';
-      el.innerHTML = '<div class="mk-top"><span class="dot"></span><span class="mk-cat">' + q[0] + '</span><span>Just opened</span></div>' +
+      el.innerHTML = '<div class="mk-top"><img class="mk-av" src="' + c[1] + '" alt=""><span class="mk-handle">' + c[0] + '</span><span class="mk-cat">' + q[0] + '</span></div>' +
         '<div class="mk-q">' + q[1] + '</div>' +
-        '<div class="mk-bot"><div class="mk-bar"><span style="width:' + fill + '%"></span></div><span>Presale ' + fill + '% filled</span></div>';
+        '<div class="mk-odds"><span class="yes">' + q[2] + ' ' + yes + '%</span><span class="no">' + q[3] + ' ' + (100 - yes) + '%</span></div>' +
+        '<div class="mk-bar"><span style="width:' + yes + '%"></span></div>' +
+        '<div class="mk-bot"><span>' + money(vol) + ' volume \u00b7 ' + traders.toLocaleString('en-US') + ' traders</span><span class="mk-earn">Creator earnings <b>$' + earn.toLocaleString('en-US') + '</b></span></div>';
       return el;
     }
     function push(instant) {
       var c = cols[col]; col = (col + 1) % cols.length;
-      var el = card(Q[i % Q.length]); i++;
+      var el = card(Q[i % Q.length], C[i % C.length]); i++;
       if (instant) el.classList.remove('enter');
       c.insertBefore(el, c.firstChild);
       if (!instant) setTimeout(function () { el.classList.remove('enter'); }, 30);
@@ -2935,7 +2947,7 @@
     }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     for (var k = 0; k < 9; k++) push(true);
-    if (!reduce) setInterval(push, 1400);
+    if (!reduce) setInterval(push, 1600);
   })();
 </script>
 </body></html>
