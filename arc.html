@@ -2253,22 +2253,22 @@
 
   /* === arc.html additions === */
   /* live market feed, slide 02 */
-  .feed { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-top: 18px; overflow: hidden; position: relative; }
+  .feed { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 18px; overflow: hidden; position: relative; }
   .feed::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 110px; background: linear-gradient(180deg, rgba(0,0,0,0), #000 90%); pointer-events: none; }
-  .feed-col { display: flex; flex-direction: column; gap: 22px; min-height: 0; }
-  .mk { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-card); padding: 24px 26px 22px; box-shadow: var(--card-shadow); transition: opacity .55s ease, transform .55s ease; }
+  .feed-col { display: flex; flex-direction: column; gap: 28px; min-height: 0; }
+  .mk { background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; padding: 32px 36px 30px; box-shadow: var(--card-shadow); transition: opacity .55s ease, transform .55s ease; }
   .mk.enter { opacity: 0; transform: translateY(-26px); }
   .mk.leave { opacity: 0; transform: translateY(18px); }
-  .mk-top { display: flex; align-items: center; gap: 12px; font-size: 18px; color: var(--text-secondary); }
-  .mk-av { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-hover); }
+  .mk-top { display: flex; align-items: center; gap: 14px; font-size: 22px; color: var(--text-secondary); }
+  .mk-av { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border-hover); }
   .mk-handle { font-weight: 600; color: var(--text); }
-  .mk-cat { margin-left: auto; font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
-  .mk-q { margin-top: 14px; font-size: 27px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); }
-  .mk-odds { margin-top: 16px; display: flex; justify-content: space-between; font-size: 19px; font-weight: 600; }
+  .mk-cat { margin-left: auto; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+  .mk-q { margin-top: 18px; font-size: 34px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); }
+  .mk-odds { margin-top: 22px; display: flex; justify-content: space-between; font-size: 23px; font-weight: 600; }
   .mk-odds .yes { color: var(--primary); } .mk-odds .no { color: var(--text-secondary); }
-  .mk-bar { margin-top: 8px; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+  .mk-bar { margin-top: 10px; height: 8px; border-radius: 3px; background: var(--track); overflow: hidden; }
   .mk-bar span { display: block; height: 100%; border-radius: 3px; background: var(--primary); }
-  .mk-bot { margin-top: 16px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 17px; color: var(--text-muted); }
+  .mk-bot { margin-top: 20px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 21px; color: var(--text-muted); }
   .mk-earn { color: var(--text-secondary); white-space: nowrap; } .mk-earn b { color: var(--green); font-weight: 700; }
   .feed-foot { margin-top: 20px; display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
   .feed-live { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px rgba(63,207,142,0.9); animation: feedpulse 1.6s ease-in-out infinite; }
@@ -2363,7 +2363,6 @@
       <div class="feed" aria-label="Markets being opened right now">
         <div class="feed-col" data-col="0"></div>
         <div class="feed-col" data-col="1"></div>
-        <div class="feed-col" data-col="2"></div>
       </div>
       <div class="feed-foot"><span class="feed-live"></span>Markets opened on Melee in October 2026 · creators and figures illustrative</div>
     </div>
@@ -2939,15 +2938,15 @@
       c.insertBefore(el, c.firstChild);
       if (!instant) setTimeout(function () { el.classList.remove('enter'); }, 30);
       var kids = c.querySelectorAll('.mk');
-      if (kids.length > 3) {
+      if (kids.length > 2) {
         var last = kids[kids.length - 1];
         last.classList.add('leave');
         setTimeout(function () { last.remove(); }, 600);
       }
     }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    for (var k = 0; k < 9; k++) push(true);
-    if (!reduce) setInterval(push, 1600);
+    for (var k = 0; k < 4; k++) push(true);
+    if (!reduce) setInterval(push, 2200);
   })();
 </script>
 </body></html>
