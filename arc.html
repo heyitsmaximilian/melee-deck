@@ -2402,6 +2402,22 @@
   .feed.one::after { display: none; }
   .feed.one .feed-col { position: relative; height: 100%; -webkit-mask-image: linear-gradient(180deg, #000 86%, transparent 100%); mask-image: linear-gradient(180deg, #000 86%, transparent 100%); }
   .feed.one .mk { position: absolute; left: 0; right: 0; top: 0; transition: transform .8s cubic-bezier(.22,.7,.18,1), opacity .8s cubic-bezier(.22,.7,.18,1); will-change: transform, opacity; }
+
+  /* === 2026-11-01: title anchored on split slides; 20px text floor (benchmarked on Kalshi) === */
+  .split { align-items: start; grid-template-columns: 700px 1fr; gap: 100px; }
+  .split-l { padding-top: 40px; width: 700px; }
+  .split .title { font-size: 64px; }
+  .split-r { align-self: center; margin-top: 80px; }
+  .pre-h, .pre-lbl { font-size: 20px; letter-spacing: 0.16em; }
+  .cmp .hdr { font-size: 20px; }
+  .stg-n { font-size: 20px; }
+  .sp-seed-kick, .sp-num { font-size: 20px; letter-spacing: 0.14em; }
+  .sp-seed-meta, .sp-how { font-size: 20px; line-height: 1.4; }
+  .trc-lbl, .trc-axis, .tr-f span { font-size: 20px; letter-spacing: 0.14em; }
+  .uof-kick { font-size: 20px; letter-spacing: 0.16em; }
+  .tgt-lbl span { font-size: 20px; }
+  .uof-ms { font-size: 20px; letter-spacing: 0.12em; }
+  .comp-hdr-role, .comp-rowlbl, .comp-callout-lbl { font-size: 20px; letter-spacing: 0.14em; }
 </style>
 
 </head>
