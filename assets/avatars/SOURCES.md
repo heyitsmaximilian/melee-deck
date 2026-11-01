@@ -8,3 +8,11 @@
 | ninja.jpg | Ninja | YouTube channel avatar via unavatar.io | Not licensed. Likeness used in a private mockup only. |
 
 Fetched 2026-09-16. Replace before any public distribution of the deck.
+
+Added 2026-11-01 for the arc deck's slide 2 market stream, each creator matched to the topic of the
+market shown with them (questions are real markets opened on Melee in October 2026; creator, odds,
+volume and earnings are illustrative):
+
+| caedrel.jpg | Caedrel (League of Legends) | X avatar via unavatar.io | Not licensed. Private mockup only. |
+| patmcafeeshow.jpg | The Pat McAfee Show (NFL) | X avatar via unavatar.io | Not licensed. Private mockup only. |
+| coinbureau.jpg | Coin Bureau (crypto) | X avatar via unavatar.io | Not licensed. Private mockup only. |

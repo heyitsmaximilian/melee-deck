@@ -3049,33 +3049,23 @@
      1.5% of volume. Fixed slots, one easing curve, runs only while slide 02 is on screen. */
   (function () {
     var Q = [
-      ['Culture','Will ZachXBT publish a thread about Kimchi on X by November 9?','Yes','No'],
-      ['Sport','Who wins PSG vs Troyes, Ligue 1, 7 November?','PSG','Troyes'],
-      ['Economics','Bank of Russia rate decision in October?','Cut','Hold'],
-      ['Sport','Brose Bamberg vs Mitteldeutscher BC','Bamberg','MBC'],
-      ['Esports','Will there be a pentakill at Worlds 2026?','Yes','No'],
-      ['Culture','Will LISA\u2019s TARANTINO video reach 100M YouTube views in 72 hours?','Yes','No'],
-      ['Sport','Shanghai Rolex Masters: Svrcina vs Etcheverry','Svrcina','Etcheverry'],
-      ['Crypto','How much will the Initia exploit drain?','Over $50M','Under'],
-      ['Esports','Will Gen.G go 3-0 in the Worlds 2026 Swiss Stage?','Yes','No'],
-      ['Culture','What will be the #2 global Netflix show this week?','Wednesday','Other'],
-      ['Sport','KBO: SSG Landers vs Kia Tigers','SSG','Kia'],
-      ['Esports','Will Faker win another Worlds title in 2026?','Yes','No'],
-      ['Culture','Views on the next MrBeast video in week one?','Over 100M','Under'],
-      ['Sport','Wuhan Open: Sawangkaew vs Frech','Sawangkaew','Frech'],
-      ['Politics','Surrey mayoral election','Locke','Other'],
-      ['Sport','Austria vs Kosovo','Austria','Kosovo'],
-      ['Crypto','BTC/USD, next 5 minutes','Up','Down'],
-      ['Esports','Which region wins Worlds 2026?','LCK','Other'],
-      ['Sport','Bengals vs Dolphins','Bengals','Dolphins']
+      ['Sport','Who wins PSG vs Troyes, Ligue 1, 7 November?','PSG','Troyes','@ishowspeed','speed.jpg'],
+      ['Esports','Will Faker win another Worlds title in 2026?','Yes','No','@caedrel','caedrel.jpg'],
+      ['Crypto','How much will the Initia exploit drain?','Over $50M','Under','@coinbureau','coinbureau.jpg'],
+      ['Culture','Views on the next MrBeast video in week one?','Over 100M','Under','@kaicenat','kaicenat.jpg'],
+      ['Sport','Bengals vs Dolphins','Bengals','Dolphins','@patmcafeeshow','patmcafeeshow.jpg'],
+      ['Esports','Will Gen.G go 3-0 in the Worlds 2026 Swiss Stage?','Yes','No','@caedrel','caedrel.jpg'],
+      ['Crypto','Will ZachXBT publish a thread about Kimchi on X by November 9?','Yes','No','@coinbureau','coinbureau.jpg'],
+      ['Culture','What will be the #2 global Netflix show this week?','Wednesday','Other','@xqc','xqc.jpg'],
+      ['Esports','Which region wins Worlds 2026?','LCK','Other','@caedrel','caedrel.jpg']
     ];
-    var C = [['@ishowspeed','assets/avatars/speed.jpg'],['@kaicenat','assets/avatars/kaicenat.jpg'],['@xqc','assets/avatars/xqc.jpg'],['@ninja','assets/avatars/ninja.jpg']];
+    var C = null;
     var col = document.querySelector('.feed.one .feed-col');
     if (!col) return;
     var SLOT = 0, OP = [1], n = 0, cards = [], timer = null;
     function money(v) { return v >= 1e6 ? '$' + (v / 1e6).toFixed(2) + 'M' : '$' + Math.round(v / 1000) + 'k'; }
     function make() {
-      var q = Q[n % Q.length], c = C[n % C.length]; n++;
+      var q = Q[n % Q.length], c = [q[4], 'assets/avatars/' + q[5]]; n++;
       var yes = 22 + Math.round(Math.random() * 60), vol = 40000 + Math.round(Math.random() * 2400000);
       var el = document.createElement('div');
       el.className = 'mk';
