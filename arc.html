@@ -2460,6 +2460,14 @@
   /* slide 06: litepaper link under the title */
   .lit-link { display: inline-block; align-self: flex-start; margin-top: 28px; font-size: 26px; font-weight: 600; color: var(--primary); text-decoration: none; border-bottom: 1px solid rgba(var(--primary-rgb),0.45); padding-bottom: 4px; }
   .lit-link:hover { border-bottom-color: var(--primary); }
+
+  /* slide 08: barrier loop */
+  .loop { position: relative; width: 820px; height: 720px; }
+  .loop svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .lp-node { position: absolute; width: 168px; height: 168px; transform: translate(-50%,-50%); border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-card); border: 2px solid rgba(var(--primary-rgb),0.55); font-family: var(--font-numeral); font-size: 24px; font-weight: 800; letter-spacing: -0.01em; color: var(--text); box-shadow: 0 0 0 10px rgba(var(--primary-rgb),0.06); }
+  .lp-node.next { background: rgba(var(--primary-rgb),0.18); border-color: var(--primary); color: var(--primary); }
+  .lp-txt { position: absolute; font-size: 24px; line-height: 1.45; color: var(--text-secondary); }
+  .lp-txt b { color: var(--text); font-weight: 600; }
 </style>
 
 </head>
@@ -2606,13 +2614,21 @@
       <div class="split">
         <div class="split-l">
       <h2 class="title">Creator markets are a new category. <span style="color:var(--primary)">Three things make it ours.</span></h2>
-      <p class="sub"><b>The barriers grow with every market opened.</b></p>
         </div>
         <div class="split-r">
-      <div class="tl mech moat2">
-        <div class="tl-item"><div class="tl-date">Mechanism</div><div class="tl-txt">The only pricing engine that <b>bootstraps liquidity</b> with no market maker or subsidy.</div></div>
-        <div class="tl-item"><div class="tl-date">Creators</div><div class="tl-txt">Creators <b>earn on every trade</b>, so they keep opening markets.</div></div>
-        <div class="tl-item is-next"><div class="tl-date">Liquidity</div><div class="tl-txt">Liquidity providers earn on the PMM, so <b>every new market opens deeper</b>.</div></div>
+      <div class="loop">
+        <svg viewBox="0 0 820 720" aria-hidden="true">
+          <defs><marker id="lpA" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#8061FD"/></marker></defs>
+          <path d="M300 190 Q 520 210 588 392" fill="none" stroke="#8061FD" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#lpA)"/>
+          <path d="M556 470 Q 395 420 238 470" fill="none" stroke="#8061FD" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#lpA)"/>
+          <path d="M120 392 Q 90 250 160 196" fill="none" stroke="#8061FD" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round" marker-end="url(#lpA)"/>
+        </svg>
+        <div class="lp-node" style="left:230px;top:140px">Mechanism</div>
+        <div class="lp-node" style="left:640px;top:470px">Creators</div>
+        <div class="lp-node next" style="left:150px;top:470px">Liquidity</div>
+        <div class="lp-txt" style="left:340px;top:58px;width:470px">The only pricing engine that <b>bootstraps liquidity</b> with no market maker or subsidy.</div>
+        <div class="lp-txt" style="left:470px;top:578px;width:340px;text-align:center">Creators <b>earn on every trade</b>, so they keep opening markets.</div>
+        <div class="lp-txt" style="left:-40px;top:578px;width:380px;text-align:center">Liquidity providers earn, so <b>every new market opens deeper</b>.</div>
       </div>
         </div>
       </div>
