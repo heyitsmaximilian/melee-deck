@@ -2334,6 +2334,70 @@
   .imagine ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
   .imagine li { font-size: 28px; color: var(--text-secondary); padding-left: 28px; position: relative; }
   .imagine li::before { content: ""; position: absolute; left: 0; top: 14px; width: 10px; height: 10px; border-radius: 50%; background: var(--primary); }
+
+  /* === arc.html spacing: wide margins, short title measure, one visual block === */
+  .frame { padding: 112px 150px 96px; }
+  .corner-mark { left: 150px; top: 56px; }
+  .frame .title { font-size: 72px; max-width: 1260px; margin: 40px 0 22px; line-height: 1.04; }
+  .frame .sub { font-size: 26px; max-width: 1100px; margin: 0 0 56px; }
+  .frame .sub b { color: var(--text); font-weight: 600; }
+  .slide-footnote, .tr-src { font-size: 16px; }
+  .feed { grid-template-columns: 1fr 1fr; gap: 36px; margin-top: 0; max-height: 440px; }
+  .feed::after { height: 150px; }
+  .feed-col { gap: 32px; }
+  .feed-foot { margin-top: 28px; }
+  .two { gap: 100px; }
+  .htl { margin-top: 0; }
+  .htl-item { min-height: 380px; }
+  .pre { margin-top: 0; }
+  .pre-cell { padding: 30px 0; }
+  .pre-n { font-size: 80px; }
+  .moat-grid { gap: 36px; }
+  .ring { min-height: 600px; margin-top: 0; }
+  .ring-svg { width: 1620px; height: 600px; }
+  .ring-mid { left: 810px; top: 300px; }
+  .stg { min-height: 580px; margin-top: 0; }
+  .stg-card.st2 { left: 620px; }
+  .uof-grid.built { gap: 32px; margin-top: 0; }
+  .uof-grid.built .uof-card { padding: 44px 36px; }
+  .uof-grid.built .uof-points li { font-size: 24px; }
+  .tgt { gap: 80px; }
+  .tgt-chart { height: 560px; }
+  .tgt-chart svg { width: 900px; height: 480px; top: 80px; }
+  .trc-row { gap: 40px; }
+  .tr-body2 { gap: 32px; margin-top: 0; }
+  .comp { margin-top: 0; }
+  .team-row { margin-top: 24px; }
+  .sp { margin-top: 0; }
+  .cmp { margin-top: 0; }
+
+  /* split layout: text left, visual right */
+  .split { flex: 1; min-height: 0; display: grid; grid-template-columns: 620px 1fr; gap: 110px; align-items: center; }
+  .split-l { display: flex; flex-direction: column; }
+  .split .title { font-size: 60px; max-width: none; margin: 0 0 26px; }
+  .split .sub { font-size: 25px; max-width: none; margin: 0; }
+  .split-r { min-height: 0; display: flex; flex-direction: column; justify-content: center; }
+  .tl { display: flex; flex-direction: column; gap: 26px; }
+  .tl-item { display: grid; grid-template-columns: 170px 1fr; gap: 28px; align-items: baseline; padding-bottom: 26px; border-bottom: 1px solid var(--border); }
+  .tl-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .tl-date { font-family: var(--font-numeral); font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: var(--text); }
+  .tl-txt { font-size: 25px; line-height: 1.4; color: var(--text-secondary); }
+  .tl-item.is-next .tl-date, .tl-item.is-next .tl-txt { color: var(--primary); }
+  .feed.one { grid-template-columns: 1fr; flex: none; height: 560px; max-height: none; }
+  .feed.one::after { height: 200px; }
+  .feed.one .mk { padding: 36px 40px 34px; }
+  .feed.one .mk-q { font-size: 36px; }
+  .split .feed-foot { margin-top: 24px; }
+  .uof-grid.built.two { grid-template-columns: 1fr 1fr; gap: 28px; align-content: center; }
+  .uof-grid.built.two .uof-card { padding: 36px 34px; }
+  .split .tgt-cards { margin-top: 44px; gap: 18px; }
+  .split .tgt-cards .uof-card { padding: 28px 32px; }
+  .split .tgt-chart { height: 600px; }
+  .split .tgt-chart svg { width: 100%; height: 520px; top: 80px; }
+  .split .tgt-lbl { width: 22%; }
+  .cmp > div { padding: 14px 24px; }
+  .cmp .val { font-size: 32px; } .cmp .rowlbl { font-size: 28px; } .cmp .hdr { font-size: 18px; }
+  .slide-footnote { margin-top: 20px; }
 </style>
 
 </head>
@@ -2358,28 +2422,38 @@
   <section data-label="Product">
     <div class="frame">
       <div class="corner-mark">02 — The idea</div>
+      <div class="split">
+        <div class="split-l">
       <h2 class="title">Imagine opening a market on anything, <span style="color:var(--primary)">the minute it happens.</span></h2>
-      <p class="sub">We built a prediction market where anyone can open a market and earn from the trading on it. No listing team. No market maker.</p>
-      <div class="feed" aria-label="Markets being opened right now">
+      <p class="sub">We built the <b>first permissionless prediction market</b>. Anyone can open a market on any question and earn from the trading on it. No listing team, no market maker.</p>
+        </div>
+        <div class="split-r">
+      <div class="feed one" aria-label="Markets being opened right now">
         <div class="feed-col" data-col="0"></div>
-        <div class="feed-col" data-col="1"></div>
       </div>
       <div class="feed-foot"><span class="feed-live"></span>Markets opened on Melee in October 2026 · creators and figures illustrative</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section data-label="History">
     <div class="frame">
       <div class="corner-mark">03 — The pattern</div>
+      <div class="split">
+        <div class="split-l">
       <h2 class="title">Prediction markets opened to traders one step at a time. <span style="color:var(--primary)">Creators are next.</span></h2>
-      <p class="sub">Each step widened who could trade. None widened who could create.</p>
-      <div class="htl">
-        <div class="htl-line"></div>
-        <div class="htl-item"><div class="htl-date">1988</div><div class="htl-dot"></div><div class="htl-txt">Iowa Electronic Markets. The first prediction market, built for research.</div></div>
-        <div class="htl-item"><div class="htl-date">2001</div><div class="htl-dot"></div><div class="htl-txt">Intrade opens prediction markets to the public.</div></div>
-        <div class="htl-item"><div class="htl-date">2014</div><div class="htl-dot"></div><div class="htl-txt">PredictIt launches under a CFTC no-action letter.</div></div>
-        <div class="htl-item"><div class="htl-date">2020</div><div class="htl-dot"></div><div class="htl-txt">Kalshi is designated by the CFTC. Polymarket launches.</div></div>
-        <div class="htl-item is-next"><div class="htl-date">Now</div><div class="htl-dot"></div><div class="htl-txt">Anyone can launch a prediction market via the Parimutuel Market Maker.</div></div>
+      <p class="sub">Every step so far widened who could trade. <b>Melee is the first to widen who can create.</b></p>
+        </div>
+        <div class="split-r">
+      <div class="tl">
+        <div class="tl-item"><div class="tl-date">1988</div><div class="tl-txt">Iowa Electronic Markets. The first prediction market, built for research.</div></div>
+        <div class="tl-item"><div class="tl-date">2001</div><div class="tl-txt">Intrade opens prediction markets to the public.</div></div>
+        <div class="tl-item"><div class="tl-date">2014</div><div class="tl-txt">PredictIt launches under a CFTC no-action letter.</div></div>
+        <div class="tl-item"><div class="tl-date">2020</div><div class="tl-txt">Kalshi is designated by the CFTC. Polymarket launches.</div></div>
+        <div class="tl-item is-next"><div class="tl-date">Now</div><div class="tl-txt">Anyone can launch a prediction market via the Parimutuel Market Maker.</div></div>
+      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2387,7 +2461,8 @@
   <section data-label="Precedent">
     <div class="frame">
       <div class="corner-mark">04 — The opportunity</div>
-      <h2 class="title">Every time creation went permissionless, <span style="color:var(--primary)">supply grew a thousandfold.</span></h2>
+      <h2 class="title">When creation goes permissionless, <span style="color:var(--primary)">supply grows a thousandfold.</span></h2>
+      <p class="sub">Permissionless creation produced a thousand times the supply in stocks and in video. <b>Prediction markets are next.</b></p>
       <div class="pre">
         <div class="pre-h"></div><div class="pre-h">Curated</div><div class="pre-h"></div><div class="pre-h open">Permissionless</div>
         <div class="pre-lbl">Stocks</div><div class="pre-cell"><div class="pre-n">~6,000</div><div class="pre-note">companies listed on NYSE and Nasdaq</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12M</div><div class="pre-note">tokens launched on Pump.fun since 2024</div></div>
@@ -2402,7 +2477,7 @@
     <div class="frame">
       <div class="corner-mark">05 — The mechanism</div>
       <h2 class="title">The PMM prices any market from the first dollar. <span style="color:var(--primary)">No market maker needed.</span></h2>
-      <p class="sub">Order books need a market maker. Parimutuel pools don't, but you can't trade in and out of them. The Parimutuel Market Maker is a pool that prices every trade and pays its liquidity providers.</p>
+      <p class="sub">The <b>Parimutuel Market Maker</b> is the first pricing engine that opens a market with no market maker and still lets traders move in and out.</p>
 
       <div class="cmp">
         <div class="hdr"></div>
@@ -2438,17 +2513,22 @@
   <section data-label="Road">
     <div class="frame">
       <div class="corner-mark">06 — The road</div>
+      <div class="split">
+        <div class="split-l">
       <h2 class="title">The road to get here.</h2>
-      <p class="sub">We designed a new market mechanism and shipped it in under a year.</p>
-      <div class="htl">
-        <div class="htl-line"></div>
-        <div class="htl-item"><div class="htl-date">Nov 2025</div><div class="htl-dot"></div><div class="htl-txt">Private alpha. The first bonding-curve parimutuel prediction market.</div></div>
-        <div class="htl-item"><div class="htl-date">Jun 2026</div><div class="htl-dot"></div><div class="htl-txt">PMM litepaper published.</div></div>
-        <div class="htl-item"><div class="htl-date">Jun 2026</div><div class="htl-dot"></div><div class="htl-txt">Sponsored transactions proven on devnet. No SOL, no seed phrase.</div></div>
-        <div class="htl-item"><div class="htl-date">Sep 2026</div><div class="htl-dot"></div><div class="htl-txt">Testnet opens on the 8th.</div></div>
-        <div class="htl-item"><div class="htl-date">Oct 2026</div><div class="htl-dot"></div><div class="htl-txt">User-created markets open on the 1st.</div></div>
-        <div class="htl-item"><div class="htl-date">Oct 2026</div><div class="htl-dot"></div><div class="htl-txt">12,800 markets created by users. 161,400 traders.</div></div>
-        <div class="htl-item is-next"><div class="htl-date">Q2 2027</div><div class="htl-dot"></div><div class="htl-txt">Order book hybrid on mainnet (planned).</div></div>
+      <p class="sub">In twelve months we went from the <b>first bonding-curve parimutuel market</b> to 161,000 traders on testnet.</p>
+        </div>
+        <div class="split-r">
+      <div class="tl">
+        <div class="tl-item"><div class="tl-date">Nov 2025</div><div class="tl-txt">Private alpha. The first bonding-curve parimutuel prediction market.</div></div>
+        <div class="tl-item"><div class="tl-date">Jun 2026</div><div class="tl-txt">PMM litepaper published.</div></div>
+        <div class="tl-item"><div class="tl-date">Jun 2026</div><div class="tl-txt">Sponsored transactions proven on devnet. No SOL, no seed phrase.</div></div>
+        <div class="tl-item"><div class="tl-date">Sep 2026</div><div class="tl-txt">Testnet opens on the 8th.</div></div>
+        <div class="tl-item"><div class="tl-date">Oct 2026</div><div class="tl-txt">User-created markets open on the 1st.</div></div>
+        <div class="tl-item"><div class="tl-date">Oct 2026</div><div class="tl-txt">12,800 markets created by users. 161,400 traders.</div></div>
+        <div class="tl-item is-next"><div class="tl-date">Q2 2027</div><div class="tl-txt">Order book hybrid on mainnet (planned).</div></div>
+      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2457,6 +2537,7 @@
     <div class="frame">
       <div class="corner-mark">07 — Why Melee</div>
       <h2 class="title">Creator markets are a new market. <span style="color:var(--primary)">Three things make it ours.</span></h2>
+      <p class="sub">A new mechanism, a creator network that pays itself and liquidity that compounds. <b>The barriers grow with every market opened.</b></p>
       <div class="moat-grid">
         <div class="s3-goal-card moat ok"><span class="moat-tick">✓</span><div class="s3-goal-title">The mechanism</div><div class="s3-goal-desc">The only pricing engine that opens a market with no market maker. Live on testnet.</div></div>
         <div class="s3-goal-card moat ok"><span class="moat-tick">✓</span><div class="s3-goal-title">The creator network</div><div class="s3-goal-desc">Creators are paid on every trade in their market, so they keep opening them. 12,800 in October.</div></div>
@@ -2469,20 +2550,21 @@
     <div class="frame">
       <div class="corner-mark">08 — Participants</div>
       <h2 class="title">Five kinds of participant <span style="color:var(--primary)">make a market.</span></h2>
+      <p class="sub">Every market pays the people who make it. <b>Creators, backers, affiliates and resolvers all earn on every trade.</b></p>
       <div class="ring">
-        <svg class="ring-svg" viewBox="0 0 1728 660" aria-hidden="true">
-          <line x1="864" y1="330" x2="864" y2="80" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
-          <line x1="864" y1="330" x2="1473" y2="253" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
-          <line x1="864" y1="330" x2="1240" y2="532" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
-          <line x1="864" y1="330" x2="488" y2="532" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
-          <line x1="864" y1="330" x2="255" y2="253" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
+        <svg class="ring-svg" viewBox="0 0 1620 600" aria-hidden="true">
+          <line x1="810" y1="300" x2="810" y2="75" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
+          <line x1="810" y1="300" x2="1381" y2="230" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
+          <line x1="810" y1="300" x2="1163" y2="482" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
+          <line x1="810" y1="300" x2="457" y2="482" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
+          <line x1="810" y1="300" x2="239" y2="230" stroke="rgba(128,97,253,0.45)" stroke-width="2"/>
         </svg>
         <div class="ring-mid"><img src="assets/melee-lockup.svg" alt="Melee"></div>
-        <div class="ring-node" style="left:864px;top:80px"><div class="hub-n">Creators</div><div class="hub-x">Open the market and set their fee.</div></div>
-        <div class="ring-node" style="left:1473px;top:253px"><div class="hub-n">Traders</div><div class="hub-x">Buy, switch outcomes, cash out early.</div></div>
-        <div class="ring-node" style="left:1240px;top:532px"><div class="hub-n">Resolvers</div><div class="hub-x">Settle the market onchain, paid per market.</div></div>
-        <div class="ring-node" style="left:488px;top:532px"><div class="hub-n">Affiliates</div><div class="hub-x">Bring traders, paid from the creator's share.</div></div>
-        <div class="ring-node" style="left:255px;top:253px"><div class="hub-n">Presale backers</div><div class="hub-x">Fund the pool before trading opens and earn the most.</div></div>
+        <div class="ring-node" style="left:810px;top:75px"><div class="hub-n">Creators</div><div class="hub-x">Open the market and set their fee.</div></div>
+        <div class="ring-node" style="left:1381px;top:230px"><div class="hub-n">Traders</div><div class="hub-x">Buy, switch outcomes, cash out early.</div></div>
+        <div class="ring-node" style="left:1163px;top:482px"><div class="hub-n">Resolvers</div><div class="hub-x">Settle the market onchain, paid per market.</div></div>
+        <div class="ring-node" style="left:457px;top:482px"><div class="hub-n">Affiliates</div><div class="hub-x">Bring traders, paid from the creator's share.</div></div>
+        <div class="ring-node" style="left:239px;top:230px"><div class="hub-n">Presale backers</div><div class="hub-x">Fund the pool before trading opens and earn the most.</div></div>
       </div>
     </div>
   </section>
@@ -2491,6 +2573,7 @@
     <div class="frame">
       <div class="corner-mark">09 — Liquidity</div>
       <h2 class="title">Liquidity begets liquidity.</h2>
+      <p class="sub">Each stage funds the next. <b>Melee is the only exchange where a market opens funded and can end on an order book.</b></p>
       <div class="stg">
         <svg class="stg-curve" viewBox="0 0 1728 640" preserveAspectRatio="none" aria-hidden="true">
           <defs><linearGradient id="stgF" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--primary)" stop-opacity="0.28"/><stop offset="1" style="stop-color:var(--primary)" stop-opacity="0"/></linearGradient></defs>
@@ -2511,6 +2594,7 @@
     <div class="frame">
       <div class="corner-mark">10 — Distribution</div>
       <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
+      <p class="sub">Creators, their fans and Melee's own accounts each carry a market further, and each is <b>paid from its fees</b>.</p>
       <div class="sp">
         <div class="sp-seed">
           <div class="sp-seed-kick">One market</div>
@@ -2557,12 +2641,9 @@
     <div class="frame">
       <div class="corner-mark">11 — Traction</div>
       <h2 class="title">Users created <span style="color:var(--primary)">12,800 markets</span> on testnet in October.</h2>
+      <p class="sub">Market creation opened to users on 1 October. By the last week of the month they were opening <b>more than 500 markets a day</b>.</p>
 
       <div class="tr-body2">
-        <div class="tr-head2">
-          <div class="tr-name">On-chain</div>
-          <div class="tr-kicker">Testnet · October 2026</div>
-        </div>
         <div class="trc-row">
           <div class="trc-card">
             <div class="trc-lbl">Daily traders</div>
@@ -2606,12 +2687,19 @@
   <section data-label="Built">
     <div class="frame">
       <div class="corner-mark">12 — What we built</div>
+      <div class="split">
+        <div class="split-l">
       <h2 class="title">We have built <span style="color:var(--primary)">four products</span> from scratch.</h2>
-      <div class="uof-grid built">
-        <div class="uof-card primary"><div class="uof-name">Pricing engine</div><ul class="uof-points"><li>Parimutuel Market Maker on Solana</li><li>Presale</li><li>Cashout LP</li><li>Minimum payout on every position</li></ul></div>
-        <div class="uof-card"><div class="uof-name">Platform</div><ul class="uof-points"><li>Web app</li><li>Embedded wallet created at login</li><li>Melee pays the gas</li><li>USDT balances</li></ul></div>
+      <p class="sub">Exchange, pricing engine, wallet rails and creation tools, <b>built in-house and live on testnet</b>.</p>
+        </div>
+        <div class="split-r">
+      <div class="uof-grid built two">
+        <div class="uof-card primary"><div class="uof-name">Pricing engine</div><ul class="uof-points"><li>Parimutuel Market Maker on Solana</li><li>Presale</li><li>Cashout LP</li></ul></div>
+        <div class="uof-card"><div class="uof-name">Platform</div><ul class="uof-points"><li>Web app</li><li>Embedded wallet created at login</li><li>Melee pays the gas</li></ul></div>
         <div class="uof-card"><div class="uof-name">Creation</div><ul class="uof-points"><li>AI creation assistant writes the rules</li><li>Resolver marketplace and API</li><li>Templates for sport, culture and crypto</li></ul></div>
         <div class="uof-card"><div class="uof-name">Distribution engine</div><ul class="uof-points"><li>Autonomous posting, hundreds a day</li><li>Affiliates and referrals</li><li>Discovery feed</li></ul></div>
+      </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2674,8 +2762,16 @@
   <section data-label="Target">
     <div class="frame">
       <div class="corner-mark">14 — The target</div>
+      <div class="split">
+        <div class="split-l">
       <h2 class="title">We're aiming for <span style="color:var(--primary)">100,000 markets a month.</span></h2>
-      <div class="tgt">
+      <p class="sub">12,800 user-created markets in the first month on testnet. <b>Mainnet and the creator network take it to 100,000.</b></p>
+        <div class="tgt-cards">
+          <div class="uof-card primary"><div class="uof-kick">Immediate</div><div class="uof-name">Trading fees</div><div class="uof-body">1% of every trade to Melee.</div></div>
+          <div class="uof-card"><div class="uof-kick">Set per market</div><div class="uof-name">Creator and resolver fees</div><div class="uof-body">Set by the creator at launch, paid out on every trade.</div></div>
+        </div>
+        </div>
+        <div class="split-r">
         <div class="tgt-chart">
           <svg viewBox="0 0 1000 520" aria-hidden="true">
             <defs><linearGradient id="tgtG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--primary)"/><stop offset="1" stop-color="#4B36A8"/></linearGradient></defs>
@@ -2685,13 +2781,10 @@
             <rect x="390" y="374" width="220" height="121" rx="10" fill="#4B36A8"/>
             <rect x="710" y="90" width="220" height="405" rx="10" fill="url(#tgtG)"/>
           </svg>
-          <div class="tgt-lbl" style="left:70px;top:355px"><b>12,800</b><span>October 2026, testnet</span></div>
-          <div class="tgt-lbl" style="left:390px;top:286px"><b>30,000</b><span>1,000 a day, mainnet milestone</span></div>
-          <div class="tgt-lbl" style="left:710px;top:2px"><b>100,000</b><span>Target, a month</span></div>
+          <div class="tgt-lbl" style="left:7%;top:355px"><b>12,800</b><span>October 2026, testnet</span></div>
+          <div class="tgt-lbl" style="left:39%;top:286px"><b>30,000</b><span>1,000 a day, mainnet milestone</span></div>
+          <div class="tgt-lbl" style="left:71%;top:2px"><b>100,000</b><span>Target, a month</span></div>
         </div>
-        <div class="tgt-cards">
-          <div class="uof-card primary"><div class="uof-kick">Immediate</div><div class="uof-name">Trading fees</div><div class="uof-body">1% of every trade to Melee.</div></div>
-          <div class="uof-card"><div class="uof-kick">Set per market</div><div class="uof-name">Creator and resolver fees</div><div class="uof-body">Set by the creator at launch, paid out on every trade.</div></div>
         </div>
       </div>
     </div>
@@ -2701,6 +2794,7 @@
     <div class="frame">
       <div class="corner-mark">15 — The raise</div>
       <h2 class="title">$5M to reach <span style="color:var(--primary)">10,000 creators on mainnet.</span></h2>
+      <p class="sub">The raise funds <b>creator distribution and the order book hybrid</b>, the two things between testnet and 10,000 creators on mainnet.</p>
 
       <div class="uof-grid two">
         <div class="uof-card">
@@ -2938,15 +3032,15 @@
       c.insertBefore(el, c.firstChild);
       if (!instant) setTimeout(function () { el.classList.remove('enter'); }, 30);
       var kids = c.querySelectorAll('.mk');
-      if (kids.length > 2) {
+      if (kids.length > 1) {
         var last = kids[kids.length - 1];
         last.classList.add('leave');
         setTimeout(function () { last.remove(); }, 600);
       }
     }
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    for (var k = 0; k < 4; k++) push(true);
-    if (!reduce) setInterval(push, 2200);
+    for (var k = 0; k < 2; k++) push(true);
+    if (!reduce) setInterval(push, 2600);
   })();
 </script>
 </body></html>
