@@ -2451,6 +2451,9 @@
   .nest-n { margin-top: 8px; font-family: var(--font-numeral); font-size: 56px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
   .nest-l.n1 .nest-n { color: var(--primary); }
   .nest-s { margin-top: 6px; font-size: 20px; color: var(--text-secondary); }
+
+  /* slide 05: mechanism rows reuse the slide 03 list */
+  .tl.mech .tl-item { grid-template-columns: 230px 1fr; }
 </style>
 
 </head>
@@ -2535,35 +2538,19 @@
   <section data-label="Mechanism">
     <div class="frame">
       <div class="corner-mark">05 — The mechanism</div>
-      <h2 class="title">The Parimutuel Market Maker prices any market from the first dollar. <span style="color:var(--primary)">No market maker needed.</span></h2>
-
-      <div class="cmp">
-        <div class="hdr"></div>
-        <div class="hdr">Bootstraps<br>liquidity</div>
-        <div class="hdr">Tradeable</div>
-        <div class="hdr">LPs<br>profitable</div>
-
-        <div class="rowlbl pmm-row">PMM</div>
-        <div class="val pmm-row">✓</div>
-        <div class="val pmm-row">✓</div>
-        <div class="val pmm-row">✓</div>
-
-        <div class="rowlbl">AMM</div>
-        <div class="val bad">—</div>
-        <div class="val good">✓</div>
-        <div class="val bad">✗</div>
-
-        <div class="rowlbl">Order book</div>
-        <div class="val bad">—</div>
-        <div class="val good">✓</div>
-        <div class="val bad">—</div>
-
-        <div class="rowlbl">Parimutuel</div>
-        <div class="val good">✓</div>
-        <div class="val bad">—</div>
-        <div class="val bad">—</div>
+      <div class="split">
+        <div class="split-l">
+      <h2 class="title">We invented the Parimutuel Market Maker <span style="color:var(--primary)">so anyone can open a market.</span></h2>
+        </div>
+        <div class="split-r">
+      <div class="tl mech">
+        <div class="tl-item"><div class="tl-date">Order book</div><div class="tl-txt">Needs a <b>market maker</b> for every market.</div></div>
+        <div class="tl-item"><div class="tl-date">AMM</div><div class="tl-txt">Needs <b>liquidity providers</b> to fund it.</div></div>
+        <div class="tl-item"><div class="tl-date">Parimutuel</div><div class="tl-txt">Funds itself, but <b>locks traders in</b>.</div></div>
+        <div class="tl-item is-next"><div class="tl-date">PMM</div><div class="tl-txt"><b>Funds itself and stays tradeable.</b></div></div>
       </div>
-
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2954,6 +2941,40 @@
         <div class="pre-lbl">Video</div><div class="pre-cell"><div class="pre-n">182</div><div class="pre-note">scripted series on US television in 2005</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">500 hrs</div><div class="pre-note">uploaded to YouTube every minute</div></div>
         <div class="pre-lbl">Prediction markets</div><div class="pre-cell"><div class="pre-n">~10,000</div><div class="pre-note">markets on Polymarket and Kalshi</div></div><div class="pre-arrow">→</div><div class="pre-cell open"><div class="pre-n">12,800</div><div class="pre-note">opened by users on Melee in October</div></div>
       </div>
+    </div>
+  </section>
+  <section data-label="Mechanism appendix">
+    <div class="frame">
+      <div class="corner-mark">Appendix — Mechanisms compared</div>
+      <h2 class="title">The Parimutuel Market Maker prices any market from the first dollar. <span style="color:var(--primary)">No market maker needed.</span></h2>
+
+      <div class="cmp">
+        <div class="hdr"></div>
+        <div class="hdr">Bootstraps<br>liquidity</div>
+        <div class="hdr">Tradeable</div>
+        <div class="hdr">LPs<br>profitable</div>
+
+        <div class="rowlbl pmm-row">PMM</div>
+        <div class="val pmm-row">✓</div>
+        <div class="val pmm-row">✓</div>
+        <div class="val pmm-row">✓</div>
+
+        <div class="rowlbl">AMM</div>
+        <div class="val bad">—</div>
+        <div class="val good">✓</div>
+        <div class="val bad">✗</div>
+
+        <div class="rowlbl">Order book</div>
+        <div class="val bad">—</div>
+        <div class="val good">✓</div>
+        <div class="val bad">—</div>
+
+        <div class="rowlbl">Parimutuel</div>
+        <div class="val good">✓</div>
+        <div class="val bad">—</div>
+        <div class="val bad">—</div>
+      </div>
+
     </div>
   </section>
 </deck-stage>
