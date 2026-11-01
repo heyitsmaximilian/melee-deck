@@ -2392,22 +2392,23 @@
   .uof-grid.built.two .uof-card { padding: 36px 34px; }
   .split .tgt-cards { margin-top: 44px; gap: 18px; }
   .split .tgt-cards .uof-card { padding: 28px 32px; }
-  .split .tgt-chart { height: 600px; }
-  .split .tgt-chart svg { width: 100%; height: 520px; top: 80px; }
+  .split .tgt-chart { height: 765px; }
+  .split .tgt-chart svg { width: 100%; height: 520px; top: 245px; }
   .split .tgt-lbl { width: 22%; }
   .cmp > div { padding: 14px 24px; }
   .cmp .val { font-size: 32px; } .cmp .rowlbl { font-size: 28px; } .cmp .hdr { font-size: 18px; }
   .slide-footnote { margin-top: 20px; }
-  .feed.one { overflow: visible; height: 760px; }
+  .feed.one { overflow: visible; height: 330px; }
   .feed.one::after { display: none; }
-  .feed.one .feed-col { position: relative; height: 100%; -webkit-mask-image: linear-gradient(180deg, #000 86%, transparent 100%); mask-image: linear-gradient(180deg, #000 86%, transparent 100%); }
+  .feed.one .feed-col { position: relative; height: 100%; }
   .feed.one .mk { position: absolute; left: 0; right: 0; top: 0; transition: transform .8s cubic-bezier(.22,.7,.18,1), opacity .8s cubic-bezier(.22,.7,.18,1); will-change: transform, opacity; }
 
   /* === 2026-11-01: title anchored on split slides; 20px text floor (benchmarked on Kalshi) === */
   .split { align-items: start; grid-template-columns: 700px 1fr; gap: 100px; }
   .split-l { padding-top: 40px; width: 700px; }
   .split .title { font-size: 64px; }
-  .split-r { align-self: center; margin-top: 80px; }
+  .split-r { align-self: start; margin-top: 40px; }
+  .split-r .tl-item:first-child { padding-top: 0; }
   .pre-h, .pre-lbl { font-size: 20px; letter-spacing: 0.16em; }
   .cmp .hdr { font-size: 20px; }
   .stg-n { font-size: 20px; }
@@ -2418,6 +2419,18 @@
   .tgt-lbl span { font-size: 20px; }
   .uof-ms { font-size: 20px; letter-spacing: 0.12em; }
   .comp-hdr-role, .comp-rowlbl, .comp-callout-lbl { font-size: 20px; letter-spacing: 0.14em; }
+
+  /* slide 02: one hero market card, top-aligned with the title */
+  .feed.one { height: 560px; }
+  .feed.one .mk { padding: 52px 56px 50px; border-radius: 24px; }
+  .feed.one .mk-top { font-size: 26px; gap: 16px; }
+  .feed.one .mk-av { width: 60px; height: 60px; }
+  .feed.one .mk-cat { font-size: 20px; }
+  .feed.one .mk-q { margin-top: 26px; font-size: 44px; line-height: 1.2; letter-spacing: -0.02em; text-wrap: balance; min-height: 2.4em; }
+  .feed.one .mk-odds { margin-top: 34px; font-size: 30px; }
+  .feed.one .mk-bar { margin-top: 14px; height: 12px; border-radius: 6px; }
+  .feed.one .mk-bar span { border-radius: 6px; }
+  .feed.one .mk-bot { margin-top: 30px; font-size: 26px; }
 </style>
 
 </head>
@@ -2789,7 +2802,7 @@
         </div>
         <div class="split-r">
         <div class="tgt-chart">
-          <svg viewBox="0 0 1000 520" aria-hidden="true">
+          <svg viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true">
             <defs><linearGradient id="tgtG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--primary)"/><stop offset="1" stop-color="#4B36A8"/></linearGradient></defs>
             <line x1="0" y1="90" x2="1000" y2="90" stroke="#1C1A27" stroke-width="2"/><line x1="0" y1="225" x2="1000" y2="225" stroke="#1C1A27" stroke-width="2"/><line x1="0" y1="360" x2="1000" y2="360" stroke="#1C1A27" stroke-width="2"/>
             <line x1="0" y1="495" x2="1000" y2="495" stroke="#2A2638" stroke-width="2"/>
@@ -2797,9 +2810,9 @@
             <rect x="390" y="374" width="220" height="121" rx="10" fill="#4B36A8"/>
             <rect x="710" y="90" width="220" height="405" rx="10" fill="url(#tgtG)"/>
           </svg>
-          <div class="tgt-lbl" style="left:7%;top:355px"><b>12,800</b><span>October 2026, testnet</span></div>
-          <div class="tgt-lbl" style="left:39%;top:286px"><b>30,000</b><span>1,000 a day, mainnet milestone</span></div>
-          <div class="tgt-lbl" style="left:71%;top:2px"><b>100,000</b><span>Target, a month</span></div>
+          <div class="tgt-lbl" style="left:7%;top:520px"><b>12,800</b><span>October 2026, testnet</span></div>
+          <div class="tgt-lbl" style="left:39%;top:451px"><b>30,000</b><span>1,000 a day, mainnet milestone</span></div>
+          <div class="tgt-lbl" style="left:71%;top:167px"><b>100,000</b><span>Target, a month</span></div>
         </div>
         </div>
       </div>
@@ -3015,7 +3028,6 @@
       ['Esports','Will Faker win another Worlds title in 2026?','Yes','No'],
       ['Culture','Views on the next MrBeast video in week one?','Over 100M','Under'],
       ['Sport','Wuhan Open: Sawangkaew vs Frech','Sawangkaew','Frech'],
-      ['Culture','Will the H3 crew release a show without Ethan Klein by November 2?','Yes','No'],
       ['Politics','Surrey mayoral election','Locke','Other'],
       ['Sport','Austria vs Kosovo','Austria','Kosovo'],
       ['Crypto','BTC/USD, next 5 minutes','Up','Down'],
@@ -3025,7 +3037,7 @@
     var C = [['@ishowspeed','assets/avatars/speed.jpg'],['@kaicenat','assets/avatars/kaicenat.jpg'],['@xqc','assets/avatars/xqc.jpg'],['@ninja','assets/avatars/ninja.jpg']];
     var col = document.querySelector('.feed.one .feed-col');
     if (!col) return;
-    var SLOT = 372, OP = [1, .4], n = 0, cards = [], timer = null;
+    var SLOT = 0, OP = [1], n = 0, cards = [], timer = null;
     function money(v) { return v >= 1e6 ? '$' + (v / 1e6).toFixed(2) + 'M' : '$' + Math.round(v / 1000) + 'k'; }
     function make() {
       var q = Q[n % Q.length], c = C[n % C.length]; n++;
@@ -3039,7 +3051,7 @@
         '<div class="mk-bot"><span>' + money(vol) + ' volume \u00b7 ' + Math.round(vol / (120 + Math.random() * 60)).toLocaleString('en-US') + ' traders</span><span class="mk-earn">Creator earnings <b>$' + Math.round(vol * 0.015).toLocaleString('en-US') + '</b></span></div>';
       return el;
     }
-    function place(el, slot, o) { el.style.transform = 'translateY(' + slot * SLOT + 'px)'; el.style.opacity = o; }
+    function place(el, slot, o) { el.style.transform = 'translateY(' + (slot < 0 ? 18 : slot > 0 ? -18 : 0) + 'px)'; el.style.opacity = o; }
     function push() {
       var el = make();
       el.style.transition = 'none'; place(el, -0.3, 0);
