@@ -2502,6 +2502,19 @@
   .cs-n { font-family: var(--font-numeral); font-size: 88px; font-weight: 800; letter-spacing: -0.035em; line-height: 1; color: var(--text); }
   .cs-n.v { color: var(--primary); } .cs-n.g { color: #8A869C; }
   .cs-l { margin-top: 10px; font-size: 24px; color: var(--text-secondary); }
+
+  /* viral flywheel slide */
+  .vf { flex: 1; display: grid; grid-template-columns: 1fr 60px 1fr 60px 1fr 60px 1fr; align-items: stretch; margin-top: 10px; }
+  .vf-step { display: flex; flex-direction: column; gap: 12px; padding-top: 28px; border-top: 2px solid rgba(255,255,255,0.12); }
+  .vf-step.hi { border-top-color: var(--primary); }
+  .vf-k { font-family: var(--font-mono); font-size: 20px; font-weight: 700; letter-spacing: .16em; color: var(--primary); }
+  .vf-name { font-size: 34px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; color: var(--text); min-height: 2.3em; }
+  .vf-step.hi .vf-name { color: var(--primary); }
+  .vf-n { margin-top: 10px; font-family: var(--font-numeral); font-size: 72px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
+  .vf-n.v { color: var(--primary); }
+  .vf-nl { font-size: 20px; line-height: 1.35; color: var(--text-muted); min-height: 2.7em; }
+  .vf-txt { margin-top: 8px; font-size: 24px; line-height: 1.45; color: var(--text-secondary); }
+  .vf-arrow { display: flex; align-items: flex-start; justify-content: center; padding-top: 90px; font-size: 36px; color: var(--text-muted); }
 </style>
 
 </head>
@@ -2518,7 +2531,7 @@
       <p class="sub">The frontier prediction market.</p>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>01 / 18</span>
+        <span>01 / 19</span>
       </div>
     </div>
   </section>
@@ -2759,10 +2772,46 @@
       </div>
     </div>
   </section>
+  <section data-label="Viral">
+    <div class="frame">
+      <div class="corner-mark">12 — Early signal</div>
+      <h2 class="title">We're finding early product-market fit <span style="color:var(--primary)">in viral internet controversies.</span></h2>
+      <p class="sub">Viral markets are already our highest-volume markets outside crypto.</p>
+      <div class="vf">
+        <div class="vf-step">
+          <div class="vf-k">01</div>
+          <div class="vf-name">Breaking news</div>
+          <div class="vf-n">3.9M</div><div class="vf-nl">views on the post that broke a podcast scandal</div>
+          <div class="vf-txt">The story trends on X.</div>
+        </div>
+        <div class="vf-arrow" aria-hidden="true">→</div>
+        <div class="vf-step">
+          <div class="vf-k">02</div>
+          <div class="vf-name">Market launched</div>
+          <div class="vf-n">1 day</div><div class="vf-nl">from story to market</div>
+          <div class="vf-txt">Melee opens a market on it.</div>
+        </div>
+        <div class="vf-arrow" aria-hidden="true">→</div>
+        <div class="vf-step">
+          <div class="vf-k">03</div>
+          <div class="vf-name">Viral distribution</div>
+          <div class="vf-n">106.5K</div><div class="vf-nl">views on the reply linking our market</div>
+          <div class="vf-txt">The market spreads as content.</div>
+        </div>
+        <div class="vf-arrow" aria-hidden="true">→</div>
+        <div class="vf-step hi">
+          <div class="vf-k">04</div>
+          <div class="vf-name">Creators acquired</div>
+          <div class="vf-n v">Live</div><div class="vf-nl">on the stream of the account that broke it</div>
+          <div class="vf-txt">A K-pop fan page we paid $10 to post asks to become a creator.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section data-label="Traction">
     <div class="frame">
-      <div class="corner-mark">12 — Traction</div>
+      <div class="corner-mark">13 — Traction</div>
       <h2 class="title">Users created <span style="color:var(--primary)">12,800 markets</span> in October.</h2>
       <p class="sub">By the end of the month they were opening <b>more than 500 markets a day</b>.</p>
 
@@ -2808,7 +2857,7 @@
 
   <section data-label="Built">
     <div class="frame">
-      <div class="corner-mark">13 — What we built</div>
+      <div class="corner-mark">14 — What we built</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">We have built <span style="color:var(--primary)">four products</span> from scratch.</h2>
@@ -2827,7 +2876,7 @@
 
   <section data-label="Team">
     <div class="frame">
-      <div class="corner-mark">14 — Team</div>
+      <div class="corner-mark">15 — Team</div>
       <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
 
       <div class="team-row">
@@ -2882,7 +2931,7 @@
 
   <section data-label="Target">
     <div class="frame">
-      <div class="corner-mark">15 — The target</div>
+      <div class="corner-mark">16 — The target</div>
       <div class="split top">
         <div class="split-l">
       <h2 class="title">We're aiming for <span style="color:var(--primary)">100,000 markets a month.</span></h2>
@@ -2912,7 +2961,7 @@
 
   <section data-label="Use of funds">
     <div class="frame">
-      <div class="corner-mark">16 — The raise</div>
+      <div class="corner-mark">17 — The raise</div>
       <h2 class="title">$5M to reach <span style="color:var(--primary)">10,000 creators on mainnet.</span></h2>
       <p class="sub">The raise funds <b>creator distribution and the order book hybrid</b>.</p>
 
@@ -2946,7 +2995,7 @@
       <div class="imagine"><p>Imagine a world</p><ul><li>where any creator opens a market the minute something happens.</li><li>where every community prices its own questions.</li><li>where the people who build a market are the ones paid for it.</li></ul></div>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>17 / 18</span>
+        <span>18 / 19</span>
       </div>
     </div>
   </section>
@@ -2958,7 +3007,7 @@
       <h1 class="headline"><em>Q&amp;A.</em></h1>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>18 / 18</span>
+        <span>19 / 19</span>
       </div>
     </div>
   </section>
