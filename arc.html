@@ -2252,6 +2252,24 @@
   .slide-footnote { font-family: var(--font-legal); font-weight: 500; letter-spacing: 0.12em; }
 
   /* === arc.html additions === */
+  /* live market feed, slide 02 */
+  .feed { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; margin-top: 18px; overflow: hidden; position: relative; }
+  .feed::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 110px; background: linear-gradient(180deg, rgba(0,0,0,0), #000 90%); pointer-events: none; }
+  .feed-col { display: flex; flex-direction: column; gap: 22px; min-height: 0; }
+  .mk { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--r-card); padding: 26px 28px 24px; box-shadow: var(--card-shadow); transition: opacity .55s ease, transform .55s ease; }
+  .mk.enter { opacity: 0; transform: translateY(-26px); }
+  .mk.leave { opacity: 0; transform: translateY(18px); }
+  .mk-top { display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+  .mk-cat { color: var(--primary); }
+  .mk-top .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px rgba(63,207,142,0.8); }
+  .mk-q { margin-top: 14px; font-size: 27px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); }
+  .mk-bot { margin-top: 18px; display: flex; align-items: center; gap: 14px; font-size: 18px; color: var(--text-secondary); }
+  .mk-bar { flex: 1; height: 6px; border-radius: 3px; background: var(--track); overflow: hidden; }
+  .mk-bar span { display: block; height: 100%; border-radius: 3px; background: var(--primary); }
+  .feed-foot { margin-top: 20px; display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }
+  .feed-live { width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px rgba(63,207,142,0.9); animation: feedpulse 1.6s ease-in-out infinite; }
+  @keyframes feedpulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+
   .htl { position: relative; flex: 1; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 28px; align-content: center; margin-top: 10px; }
   .htl-line { position: absolute; left: 0; right: 0; top: calc(50% - 1px); height: 2px; background: var(--border-hover); }
   .htl-item { position: relative; display: flex; flex-direction: column; justify-content: center; min-height: 420px; }
@@ -2338,45 +2356,12 @@
       <div class="corner-mark">02 — The idea</div>
       <h2 class="title">Imagine opening a market on anything, <span style="color:var(--primary)">the minute it happens.</span></h2>
       <p class="sub">We built a prediction market where anyone can open a market and earn from the trading on it. No listing team. No market maker.</p>
-
-      <div class="s4-wrap">
-        <div class="s4-row">
-        <div class="ce-wrap">
-          <div class="ce">
-            <div class="ce-head rv" style="--d:.10s">
-              <div class="ce-q">Will GTA VI score 90+ on Metacritic?</div>
-              <div class="ce-creator">
-                <span class="ce-av"><img src="assets/avatars/speed.jpg" alt="IShowSpeed"></span>
-                <span class="ce-handle">@ishowspeed</span>
-              </div>
-            </div>
-            <div class="ce-scale rv-fade" style="--d:.22s"><span>Yes 62%</span><span>No 38%</span></div>
-            <div class="ce-bar"><span style="width:62%"></span></div>
-            <div class="ce-meta rv-fade" style="--d:.46s">$<span id="ce-vol">14.90</span>M volume · 7,842 traders</div>
-            <div class="ce-earn rv" style="--d:.58s">
-              <span class="ce-label">Creator earnings</span>
-              <b>$<span id="ce-earn">223,479</span></b>
-            </div>
-            <div class="ce-social rv" style="--d:.74s">
-              <div class="ce-faces" aria-hidden="true">
-                <span class="ce-face"><img src="assets/avatars/kaicenat.jpg" alt="Kai Cenat"></span>
-                <span class="ce-face"><img src="assets/avatars/xqc.jpg" alt="xQc"></span>
-                <span class="ce-face"><img src="assets/avatars/ninja.jpg" alt="Ninja"></span>
-              </div>
-              <span class="ce-social-txt"><b>3 of your friends</b> traded this market</span>
-            </div>
-          </div>
-        </div>
-        </div>
-        <div class="s4-chips">
-          <span class="s4-chip">Crypto</span>
-          <span class="s4-chip">Sports</span>
-          <span class="s4-chip">Politics</span>
-          <span class="s4-chip">Economics</span>
-          <span class="s4-chip live">Culture</span>
-          <span class="s4-chip">Breaking news</span>
-        </div>
+      <div class="feed" aria-label="Markets being opened right now">
+        <div class="feed-col" data-col="0"></div>
+        <div class="feed-col" data-col="1"></div>
+        <div class="feed-col" data-col="2"></div>
       </div>
+      <div class="feed-foot"><span class="feed-live"></span>Markets opened on Melee in October 2026</div>
     </div>
   </section>
 
@@ -2896,6 +2881,63 @@
   ReactDOM.createRoot(document.getElementById('tweak-mount')).render(<DeckTweaks />);
 </script>
 
+
+<script>
+  /* Slide 02 live feed. Questions are real markets opened on Melee in October 2026
+     (from the daily metrics reports). Presale fill is drawn from the observed 34% to 89% range. */
+  (function () {
+    var Q = [
+      ['Culture','Will ZachXBT publish a thread about Kimchi on X by November 9?'],
+      ['Sport','Who wins PSG vs Troyes, Ligue 1, 7 November?'],
+      ['Economics','Bank of Russia rate decision in October?'],
+      ['Sport','Brose Bamberg vs Mitteldeutscher BC'],
+      ['Esports','Will there be a pentakill at Worlds 2026?'],
+      ['Culture','Will LISA\u2019s TARANTINO video reach 100M YouTube views in 72 hours?'],
+      ['Sport','Shanghai Rolex Masters: Svrcina vs Etcheverry'],
+      ['Crypto','How much will the Initia exploit drain?'],
+      ['Esports','Will Gen.G go 3-0 in the Worlds 2026 Swiss Stage?'],
+      ['Culture','What will be the #2 global Netflix show this week?'],
+      ['Sport','KBO: SSG Landers vs Kia Tigers'],
+      ['Esports','Will Faker win another Worlds title in 2026?'],
+      ['Culture','Views on the next MrBeast video in week one?'],
+      ['Sport','Wuhan Open: Sawangkaew vs Frech'],
+      ['Culture','Will the H3 crew release a show without Ethan Klein by November 2?'],
+      ['Politics','Surrey mayoral election'],
+      ['Sport','Austria vs Kosovo'],
+      ['Crypto','BTC/USD, next 5 minutes'],
+      ['Esports','Which region wins Worlds 2026?'],
+      ['Sport','Bengals vs Dolphins']
+    ];
+    var cols = document.querySelectorAll('.feed-col');
+    if (!cols.length) return;
+    var i = 0, col = 0;
+    function card(q) {
+      var fill = 34 + Math.round(Math.random() * 55);
+      var el = document.createElement('div');
+      el.className = 'mk enter';
+      el.innerHTML = '<div class="mk-top"><span class="dot"></span><span class="mk-cat">' + q[0] + '</span><span>Just opened</span></div>' +
+        '<div class="mk-q">' + q[1] + '</div>' +
+        '<div class="mk-bot"><div class="mk-bar"><span style="width:' + fill + '%"></span></div><span>Presale ' + fill + '% filled</span></div>';
+      return el;
+    }
+    function push(instant) {
+      var c = cols[col]; col = (col + 1) % cols.length;
+      var el = card(Q[i % Q.length]); i++;
+      if (instant) el.classList.remove('enter');
+      c.insertBefore(el, c.firstChild);
+      if (!instant) setTimeout(function () { el.classList.remove('enter'); }, 30);
+      var kids = c.querySelectorAll('.mk');
+      if (kids.length > 3) {
+        var last = kids[kids.length - 1];
+        last.classList.add('leave');
+        setTimeout(function () { last.remove(); }, 600);
+      }
+    }
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    for (var k = 0; k < 9; k++) push(true);
+    if (!reduce) setInterval(push, 1400);
+  })();
+</script>
 </body></html>
 
 
