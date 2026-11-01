@@ -2431,6 +2431,15 @@
   .feed.one .mk-bar { margin-top: 14px; height: 12px; border-radius: 6px; }
   .feed.one .mk-bar span { border-radius: 6px; }
   .feed.one .mk-bot { margin-top: 30px; font-size: 26px; }
+
+  /* split slides: centre the whole composition vertically (Max picked this over title-at-top);
+     the target slide keeps top alignment because both its columns already fill the height */
+  .split { align-items: center; height: 100%; }
+  .split-l { padding-top: 0; }
+  .split-r { align-self: center; margin-top: 0; }
+  .split.top { align-items: start; height: auto; }
+  .split.top .split-l { padding-top: 40px; }
+  .split.top .split-r { align-self: start; margin-top: 40px; }
 </style>
 
 </head>
@@ -2791,7 +2800,7 @@
   <section data-label="Target">
     <div class="frame">
       <div class="corner-mark">14 — The target</div>
-      <div class="split">
+      <div class="split top">
         <div class="split-l">
       <h2 class="title">We're aiming for <span style="color:var(--primary)">100,000 markets a month.</span></h2>
       <p class="sub">12,800 user-created markets in the first month on testnet. <b>Mainnet and the creator network take it to 100,000.</b></p>
