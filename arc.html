@@ -2515,6 +2515,34 @@
   .vf-nl { font-size: 20px; line-height: 1.35; color: var(--text-muted); min-height: 2.7em; }
   .vf-txt { margin-top: 8px; font-size: 24px; line-height: 1.45; color: var(--text-secondary); }
   .vf-arrow { display: flex; align-items: flex-start; justify-content: center; padding-top: 90px; font-size: 36px; color: var(--text-muted); }
+
+  /* hedging slide: business-opened market cards */
+  .hg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .hg-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 32px 34px; display: flex; flex-direction: column; gap: 16px; min-height: 230px; }
+  .hg-card.hi { border-color: rgba(var(--primary-rgb),0.55); background: rgba(var(--primary-rgb),0.08); }
+  .hg-who { font-size: 20px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-muted); }
+  .hg-card.hi .hg-who { color: var(--primary); }
+  .hg-q { font-size: 32px; font-weight: 600; line-height: 1.25; letter-spacing: -0.01em; color: var(--text); }
+
+  /* viral case slide */
+  .vc-strip { margin-top: 4px; display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--text-muted); }
+  .vc-strip i { font-style: normal; color: var(--text-muted); }
+  .vc-strip b { color: var(--primary); }
+  .vc-link { margin-left: auto; font-size: 22px; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--primary); text-decoration: none; border-bottom: 1px solid rgba(var(--primary-rgb),0.45); padding-bottom: 3px; }
+  .vc { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 30px; }
+  .vc-panel { display: flex; flex-direction: column; gap: 18px; }
+  .vc-img { height: 300px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #000; }
+  .vc-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; display: block; }
+  .vc-img.top img { object-position: 50% 0%; }
+  .vc-stats { display: flex; gap: 40px; }
+  .vc-stats b { display: block; font-family: var(--font-numeral); font-size: 48px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--text); }
+  .vc-stats b.v { color: var(--primary); }
+  .vc-stats span { display: block; margin-top: 6px; font-size: 20px; color: var(--text-muted); }
+  .vc-cap { font-size: 24px; line-height: 1.45; color: var(--text-secondary); }
+  .vc-cap b { color: var(--text); font-weight: 600; }
+  .hg-h { margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 22px; color: var(--text-secondary); }
+  .uof-grid.two.stack { grid-template-columns: 1fr; gap: 24px; }
+  .uof-grid.two.stack .uof-card { padding: 34px 40px; }
 </style>
 
 </head>
@@ -2531,7 +2559,7 @@
       <p class="sub">The frontier prediction market.</p>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>01 / 19</span>
+        <span>01 / 20</span>
       </div>
     </div>
   </section>
@@ -2776,34 +2804,36 @@
     <div class="frame">
       <div class="corner-mark">12 — Early signal</div>
       <h2 class="title">We're finding early product-market fit <span style="color:var(--primary)">in viral internet controversies.</span></h2>
-      <p class="sub">Viral markets are already our highest-volume markets outside crypto.</p>
-      <div class="vf">
-        <div class="vf-step">
-          <div class="vf-k">01</div>
-          <div class="vf-name">Breaking news</div>
-          <div class="vf-n">3.9M</div><div class="vf-nl">views on the post that broke a podcast scandal</div>
-          <div class="vf-txt">The story trends on X.</div>
+      <div class="vc-strip">Breaking news <i>→</i> Market launched <i>→</i> Viral distribution <i>→</i> <b>Creators acquired</b><a class="vc-link" href="https://app.notion.com/p/Melee-Viral-Market-Flywheel-406c75b77d5c810997b3f02b034b9b59" target="_blank" rel="noopener">Read the case study →</a></div>
+      <div class="vc">
+        <div class="vc-panel">
+          <div class="vc-img"><img src="assets/viral/stream.jpg" alt="The account that broke the story trading our market live on stream"></div>
+          <div class="vc-stats"><div><b>3.9M</b><span>views on the post that broke the story</span></div><div><b>106.5K</b><span>views on the reply linking our market</span></div></div>
+          <p class="vc-cap">A podcast scandal breaks on X. We open a market the next day, and the account that broke the story trades it <b>live on stream</b>.</p>
         </div>
-        <div class="vf-arrow" aria-hidden="true">→</div>
-        <div class="vf-step">
-          <div class="vf-k">02</div>
-          <div class="vf-name">Market launched</div>
-          <div class="vf-n">1 day</div><div class="vf-nl">from story to market</div>
-          <div class="vf-txt">Melee opens a market on it.</div>
+        <div class="vc-panel">
+          <div class="vc-img top"><img src="assets/viral/lisa-market.png" alt="Melee market on LISA's Tarantino video, presale oversubscribed"></div>
+          <div class="vc-stats"><div><b>$85.4K</b><span>in presale bids from 308 bidders</span></div><div><b class="v">5.7×</b><span>oversubscribed</span></div></div>
+          <p class="vc-cap">A K-pop fan page we paid $10 shares our LISA market, then <b>asks to become a creator</b>.</p>
         </div>
-        <div class="vf-arrow" aria-hidden="true">→</div>
-        <div class="vf-step">
-          <div class="vf-k">03</div>
-          <div class="vf-name">Viral distribution</div>
-          <div class="vf-n">106.5K</div><div class="vf-nl">views on the reply linking our market</div>
-          <div class="vf-txt">The market spreads as content.</div>
+      </div>
+    </div>
+  </section>
+  <section data-label="Hedging">
+    <div class="frame">
+      <div class="corner-mark">13 — The long game</div>
+      <div class="split">
+        <div class="split-l">
+      <h2 class="title">Next, businesses open markets on <span style="color:var(--primary)">the risks only they face.</span></h2>
+      <p class="sub">Kalshi was founded so businesses could hedge events, but it only lists the risks a market maker will price. <b>The PMM bootstraps the other side of any risk.</b></p>
         </div>
-        <div class="vf-arrow" aria-hidden="true">→</div>
-        <div class="vf-step hi">
-          <div class="vf-k">04</div>
-          <div class="vf-name">Creators acquired</div>
-          <div class="vf-n v">Live</div><div class="vf-nl">on the stream of the account that broke it</div>
-          <div class="vf-txt">A K-pop fan page we paid $10 to post asks to become a creator.</div>
+        <div class="split-r">
+      <div class="hg-grid">
+        <div class="hg-card"><div class="hg-who">A vineyard</div><div class="hg-q">Frost in Napa before the October harvest?</div><div class="hg-h">Hedges a lost vintage.</div></div>
+        <div class="hg-card"><div class="hg-who">An importer</div><div class="hg-q">Long Beach port strike before March?</div><div class="hg-h">Hedges stranded inventory.</div></div>
+        <div class="hg-card"><div class="hg-who">A festival</div><div class="hg-q">More than an inch of rain on site Saturday?</div><div class="hg-h">Hedges ticket refunds.</div></div>
+        <div class="hg-card hi"><div class="hg-who">A developer</div><div class="hg-q">County approves the rezoning by June?</div><div class="hg-h">Hedges carrying costs.</div></div>
+      </div>
         </div>
       </div>
     </div>
@@ -2811,7 +2841,7 @@
 
   <section data-label="Traction">
     <div class="frame">
-      <div class="corner-mark">13 — Traction</div>
+      <div class="corner-mark">14 — Traction</div>
       <h2 class="title">Users created <span style="color:var(--primary)">12,800 markets</span> in October.</h2>
       <p class="sub">By the end of the month they were opening <b>more than 500 markets a day</b>.</p>
 
@@ -2857,7 +2887,7 @@
 
   <section data-label="Built">
     <div class="frame">
-      <div class="corner-mark">14 — What we built</div>
+      <div class="corner-mark">15 — What we built</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">We have built <span style="color:var(--primary)">four products</span> from scratch.</h2>
@@ -2876,7 +2906,7 @@
 
   <section data-label="Team">
     <div class="frame">
-      <div class="corner-mark">15 — Team</div>
+      <div class="corner-mark">16 — Team</div>
       <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
 
       <div class="team-row">
@@ -2931,7 +2961,7 @@
 
   <section data-label="Target">
     <div class="frame">
-      <div class="corner-mark">16 — The target</div>
+      <div class="corner-mark">17 — The target</div>
       <div class="split top">
         <div class="split-l">
       <h2 class="title">We're aiming for <span style="color:var(--primary)">100,000 markets a month.</span></h2>
@@ -2961,11 +2991,14 @@
 
   <section data-label="Use of funds">
     <div class="frame">
-      <div class="corner-mark">17 — The raise</div>
+      <div class="corner-mark">18 — The raise</div>
+      <div class="split">
+        <div class="split-l">
       <h2 class="title">$5M to reach <span style="color:var(--primary)">10,000 creators on mainnet.</span></h2>
       <p class="sub">The raise funds <b>creator distribution and the order book hybrid</b>.</p>
-
-      <div class="uof-grid two">
+        </div>
+        <div class="split-r">
+      <div class="uof-grid two stack">
         <div class="uof-card">
           <div class="uof-name">Growth</div>
           <ul class="uof-points">
@@ -2984,6 +3017,8 @@
           <div class="uof-ms">Milestone · order book hybrid · <b>Q2 2027</b></div>
         </div>
       </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -2995,7 +3030,7 @@
       <div class="imagine"><p>Imagine a world</p><ul><li>where any creator opens a market the minute something happens.</li><li>where every community prices its own questions.</li><li>where the people who build a market are the ones paid for it.</li></ul></div>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>18 / 19</span>
+        <span>19 / 20</span>
       </div>
     </div>
   </section>
@@ -3007,7 +3042,7 @@
       <h1 class="headline"><em>Q&amp;A.</em></h1>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>19 / 19</span>
+        <span>20 / 20</span>
       </div>
     </div>
   </section>
