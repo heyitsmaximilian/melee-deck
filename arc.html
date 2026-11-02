@@ -2420,6 +2420,10 @@
   .feed.one .mk { padding: 52px 56px 50px; border-radius: 24px; }
   .feed.one .mk-top { font-size: 26px; gap: 16px; }
   .feed.one .mk-av { width: 60px; height: 60px; }
+  /* 2026-11-02: card sized to its content and centred on the text column (was a 560px box, top-aligned) */
+  .feed.one { height: auto; }
+  .feed.one .feed-col { display: grid; height: auto; }
+  .feed.one .mk { position: relative; top: auto; left: auto; right: auto; grid-area: 1 / 1; }
   .feed.one .mk-cat { font-size: 20px; }
   .feed.one .mk-q { margin-top: 26px; font-size: 44px; line-height: 1.2; letter-spacing: -0.02em; text-wrap: balance; min-height: 2.4em; }
   .feed.one .mk-odds { margin-top: 34px; font-size: 30px; }
