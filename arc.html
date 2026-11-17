@@ -2564,25 +2564,10 @@
 
   /* === Demo slide: a simulated front end of the market assistant (melee-client creator/assistant) === */
   .dm { position: relative; z-index: 1; width: 100%; height: 100%; box-sizing: border-box; overflow: hidden; }
-  .dm-tag { position: absolute; top: 58px; right: 100px; font-family: var(--font-mono); font-size: 20px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
-  .dm-step { position: absolute; inset: 0; display: flex; box-sizing: border-box; opacity: 0; visibility: hidden; transform: translateY(14px); transition: opacity .45s ease, transform .45s ease, visibility 0s linear .45s; }
-  .dm[data-step="ask"] .dm-ask, .dm[data-step="work"] .dm-work, .dm[data-step="live"] .dm-live { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .dm-col { position: absolute; left: 470px; right: 470px; top: 250px; display: flex; flex-direction: column; }
+  .dm-h { margin: 0; font-size: 68px; font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; color: var(--text); white-space: nowrap; }
 
-  .dm-orb { position: relative; display: inline-flex; flex: none; width: 44px; height: 44px; border-radius: 50%; background: #16141F; box-shadow: 0 0 0 1px rgba(255,255,255,0.1); }
-  .dm-orb.lg { width: 76px; height: 76px; }
-  .dm-orb b { position: absolute; inset: 22%; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgb(var(--primary-rgb)) 0%, rgba(var(--primary-rgb),0.75) 55%, rgba(var(--primary-rgb),0.35) 100%); box-shadow: 0 0 14px rgba(var(--primary-rgb),0.45); animation: dmBreathe 4s ease-in-out infinite; }
-  .dm-orb i { position: absolute; inset: 0; border-radius: 50%; opacity: 0; background: conic-gradient(from 0deg, rgba(var(--primary-rgb),0.9) 0deg, rgba(var(--primary-rgb),0) 110deg, rgba(var(--primary-rgb),0) 360deg); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); }
-  .dm-orb.thinking i { opacity: 1; animation: dmOrbit 1.6s linear infinite; }
-  .dm-orb.thinking b { animation-duration: 1.4s; }
-  @keyframes dmBreathe { 0%,100% { transform: scale(0.92); opacity: 0.85; } 50% { transform: scale(1); opacity: 1; } }
-  @keyframes dmOrbit { to { transform: rotate(360deg); } }
-  @keyframes dmRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-
-  .dm-ask { flex-direction: column; justify-content: center; padding: 60px 500px 0; }
-  .dm-h { margin: 28px 0 0; font-size: 76px; font-weight: 700; line-height: 1.08; letter-spacing: -0.03em; color: var(--text); }
-  .dm-p { margin: 20px 0 0; font-size: 28px; line-height: 1.45; color: var(--text-secondary); }
-
-  .dm-box { margin: 40px 0 0; display: flex; align-items: flex-end; gap: 16px; padding: 14px 14px 14px 36px; border: 1.5px solid rgba(255,255,255,0.18); border-radius: 46px; background: #0B0A12; transition: border-color .2s ease, box-shadow .2s ease; }
+  .dm-box { margin: 44px 0 0; display: flex; align-items: flex-end; gap: 16px; padding: 14px 14px 14px 36px; border: 1.5px solid rgba(255,255,255,0.18); border-radius: 46px; background: #0B0A12; transition: border-color .2s ease, box-shadow .2s ease; }
   .dm-box:focus-within { border-color: var(--primary); box-shadow: 0 0 0 5px rgba(var(--primary-rgb),0.2); }
   .dm-box textarea { flex: 1; min-width: 0; height: 62px; max-height: 148px; padding: 10px 0; resize: none; border: 0; outline: 0; background: transparent; color: var(--text); font-family: inherit; font-size: 30px; line-height: 1.4; }
   .dm-box textarea::placeholder { color: var(--text-muted); }
@@ -2591,49 +2576,26 @@
   .dm-box button:disabled { cursor: default; }
   .dm-box svg { width: 28px; height: 28px; }
 
-  .dm-ex-lbl { margin-top: 44px; font-family: var(--font-mono); font-size: 20px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-muted); }
-  .dm-ex { list-style: none; margin: 6px 0 0; padding: 0; }
+  .dm-ex { list-style: none; margin: 26px 0 0; padding: 0; }
   .dm-ex li { border-bottom: 1px solid var(--border); }
   .dm-ex li:last-child { border-bottom: 0; }
   .dm-ex button { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; border: 0; background: none; color: var(--text); font-family: inherit; font-size: 28px; line-height: 1.3; text-align: left; cursor: pointer; }
   .dm-ex svg { flex: none; width: 26px; height: 26px; color: var(--text-muted); transition: color .2s ease; }
   .dm-ex button:hover svg { color: var(--text); }
 
-  .dm-work { gap: 72px; padding: 170px 150px 120px; align-items: stretch; }
-  .dm-chat { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; }
-  .dm-log { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: flex-end; gap: 28px; padding-bottom: 30px; overflow: hidden; }
-  .dm-me { align-self: flex-end; max-width: 82%; padding: 18px 28px; border-radius: 30px; background: rgba(255,255,255,0.08); color: var(--text); font-size: 28px; line-height: 1.4; overflow-wrap: anywhere; animation: dmRise .32s cubic-bezier(.2,.8,.2,1) both; }
-  .dm-ai { display: flex; gap: 18px; align-items: flex-start; font-size: 28px; line-height: 1.45; color: var(--text); animation: dmRise .4s ease both; }
-  .dm-ai p { margin: 3px 0 0; }
-  .dm-ai.status p { color: var(--text-muted); }
-  .dm-chat .dm-box { margin: 0; }
-  .dm-chat .dm-box[hidden] { display: flex; visibility: hidden; }
+  .dm-status { display: flex; align-items: center; gap: 18px; margin-top: 44px; font-size: 28px; line-height: 1.4; color: var(--text-secondary); animation: dmRise .4s ease both; }
+  .dm-status p { margin: 0; }
+  .dm-orb { position: relative; display: inline-flex; flex: none; width: 44px; height: 44px; border-radius: 50%; background: #16141F; box-shadow: 0 0 0 1px rgba(255,255,255,0.1); }
+  .dm-orb b { position: absolute; inset: 22%; border-radius: 50%; background: radial-gradient(circle at 35% 35%, rgb(var(--primary-rgb)) 0%, rgba(var(--primary-rgb),0.75) 55%, rgba(var(--primary-rgb),0.35) 100%); box-shadow: 0 0 14px rgba(var(--primary-rgb),0.45); animation: dmBreathe 4s ease-in-out infinite; }
+  .dm-orb i { position: absolute; inset: 0; border-radius: 50%; opacity: 0; background: conic-gradient(from 0deg, rgba(var(--primary-rgb),0.9) 0deg, rgba(var(--primary-rgb),0) 110deg, rgba(var(--primary-rgb),0) 360deg); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2.5px)); }
+  .dm-orb.thinking i { opacity: 1; animation: dmOrbit 1.6s linear infinite; }
+  .dm-orb.thinking b { animation-duration: 1.4s; }
+  @keyframes dmBreathe { 0%,100% { transform: scale(0.92); opacity: 0.85; } 50% { transform: scale(1); opacity: 1; } }
+  @keyframes dmOrbit { to { transform: rotate(360deg); } }
+  @keyframes dmRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
 
-  .dm-draft { flex: 0 0 660px; display: flex; flex-direction: column; padding: 34px 40px 38px; border: 1px solid var(--border); border-radius: 24px; background: var(--bg-card); box-shadow: var(--card-shadow); }
-  .dm-draft-h { display: flex; justify-content: space-between; align-items: baseline; font-size: 28px; font-weight: 600; color: var(--text); }
-  .dm-draft-h em { font-style: normal; font-size: 20px; font-weight: 400; color: var(--text-muted); }
-  .dm-rows { flex: 1; min-height: 0; margin: 8px 0 0; }
-  .dm-empty { margin: 18px 0 0; font-size: 24px; line-height: 1.45; color: var(--text-muted); }
-  .dm-row { padding: 18px 0; border-bottom: 1px solid var(--border); animation: dmRise .4s ease both; }
-  .dm-row dt { font-family: var(--font-mono); font-size: 20px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); }
-  .dm-row dd { margin: 8px 0 0; font-size: 24px; line-height: 1.4; color: var(--text-secondary); overflow-wrap: anywhere; }
-  .dm-row.q dd { font-size: 30px; font-weight: 600; line-height: 1.25; color: var(--text); }
-  .dm-chips { display: flex; flex-wrap: wrap; gap: 10px; }
-  .dm-chips span { padding: 4px 14px; border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; font-size: 22px; font-weight: 600; color: var(--text); }
-
-  .dm-cta, .dm-ghost { height: 72px; padding: 0 44px; border-radius: 16px; font-family: inherit; font-size: 28px; font-weight: 600; cursor: pointer; transition: opacity .2s ease, transform .15s ease, border-color .2s ease; }
-  .dm-cta { border: 0; background: var(--primary); color: #fff; }
-  .dm-cta:disabled { opacity: 0.35; cursor: default; }
-  .dm-cta:not(:disabled):hover { transform: translateY(-1px); }
-  .dm-ghost { border: 1px solid rgba(255,255,255,0.18); background: none; color: var(--text); }
-  .dm-ghost:hover { border-color: rgba(255,255,255,0.4); }
-  .dm-draft .dm-cta { margin-top: 26px; }
-
-  .dm-live { flex-direction: column; justify-content: center; align-items: center; padding-top: 30px; }
-  .dm-live-k { display: inline-flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 20px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--green); }
-  .dm-live-k i { width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 14px rgba(63,207,142,0.9); animation: feedpulse 1.6s ease-in-out infinite; }
-  .dm-live .dm-h { margin-top: 16px; font-size: 64px; }
-  .dm-card { width: 920px; margin-top: 44px; padding: 48px 52px 46px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 24px; background: var(--bg-card); box-shadow: var(--card-shadow); }
+  .dm-card { margin-top: 44px; padding: 48px 52px 46px; box-sizing: border-box; border: 1px solid var(--border); border-radius: 24px; background: var(--bg-card); box-shadow: var(--card-shadow); animation: dmRise .5s cubic-bezier(.2,.8,.2,1) both; }
+  .dm-ex[hidden], .dm-status[hidden], .dm-card[hidden] { display: none; }
   .dm-card .mk-top { font-size: 26px; gap: 16px; }
   .dm-av { flex: none; width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #C9B8FF 0%, var(--primary) 55%, #4B36A8 100%); }
   .dm-card .mk-cat { font-size: 20px; }
@@ -2642,14 +2604,10 @@
   .dm-card .mk-bar { margin-top: 14px; height: 12px; border-radius: 6px; }
   .dm-card .mk-bar span { border-radius: 6px; transition: width .8s ease; }
   .dm-card .mk-bot { margin-top: 28px; font-size: 26px; font-variant-numeric: tabular-nums; }
-  .dm-actions { display: flex; gap: 18px; margin-top: 40px; }
 
   .dm-skip { position: absolute; right: 100px; bottom: 56px; padding: 0; border: 0; background: none; font-family: var(--font-mono); font-size: 24px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); cursor: pointer; transition: color .2s ease; }
   .dm-skip:hover { color: var(--text); }
-  @media (prefers-reduced-motion: reduce) {
-    .dm-orb b, .dm-orb i, .dm-me, .dm-ai, .dm-row, .dm-live-k i { animation: none; }
-    .dm-step { transition: none; transform: none; }
-  }
+  @media (prefers-reduced-motion: reduce) { .dm-orb b, .dm-orb i, .dm-status, .dm-card { animation: none; } }
 </style>
 
 </head>
@@ -2657,59 +2615,6 @@
 <body style="">
 
 <deck-stage width="1920" height="1080">
-  <section data-label="Demo">
-    <div class="dm" data-step="ask">
-      <div class="s1-glow"></div>
-      <div class="s1-wordmark"><img src="assets/melee-lockup.svg" alt="Melee"></div>
-      <div class="dm-tag">Demo</div>
-
-      <div class="dm-step dm-ask">
-        <span class="dm-orb lg" aria-hidden="true"><i></i><b></b></span>
-        <h1 class="dm-h">What should your market ask?</h1>
-        <p class="dm-p">Say it in your own words. The assistant checks the facts and the markets Melee already has, then writes a draft you can launch.</p>
-        <form class="dm-box" autocomplete="off">
-          <textarea rows="1" maxlength="140" placeholder="Describe your market…" aria-label="Describe your market"></textarea>
-          <button type="submit" aria-label="Send" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-        </form>
-        <div class="dm-ex-lbl">Examples</div>
-        <ul class="dm-ex"></ul>
-      </div>
-
-      <div class="dm-step dm-work">
-        <div class="dm-chat">
-          <div class="dm-log" aria-live="polite"></div>
-          <form class="dm-box" autocomplete="off" hidden>
-            <textarea rows="1" maxlength="140" placeholder="List the outcomes…" aria-label="List the outcomes"></textarea>
-            <button type="submit" aria-label="Send" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-          </form>
-        </div>
-        <div class="dm-draft">
-          <div class="dm-draft-h"><span>Draft</span><em></em></div>
-          <dl class="dm-rows"></dl>
-          <button type="button" class="dm-cta" data-act="launch" disabled>Launch</button>
-        </div>
-      </div>
-
-      <div class="dm-step dm-live">
-        <div class="dm-live-k"><i></i>Live</div>
-        <h2 class="dm-h">Your market is live.</h2>
-        <div class="dm-card">
-          <div class="mk-top"><span class="dm-av"></span><span class="mk-handle">@you</span><span class="mk-cat"></span></div>
-          <div class="mk-q"></div>
-          <div class="mk-odds"><span class="yes"></span><span class="no"></span></div>
-          <div class="mk-bar"><span style="width:50%"></span></div>
-          <div class="mk-bot"><span class="dm-vol"></span><span class="mk-earn">Creator earnings <b></b></span></div>
-        </div>
-        <div class="dm-actions">
-          <button type="button" class="dm-cta" data-act="next">See how it works</button>
-          <button type="button" class="dm-ghost" data-act="again">Make another</button>
-        </div>
-      </div>
-
-      <button type="button" class="dm-skip" data-act="next">Skip to the deck →</button>
-    </div>
-  </section>
-
   <section data-label="North Star">
     <div class="s1">
       <div class="s1-glow"></div>
@@ -2719,14 +2624,14 @@
       <p class="sub">The creator-powered prediction market.</p>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>02 / 14</span>
+        <span>01 / 13</span>
       </div>
     </div>
   </section>
 
   <section data-label="Product">
     <div class="frame">
-      <div class="corner-mark">03 — The idea</div>
+      <div class="corner-mark">02 — The idea</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">Open a market on anything, <span style="color:var(--primary)">the minute it happens.</span></h2>
@@ -2743,7 +2648,7 @@
 
   <section data-label="Precedent">
     <div class="frame">
-      <div class="corner-mark">04 — The precedent</div>
+      <div class="corner-mark">03 — The precedent</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">When creation goes<br>permissionless,<br><span style="color:var(--primary)">market size grows<br>a thousandfold.</span></h2>
@@ -2762,7 +2667,7 @@
 
   <section data-label="Mechanism">
     <div class="frame">
-      <div class="corner-mark">05 — The mechanism</div>
+      <div class="corner-mark">04 — The mechanism</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">We invented the Parimutuel Market Maker <span style="color:var(--primary)">to unlock the next frontier.</span></h2>
@@ -2783,7 +2688,7 @@
 
   <section data-label="Liquidity">
     <div class="frame">
-      <div class="corner-mark">06 — Liquidity</div>
+      <div class="corner-mark">05 — Liquidity</div>
       <h2 class="title">We own the entire market lifecycle <span style="color:var(--primary)">from the first trade to the block trade.</span></h2>
       <p class="sub">Melee is the only exchange where a market can open from the first dollar and graduate to institutional pricing.</p>
       <div class="stg">
@@ -2804,7 +2709,7 @@
 
   <section data-label="Viral">
     <div class="frame">
-      <div class="corner-mark">07 — Early signal</div>
+      <div class="corner-mark">06 — Early signal</div>
       <h2 class="title">We're finding early product-market fit <span style="color:var(--primary)">in viral internet controversies.</span></h2>
       <div class="vc-strip">Breaking news <i>→</i> Market launched <i>→</i> Viral distribution <i>→</i> <b>Creators acquired</b><a class="vc-link" href="https://app.notion.com/p/Melee-Viral-Market-Flywheel-406c75b77d5c810997b3f02b034b9b59" target="_blank" rel="noopener">Read the case study →</a></div>
       <div class="vc">
@@ -2824,7 +2729,7 @@
 
   <section data-label="Traction">
     <div class="frame">
-      <div class="corner-mark">08 — Traction</div>
+      <div class="corner-mark">07 — Traction</div>
       <h2 class="title">Users have created <span style="color:var(--primary)">20,700 markets</span> since October.</h2>
       <p class="sub">In November they are opening 460 a day.</p>
 
@@ -2870,7 +2775,7 @@
 
   <section data-label="Distribution">
     <div class="frame">
-      <div class="corner-mark">09 — Distribution</div>
+      <div class="corner-mark">08 — Distribution</div>
       <h2 class="title">Every market brings <span style="color:var(--primary)">its own distribution.</span></h2>
       <p class="sub">Creators, their fans and Melee's own accounts each carry a market further, and each is paid from its fees.</p>
       <div class="sp">
@@ -2917,7 +2822,7 @@
 
   <section data-label="Hedging">
     <div class="frame">
-      <div class="corner-mark">10 — The opportunity</div>
+      <div class="corner-mark">09 — The opportunity</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">A market for <span style="color:var(--primary)">every asset, event and risk.</span></h2>
@@ -2937,7 +2842,7 @@
 
   <section data-label="Team">
     <div class="frame">
-      <div class="corner-mark">11 — Team</div>
+      <div class="corner-mark">10 — Team</div>
       <h2 class="title">Built <span style="color:var(--primary)">for this problem.</span></h2>
 
       <div class="team-row">
@@ -2992,7 +2897,7 @@
 
   <section data-label="Target">
     <div class="frame">
-      <div class="corner-mark">12 — The target</div>
+      <div class="corner-mark">11 — The target</div>
       <div class="split top">
         <div class="split-l">
       <h2 class="title">We're aiming for <span style="color:var(--primary)">100,000 markets a month.</span></h2>
@@ -3022,7 +2927,7 @@
 
   <section data-label="Use of funds">
     <div class="frame">
-      <div class="corner-mark">13 — The raise</div>
+      <div class="corner-mark">12 — The raise</div>
       <div class="split">
         <div class="split-l">
       <h2 class="title">$5M to reach <span style="color:var(--primary)">10,000 creators on mainnet.</span></h2>
@@ -3060,7 +2965,7 @@
       <h1 class="headline">Every question <em>will have a market.</em></h1>
       <div class="s1-footer">
         <span>melee.markets</span>
-        <span>14 / 14</span>
+        <span>13 / 13</span>
       </div>
     </div>
   </section>
@@ -3069,6 +2974,29 @@
 
 <!-- Hidden slides: kept for reuse, not part of the deck -->
 <div id="deck-archive" hidden>
+  <section data-label="Demo">
+    <div class="dm">
+      <div class="s1-glow"></div>
+      <div class="s1-wordmark"><img src="assets/melee-lockup.svg" alt="Melee"></div>
+      <div class="dm-col">
+        <h1 class="dm-h">What should your market ask?</h1>
+        <form class="dm-box" autocomplete="off">
+          <textarea rows="1" maxlength="140" placeholder="Describe your market…" aria-label="Describe your market"></textarea>
+          <button type="submit" aria-label="Send" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+        </form>
+        <ul class="dm-ex"></ul>
+        <div class="dm-status" aria-live="polite" hidden><span class="dm-orb" aria-hidden="true"><i></i><b></b></span><p></p></div>
+        <div class="dm-card" hidden>
+          <div class="mk-top"><span class="dm-av"></span><span class="mk-handle">@you</span><span class="mk-cat"></span></div>
+          <div class="mk-q"></div>
+          <div class="mk-odds"><span class="yes"></span><span class="no"></span></div>
+          <div class="mk-bar"><span style="width:50%"></span></div>
+          <div class="mk-bot"><span class="dm-vol"></span><span class="mk-earn">Creator earnings <b></b></span></div>
+        </div>
+      </div>
+      <button type="button" class="dm-skip">Continue →</button>
+    </div>
+  </section>
   <section data-label="Frontier">
     <div class="frame">
       <div class="corner-mark">04 — The opportunity</div>
@@ -3271,47 +3199,31 @@
 </script>
 <script>
   /* Demo slide: a simulated front end of the market assistant. Nothing is sent
-     anywhere. The three examples carry hand-written drafts; a typed question
-     gets a draft built from its own words. */
+     anywhere. A typed question becomes a market card in place; a question that
+     isn't yes or no is asked for its outcomes first. */
   (function () {
     var root = document.querySelector('.dm');
     if (!root) return;
     var deck = document.querySelector('deck-stage');
+    if (!deck || !deck.contains(root)) return; /* parked in #deck-archive */
     var slide = root.closest('section');
-    function $(sel, el) { return (el || root).querySelector(sel); }
+    function $(sel) { return root.querySelector(sel); }
 
-    var askForm = $('.dm-ask .dm-box'), askBox = $('textarea', askForm);
-    var chatForm = $('.dm-chat .dm-box'), chatBox = $('textarea', chatForm);
-    var log = $('.dm-log'), rows = $('.dm-rows'), saved = $('.dm-draft-h em');
-    var launch = $('[data-act="launch"]'), examples = $('.dm-ex');
-    var timers = [], ticker = null, draft = null;
+    var form = $('.dm-box'), box = $('.dm-box textarea'), send = $('.dm-box button');
+    var examples = $('.dm-ex'), status = $('.dm-status'), card = $('.dm-card');
+    var timer = null, ticker = null, pending = null;
 
     var PLUS = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>';
-    var EMPTY = 'Your market takes shape here as the assistant writes it.';
-
-    function later(fn, ms) { timers.push(setTimeout(fn, ms)); }
-    function stopAll() { timers.forEach(clearTimeout); timers = []; clearInterval(ticker); ticker = null; }
-    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-    function day(d) { return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' }).replace(/,/g, ''); }
-    function inDays(n) { var d = new Date(); d.setDate(d.getDate() + n); return d; }
-    function monthEnd() { var d = new Date(); return new Date(d.getFullYear(), d.getMonth() + 1, 0); }
-    function nextMonday() { var d = new Date(); d.setDate(d.getDate() + ((8 - d.getDay()) % 7 || 7)); return d; }
-    function money(v) { return v >= 1e6 ? '$' + (v / 1e6).toFixed(2) + 'M' : v >= 1000 ? '$' + (v / 1000).toFixed(1) + 'k' : '$' + Math.round(v); }
-
     var EXAMPLES = [
-      { q: 'Will Bitcoin close this month higher than it opened?', cat: 'Crypto', out: ['Yes', 'No'],
-        when: function () { return day(monthEnd()); },
-        rules: 'Yes if the BTC-USD daily close on the last day of the month is above the month’s opening price. No otherwise.',
-        srcLabel: 'Resolution source', src: 'Coinbase BTC-USD daily candles' },
-      { q: 'Will this weekend’s top film open above $100M?', cat: 'Culture', out: ['Yes', 'No'],
-        when: function () { return day(nextMonday()); },
-        rules: 'Yes if the number one film’s Friday to Sunday US gross is above $100M. No otherwise.',
-        srcLabel: 'Resolution source', src: 'Box Office Mojo weekend chart' },
-      { q: 'Will the Fed cut rates at its next meeting?', cat: 'Economics', out: ['Yes', 'No'],
-        when: function () { return 'the day of the meeting'; },
-        rules: 'Yes if the Federal Reserve lowers its target range at its next scheduled meeting. No otherwise.',
-        srcLabel: 'Resolution source', src: 'Federal Reserve press release' }
+      'Will Bitcoin close this month higher than it opened?',
+      'Will this weekend\u2019s top film open above $100M?',
+      'Will the Fed cut rates at its next meeting?'
     ];
+    var ASK = 'Describe your market\u2026', OUTCOMES = 'List the outcomes, separated by commas\u2026';
+
+    function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+    function money(v) { return v >= 1e6 ? '$' + (v / 1e6).toFixed(2) + 'M' : v >= 1000 ? '$' + (v / 1000).toFixed(1) + 'k' : '$' + Math.round(v); }
+    function stop() { clearTimeout(timer); clearInterval(ticker); timer = ticker = null; }
 
     function category(q) {
       if (/\b(bitcoin|btc|ethereum|eth|solana|crypto|token|memecoin)\b/i.test(q)) return 'Crypto';
@@ -3320,170 +3232,98 @@
       if (/\b(fed|inflation|cpi|gdp|recession|interest rates?|jobs report)\b/i.test(q)) return 'Economics';
       return 'Culture';
     }
-
-    /* A typed question as a draft. A question that isn't yes or no comes back
-       with no outcomes, and the assistant asks for them. */
-    function draftFor(text) {
+    function question(text) {
       var q = text.trim().replace(/\s+/g, ' ');
       q = q.charAt(0).toUpperCase() + q.slice(1);
-      if (!/\?$/.test(q)) q = q.replace(/[.!]+$/, '') + '?';
-      for (var i = 0; i < EXAMPLES.length; i++) {
-        var e = EXAMPLES[i];
-        if (e.q.toLowerCase() === q.toLowerCase()) return { q: e.q, cat: e.cat, out: e.out, when: e.when(), rules: e.rules, srcLabel: e.srcLabel, src: e.src };
-      }
-      var when = day(inDays(7));
-      var binary = /^(will|is|are|was|were|does|do|did|can|could|has|have|had|should|would)\b/i.test(q);
-      return { q: q, cat: category(q), out: binary ? ['Yes', 'No'] : null, when: when,
-        rules: binary ? 'Yes if it happens by ' + when + '. No otherwise.' : 'Settles on the outcome that happens by ' + when + '.',
-        srcLabel: 'Result', src: 'You decide the result.' };
+      return /\?$/.test(q) ? q : q.replace(/[.!]+$/, '') + '?';
+    }
+    function say(text, thinking) {
+      status.firstChild.className = 'dm-orb' + (thinking ? ' thinking' : '');
+      status.lastChild.textContent = text;
+      status.hidden = false;
     }
 
-    function say(html, cls) {
-      var el = document.createElement('div');
-      el.className = cls;
-      el.innerHTML = html;
-      log.appendChild(el);
-      return el;
-    }
-    function me(text) { say(esc(text), 'dm-me'); }
-    function reply(text) { say('<span class="dm-orb" aria-hidden="true"><i></i><b></b></span><p>' + esc(text) + '</p>', 'dm-ai'); }
-    function working(steps, done) {
-      var el = say('<span class="dm-orb thinking" aria-hidden="true"><i></i><b></b></span><p></p>', 'dm-ai status');
-      steps.forEach(function (s, i) { later(function () { el.lastChild.textContent = s + '…'; }, i * 950); });
-      later(function () { el.remove(); done(); }, steps.length * 950);
-    }
-
-    function row(label, html, cls) {
-      var el = document.createElement('div');
-      el.className = 'dm-row' + (cls ? ' ' + cls : '');
-      el.innerHTML = '<dt>' + label + '</dt><dd>' + html + '</dd>';
-      rows.appendChild(el);
-    }
-    function writeDraft() {
-      var d = draft;
-      rows.innerHTML = '';
-      var parts = [
-        function () { row('Question', esc(d.q), 'q'); },
-        function () { row('Outcomes', '<span class="dm-chips">' + d.out.map(function (o) { return '<span>' + esc(o) + '</span>'; }).join('') + '</span>'); },
-        function () { row('Category and result', esc(d.cat + ' · result expected ' + d.when)); },
-        function () { row('Resolution criteria', esc(d.rules)); },
-        function () { row(d.srcLabel, esc(d.src)); }
-      ];
-      parts.forEach(function (fn, i) { later(fn, i * 260); });
-      later(function () {
-        saved.textContent = 'Saved';
-        reply('Here’s the draft. Launch it when it reads right.');
-        launch.disabled = false;
-      }, parts.length * 260 + 200);
-    }
-
-    function start(text) {
-      text = text.trim();
-      if (!text) return;
-      stopAll();
-      draft = draftFor(text);
-      log.innerHTML = '';
-      rows.innerHTML = '<p class="dm-empty">' + EMPTY + '</p>';
-      saved.textContent = '';
-      launch.disabled = true;
-      chatForm.hidden = true;
-      root.setAttribute('data-step', 'work');
-      me(text);
-      var steps = ['Searching the web', 'Checking Melee’s markets', 'Writing the draft'];
-      if (draft.out) return working(steps, writeDraft);
-      working(steps.slice(0, 2), function () {
-        reply('What are the outcomes? List them, separated by commas.');
-        chatForm.hidden = false;
-        chatBox.focus();
-      });
-    }
-
-    function outcomes(text) {
-      var out = text.split(/,|\bor\b|\bvs\.?\b|\//i).map(function (s) { return s.trim().replace(/[.?!]+$/, ''); })
-        .filter(Boolean).slice(0, 6)
-        .map(function (s) { return s.charAt(0).toUpperCase() + s.slice(1); });
-      me(text);
-      if (out.length < 2) return reply('A market needs at least two outcomes. List them, separated by commas.');
-      draft.out = out;
-      chatForm.hidden = true;
-      working(['Writing the draft'], writeDraft);
-    }
-
-    function goLive() {
-      var d = draft, vol = 0, yes = 50;
-      var a = d.out[0], b = d.out.length > 2 ? 'Other' : d.out[1];
-      $('.dm-card .mk-cat').textContent = d.cat;
-      $('.dm-card .mk-q').textContent = d.q;
+    function show(q, out) {
+      var vol = 0, yes = 50;
+      var a = out[0], b = out.length > 2 ? 'Other' : out[1];
+      $('.dm-card .mk-cat').textContent = category(q);
+      $('.dm-card .mk-q').textContent = q;
       function paint() {
         $('.dm-card .yes').textContent = a + ' ' + yes + '%';
         $('.dm-card .no').textContent = b + ' ' + (100 - yes) + '%';
         $('.dm-card .mk-bar span').style.width = yes + '%';
-        $('.dm-vol').textContent = money(vol) + ' volume · ' + Math.round(vol / 160).toLocaleString('en-US') + ' traders';
+        $('.dm-vol').textContent = money(vol) + ' volume \u00b7 ' + Math.round(vol / 160).toLocaleString('en-US') + ' traders';
         $('.dm-card .mk-earn b').textContent = '$' + Math.round(vol * 0.015).toLocaleString('en-US');
       }
       paint();
-      root.setAttribute('data-step', 'live');
-      clearInterval(ticker);
+      status.hidden = true;
+      card.hidden = false;
       ticker = setInterval(function () {
         vol += 900 + Math.random() * 5200;
         yes = Math.max(18, Math.min(82, yes + Math.round((Math.random() - 0.46) * 7)));
         paint();
       }, 1100);
     }
+    function write(q, out) {
+      say('Writing your market\u2026', true);
+      timer = setTimeout(function () { show(q, out); }, 1500);
+    }
 
-    function reset() {
-      stopAll();
-      draft = null;
-      askBox.value = '';
-      grow(askBox);
-      root.setAttribute('data-step', 'ask');
+    function start(text) {
+      stop();
+      examples.hidden = true;
+      card.hidden = true;
+      box.placeholder = ASK;
+      var q = question(text);
+      if (/^(will|is|are|was|were|does|do|did|can|could|has|have|had|should|would)\b/i.test(q)) { pending = null; return write(q, ['Yes', 'No']); }
+      pending = q;
+      say('What are the outcomes?', false);
+      box.placeholder = OUTCOMES;
+      box.focus();
+    }
+    function outcomes(text) {
+      var out = text.split(/,|\bor\b|\bvs\.?\b|\//i).map(function (s) { return s.trim().replace(/[.?!]+$/, ''); })
+        .filter(Boolean).slice(0, 6)
+        .map(function (s) { return s.charAt(0).toUpperCase() + s.slice(1); });
+      if (out.length < 2) return say('A market needs at least two outcomes.', false);
+      var q = pending;
+      pending = null;
+      box.placeholder = ASK;
+      write(q, out);
     }
 
     /* The box grows with its text; Send wakes when there is something to send. */
-    function grow(box) {
+    function grow() {
       box.style.height = '';
       box.style.height = Math.min(box.scrollHeight, 148) + 'px';
-      box.form.querySelector('button').disabled = !box.value.trim();
+      send.disabled = !box.value.trim();
     }
-    function wire(form, box, send) {
-      box.addEventListener('input', function () { grow(box); });
-      box.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); form.requestSubmit(); }
-      });
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var text = box.value.trim();
-        if (!text) return;
-        box.value = '';
-        grow(box);
-        send(text);
-      });
-    }
-    wire(askForm, askBox, start);
-    wire(chatForm, chatBox, outcomes);
+    box.addEventListener('input', grow);
+    box.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); form.requestSubmit(); }
+    });
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var text = box.value.trim();
+      if (!text) return;
+      box.value = '';
+      grow();
+      if (pending) outcomes(text); else start(text);
+    });
 
-    EXAMPLES.forEach(function (e) {
+    EXAMPLES.forEach(function (q) {
       var li = document.createElement('li');
-      li.innerHTML = '<button type="button"><span>' + esc(e.q) + '</span>' + PLUS + '</button>';
-      li.firstChild.addEventListener('click', function () { start(e.q); });
+      li.innerHTML = '<button type="button"><span>' + esc(q) + '</span>' + PLUS + '</button>';
+      li.firstChild.addEventListener('click', function () { start(q); });
       examples.appendChild(li);
     });
-
-    root.addEventListener('click', function (e) {
-      var act = e.target.closest('[data-act]');
-      if (!act) return;
-      var what = act.getAttribute('data-act');
-      if (what === 'launch' && draft && draft.out) goLive();
-      if (what === 'again') reset();
-      if (what === 'next' && deck && deck.next) deck.next();
-    });
+    $('.dm-skip').addEventListener('click', function () { if (deck && deck.next) deck.next(); });
 
     /* On a touch screen the deck's tap zones cover the left and right thirds,
        which would swallow taps on the demo. They step aside while it shows. */
     function sync(active) {
       var zones = deck && deck.shadowRoot && deck.shadowRoot.querySelector('.tapzones');
       if (zones) zones.style.display = active ? 'none' : '';
-      if (!active) { clearInterval(ticker); ticker = null; }
     }
     document.addEventListener('slidechange', function (e) { sync(!!e.detail && e.detail.slide === slide); });
     setTimeout(function () { sync(!!deck && deck.index === 0); }, 0);
