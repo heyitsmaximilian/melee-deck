@@ -2517,6 +2517,8 @@
 
   /* hedging slide: business-opened market cards */
   .hg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .hg-grid.three { grid-template-columns: 1fr; gap: 22px; }
+  .hg-grid.three .hg-card { min-height: 0; padding: 28px 34px; gap: 14px; }
   .hg-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px 32px 34px; display: flex; flex-direction: column; gap: 16px; min-height: 230px; }
   .hg-card.hi { border-color: rgba(var(--primary-rgb),0.55); background: rgba(var(--primary-rgb),0.08); }
   .hg-who { font-size: 20px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--text-muted); }
@@ -2778,15 +2780,14 @@
       <div class="corner-mark">09 — The opportunity</div>
       <div class="split">
         <div class="split-l">
-      <h2 class="title">Businesses will open markets on <span style="color:var(--primary)">the risks only they face.</span></h2>
-      <p class="sub">Prediction markets are projected to reach $1 trillion a year by 2030, but exchanges only list the risks a market maker will price. The PMM bootstraps the other side of any risk.</p>
+      <h2 class="title">A market for <span style="color:var(--primary)">every asset, event and risk.</span></h2>
+      <p class="sub">Prediction markets are projected to reach $1 trillion a year by 2030, but exchanges only list what a market maker will price. The PMM bootstraps the other side of any market.</p>
         </div>
         <div class="split-r">
-      <div class="hg-grid">
-        <div class="hg-card"><div class="hg-who">A vineyard</div><div class="hg-q">Frost in Napa before the October harvest?</div><div class="hg-h">Hedges a lost vintage.</div></div>
-        <div class="hg-card"><div class="hg-who">An importer</div><div class="hg-q">Long Beach port strike before March?</div><div class="hg-h">Hedges stranded inventory.</div></div>
-        <div class="hg-card"><div class="hg-who">A festival</div><div class="hg-q">More than an inch of rain on site Saturday?</div><div class="hg-h">Hedges ticket refunds.</div></div>
-        <div class="hg-card hi"><div class="hg-who">A developer</div><div class="hg-q">County approves the rezoning by June?</div><div class="hg-h">Hedges carrying costs.</div></div>
+      <div class="hg-grid three">
+        <div class="hg-card"><div class="hg-who">Asset · A collector</div><div class="hg-q">A Basquiat above $50M at Christie's in May?</div><div class="hg-h">Prices a collection.</div></div>
+        <div class="hg-card"><div class="hg-who">Event · An advertiser</div><div class="hg-q">Super Bowl LXI above 130M viewers?</div><div class="hg-h">Sizes an ad buy.</div></div>
+        <div class="hg-card hi"><div class="hg-who">Risk · An importer</div><div class="hg-q">Long Beach port strike before March?</div><div class="hg-h">Hedges stranded inventory.</div></div>
       </div>
         </div>
       </div>
